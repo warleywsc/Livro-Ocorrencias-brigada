@@ -290,3 +290,27 @@ Validacao manual:
 Proxima etapa:
 
 - Criar a lista EquipePlantao.
+
+---
+
+## Registro — Substituições, Responsabilidade e Autoria
+
+Data: 08/06/2026
+Status: Regra operacional registrada
+
+Arquivo criado:
+
+- sharepoint/14_substituicoes_responsabilidade_autoria.md
+
+Decisões registradas:
+
+- O livro pertence ao plantão, não à pessoa.
+- LiderResponsavelAtual controla quem edita/finaliza o livro.
+- Substituição de líder deve ser registrada em Plantoes.
+- Substituição de integrantes deve ser registrada em EquipePlantao.
+- EquipePlantao foi corrigida manualmente, removendo campos de líder que pertencem a Plantoes.
+- Ocorrências devem separar líder no momento do fato, usuário que registrou e responsável pelo acompanhamento.
+
+Próxima etapa:
+
+- Conferir a lista Plantoes e seguir para PendenciasOperacionais.
