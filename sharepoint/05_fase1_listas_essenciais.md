@@ -71,7 +71,7 @@ Controlar os usuários autorizados, perfis de acesso e vínculo operacional.
 | Matricula | Texto uma linha | Não | Identificação interna |
 | Funcao | Escolha | Sim | Líder, Motorista, Brigadista, Apoio, Supervisor, Administrador, Outro |
 | PerfilAcesso | Escolha | Sim | Leitura, Operador, Lider, Supervisor, Administrador |
-| UnidadePadrao | Escolha | Não | Unidade padrão |
+| PostoServico | Escolha | Não | Posto de Serviço padrão |
 | Ativo | Sim/Não | Sim | Controla acesso lógico |
 | Observacoes | Texto várias linhas | Não | Observações administrativas |
 
@@ -314,3 +314,4 @@ Ainda não criar listas reais no SharePoint antes de confirmar:
 - prioridades;
 - status;
 - se "Unidade Central" será mantida como unidade real ou apenas como dado fictício.
+

@@ -97,7 +97,7 @@ Controlar os usuários autorizados e seus perfis de acesso no aplicativo.
 | Matricula | Texto uma linha | Não | Matrícula ou identificação interna |
 | Funcao | Escolha | Sim | Brigadista, Líder, Supervisor, Administrador, Apoio |
 | PerfilAcesso | Escolha | Sim | Leitura, Operador, Lider, Supervisor, Administrador |
-| UnidadePadrao | Escolha | Não | Unidade padrão do usuário |
+| PostoServico | Escolha | Não | Posto de Serviço padrão do usuário |
 | Ativo | Sim/Não | Sim | Controla se o usuário pode acessar |
 | Observacoes | Texto várias linhas | Não | Observações administrativas |
 
@@ -558,3 +558,4 @@ Próxima etapa:
 - confirmar escolhas de status;
 - revisar permissões;
 - só depois criar as listas no SharePoint.
+

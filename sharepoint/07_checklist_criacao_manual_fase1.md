@@ -78,7 +78,7 @@ Cadastro de usuários autorizados, funções e perfis de acesso do Livro de Ocor
 - Matricula
 - Funcao
 - PerfilAcesso
-- UnidadePadrao
+- PostoServico
 - Ativo
 - Observacoes
 
@@ -92,7 +92,7 @@ Após criar, validar:
 - [ ] Campo UsuarioMicrosoft criado como Pessoa.
 - [ ] Campo Funcao criado como Escolha.
 - [ ] Campo PerfilAcesso criado como Escolha.
-- [ ] Campo UnidadePadrao criado como Escolha.
+- [ ] Campo PostoServico criado como Escolha.
 - [ ] Campo Ativo criado como Sim/Não.
 - [ ] Campo Observacoes criado como texto várias linhas.
 
@@ -404,3 +404,4 @@ Após a criação manual e validação das listas, a próxima etapa será:
    - Footer
 5. conectar as listas essenciais;
 6. montar o Dashboard inicial com dados fictícios.
+

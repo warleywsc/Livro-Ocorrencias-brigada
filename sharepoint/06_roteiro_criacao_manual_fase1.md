@@ -62,7 +62,7 @@ Controlar usuários autorizados, função e perfil de acesso.
 | Matricula | Texto uma linha | Não |
 | Funcao | Escolha | Sim |
 | PerfilAcesso | Escolha | Sim |
-| UnidadePadrao | Escolha | Não |
+| PostoServico | Escolha | Não |
 | Ativo | Sim/Não | Sim |
 | Observacoes | Texto várias linhas | Não |
 
@@ -84,7 +84,7 @@ Controlar usuários autorizados, função e perfil de acesso.
 - Supervisor
 - Administrador
 
-### Valores de escolha — UnidadePadrao
+### Valores de escolha — PostoServico
 
 - Unidade Central
 - Angra 1
@@ -456,3 +456,4 @@ Antes de criar as listas reais, confirmar:
 Este roteiro está preparado para validação.
 
 Ainda não executar criação real das listas sem confirmação.
+

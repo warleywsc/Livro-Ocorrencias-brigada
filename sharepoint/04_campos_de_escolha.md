@@ -30,7 +30,7 @@ Nenhuma lista deve ser criada no SharePoint antes da validação destes valores.
 Campo sugerido:
 
 - Unidade
-- UnidadePadrao
+- PostoServico
 
 Valores propostos:
 
@@ -461,3 +461,4 @@ Status atual:
 - Proposta inicial criada.
 - Aguardando validação operacional.
 - Ainda não criar listas no SharePoint.
+

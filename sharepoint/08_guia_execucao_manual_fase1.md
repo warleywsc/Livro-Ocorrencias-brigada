@@ -63,7 +63,7 @@ Cadastro de usuários autorizados, funções e perfis de acesso do Livro de Ocor
 | Matricula | Texto uma linha | Não | Livre |
 | Funcao | Escolha | Sim | Líder; Motorista; Brigadista; Apoio; Supervisor; Administrador; Outro |
 | PerfilAcesso | Escolha | Sim | Leitura; Operador; Lider; Supervisor; Administrador |
-| UnidadePadrao | Escolha | Não | Unidade Central; Angra 1; Angra 2; Angra 3; Apoio Externo; Outro |
+| PostoServico | Escolha | Não | Unidade Central; Angra 1; Angra 2; Angra 3; Apoio Externo; Outro |
 | Ativo | Sim/Não | Sim | Sim/Não |
 | Observacoes | Texto várias linhas | Não | Livre |
 
@@ -81,7 +81,7 @@ Após criar a lista, confirmar:
 - [ ] Campo Title mantido.
 - [ ] Campo Email criado.
 - [ ] Campo UsuarioMicrosoft criado como Pessoa.
-- [ ] Campos Funcao, PerfilAcesso e UnidadePadrao criados como Escolha.
+- [ ] Campos Funcao, PerfilAcesso e PostoServico criados como Escolha.
 - [ ] Campo Ativo criado como Sim/Não.
 - [ ] Campo Observacoes criado como texto várias linhas.
 
@@ -394,3 +394,4 @@ Após criação manual e validação:
 3. preparar Power Apps Canvas App;
 4. criar AppShell;
 5. conectar listas essenciais.
+
