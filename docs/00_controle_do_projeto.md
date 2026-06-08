@@ -314,3 +314,54 @@ Decisões registradas:
 Próxima etapa:
 
 - Conferir a lista Plantoes e seguir para PendenciasOperacionais.
+
+---
+
+## Registro — Lista Plantoes corrigida no SharePoint
+
+Data: 08/06/2026
+Status: Corrigida manualmente
+
+Site:
+
+- https://etnweb.sharepoint.com/sites/BrigadaIncendio
+
+Lista corrigida:
+
+- Plantoes
+
+Correcoes aplicadas:
+
+- LiderPlantao deixou de ser o campo principal.
+- Foram adotados LiderEscalado e LiderResponsavelAtual.
+- Foram adicionados campos para substituicao de lider.
+- Foi confirmada a coluna PlantaoExtra.
+- Foi confirmada a coluna PostoServico.
+- Foi confirmada a regra de que o livro pertence ao plantao, nao a pessoa.
+
+Colunas principais esperadas:
+
+- CodigoPlantao
+- DataPlantao
+- Turno
+- PlantaoExtra
+- PostoServico
+- StatusLivro
+- PassagemServico
+- ResumoOperacional
+- DataAbertura
+- DataFinalizacao
+- FinalizadoPor
+- JustificativaReabertura
+- Observacoes
+- LiderEscalado
+- LiderResponsavelAtual
+- HouveSubstituicaoLider
+- LiderSubstituido
+- MotivoSubstituicaoLider
+- DataHoraAssuncaoLider
+- ObservacoesSubstituicaoLider
+
+Proxima etapa:
+
+- Criar a lista PendenciasOperacionais.
