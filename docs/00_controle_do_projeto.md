@@ -153,3 +153,24 @@ Decisão registrada:
 Próxima etapa:
 
 - Criar manualmente as listas da Fase 1 no Microsoft Lists / SharePoint quando houver ambiente disponível.
+
+---
+
+## Registro — Guia de Execução Manual da Fase 1
+
+Data: 07/06/2026  
+Status: Guia operacional preparado
+
+Arquivo criado:
+
+- sharepoint/08_guia_execucao_manual_fase1.md
+
+Decisão registrada:
+
+- Criar guia operacional tela a tela para uso durante a criação manual das listas.
+- A criação real ainda depende de ambiente SharePoint/Microsoft Lists disponível.
+- Power Apps continua fora desta etapa.
+
+Próxima etapa:
+
+- Usar o guia para criar manualmente as listas essenciais no Microsoft Lists / SharePoint.
