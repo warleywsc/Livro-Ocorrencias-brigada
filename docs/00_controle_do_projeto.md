@@ -60,3 +60,24 @@ Arquivo criado:
 Próxima etapa:
 
 - Validar os valores oficiais dos campos de escolha.
+
+---
+
+## Registro — Campos de Escolha
+
+Data: 07/06/2026  
+Status: Proposta inicial registrada
+
+Arquivo criado:
+
+- sharepoint/04_campos_de_escolha.md
+
+Decisão registrada:
+
+- Documentar os valores de escolha antes da criação real das listas.
+- Manter os valores como proposta inicial até validação operacional.
+- Não criar listas no SharePoint antes da validação desses valores.
+
+Próxima etapa:
+
+- Validar unidades, turnos, funções, tipos de ocorrência, status, prioridades e perfis de acesso.
