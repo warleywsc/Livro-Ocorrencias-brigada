@@ -1,0 +1,416 @@
+<!DOCTYPE html><html class="light" lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title class="">Pendências Operacionais - Livro de Ocorrências Digital</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"primary-fixed": "#cae6ff", "secondary-fixed-dim": "#8cd3ca", "on-background": "#191c1e", "surface-dim": "#d9dadd", "tertiary-container": "#466601", "tertiary-fixed-dim": "#acd369", "inverse-on-surface": "#f0f0f4", error: "#ba1a1a", background: "#f9f9fc", "on-error": "#ffffff", "primary-container": "#00628f", "on-primary-container": "#addaff", "inverse-primary": "#8bceff", "surface-variant": "#e2e2e6", "on-error-container": "#93000a", "surface-container-highest": "#e2e2e6", secondary: "#1b6962", "error-container": "#ffdad6", "secondary-fixed": "#a8f0e7", "surface-container-lowest": "#ffffff", outline: "#70787f", "primary-fixed-dim": "#8bceff", tertiary: "#334c00", "on-tertiary-fixed-variant": "#354e00", "surface-container-high": "#e7e8eb", "tertiary-fixed": "#c8f082", "on-tertiary-fixed": "#131f00", "surface-tint": "#076491", "on-tertiary-container": "#bbe377", primary: "#00496c", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", surface: "#f9f9fc", "on-primary": "#ffffff", "inverse-surface": "#2e3133", "secondary-container": "#a5ede4", "surface-container": "#edeef1", "on-secondary-fixed": "#00201d", "surface-bright": "#f9f9fc", "on-surface": "#191c1e", "on-secondary-container": "#216d66", "surface-container-low": "#f3f3f7", "on-surface-variant": "#40484e", "on-secondary-fixed-variant": "#00504a", "on-primary-fixed-variant": "#004b6f", "on-primary-fixed": "#001e2f", "outline-variant": "#c0c7d0"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"stack-md": "1rem", gutter: "1rem", "margin-desktop": "2rem", "stack-sm": "0.5rem", "stack-lg": "1.5rem", "margin-mobile": "1rem"}, fontFamily: {"headline-sm": ["Hanken Grotesk"], "body-md": ["Open Sans"], "title-lg": ["Hanken Grotesk"], "label-lg": ["Open Sans"], "headline-lg-mobile": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "body-lg": ["Open Sans"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Open Sans"], label: ["Open Sans"]}, fontSize: {"headline-sm": ["20px", {lineHeight: "28px", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "title-lg": ["18px", {lineHeight: "24px", fontWeight: "500"}], "label-lg": ["12px", {lineHeight: "16px", letterSpacing: "0.5px", fontWeight: "600"}], "headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "700"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "700"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}};</script>
+<style>
+        /* Base styles */
+        body { @apply bg-background text-on-surface font-body-md min-h-screen flex flex-col; }
+        
+        /* Skip links */
+        .skip-link {
+            @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[60] bg-surface-container-highest px-4 py-2 rounded-lg text-primary font-label-lg shadow-md;
+        }
+
+        /* Material Icons setup */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body>
+<!-- Acessibilidade: Links Pular Conteúdo -->
+<a class="skip-link" href="#main-content">Ir para conteúdo</a>
+<a class="skip-link" href="#sidebar-nav">Ir para menu</a>
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 flex justify-between items-center w-full px-margin-desktop h-16 bg-surface-container-low dark:bg-surface-container-high border-b border-outline-variant z-30">
+<div class="flex items-center">
+<span class="font-headline-md text-headline-md font-bold text-safety-blue dark:text-primary-fixed-dim hidden md:block mr-8" style="color: rgb(0, 130, 188);"><span class="material-symbols-outlined mr-2 text-headline-md align-middle">menu_book</span>Livro de Ocorrências Digital</span>
+<div class="hidden lg:flex space-x-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#main-content">Ir para conteúdo</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#sidebar-nav">Ir para menu</a>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-highest border-transparent rounded-full focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all w-64 text-body-md text-on-surface" placeholder="Buscar..." type="text">
+</div>
+<div class="flex space-x-2 text-on-surface-variant">
+<button aria-label="Claro" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">light_mode</span>
+<span class="text-xs font-label-lg">Claro</span>
+</button>
+<button aria-label="Escuro" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+<span class="text-xs font-label-lg">Escuro</span>
+</button>
+<button aria-label="Alto contraste" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">contrast</span>
+<span class="text-xs font-label-lg">Alto contraste</span>
+</button>
+<button aria-label="Acessibilidade" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">accessibility</span>
+<span class="text-xs font-label-lg">Acessibilidade</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<button class="flex items-center space-x-3 p-1 pr-3 hover:bg-surface-container-highest rounded-full transition-colors">
+<img alt="Avatar Sgt. Oliveira" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLshvoHf3sRnTwZqmAq4mDLjnqkY2kaHpwsJds_MNBSN8QuD-4kce__5tqf7lfB9ZNQxoeL58_pxYWfgpHRflxmR0ogE2D9dbIY36TYPb2xIkb-_i7m9IWby8I7giXR_xlHI_Am2t6aSkq906nANywD-YSnvCwX1c5RZh8Ct2q1fCj-ar_tnvuxnVXyNwogeJouNP_ePXev5u13fmFOVGc3J6aZenb6FcQSaTk1u5B_xO4fWNJh2k8jLZQ">
+<div class="text-left hidden sm:block">
+<p class="font-label-lg text-label-lg text-on-surface">Sgt. Oliveira</p>
+<p class="text-xs text-on-surface-variant font-semibold">Líder de Brigada</p>
+</div>
+</button>
+</div>
+</header>
+<div class="flex flex-1 pt-16">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-16 bottom-0 w-64 flex flex-col pt-4 bg-surface-container-lowest dark:bg-surface-dim border-r border-outline-variant z-20 hidden md:flex" id="sidebar-nav">
+<div class="flex flex-col space-y-1 overflow-y-auto pb-4">
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">menu_book</span>
+<span class="font-label-lg text-label-lg">Livro do Plantão</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">emergency</span>
+<span class="font-label-lg text-label-lg">Ocorrências</span>
+</a>
+<a class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full mx-2 flex items-center px-4 py-3 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">pending_actions</span>
+<span class="font-label-lg text-label-lg">Pendências</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">assignment_turned_in</span>
+<span class="font-label-lg text-label-lg">POTs e Ciência</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">history</span>
+<span class="font-label-lg text-label-lg">Histórico</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">assessment</span>
+<span class="font-label-lg text-label-lg">Relatórios</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full mt-auto" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-label-lg text-label-lg">Administração</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-margin-mobile md:p-margin-desktop bg-background min-h-screen flex flex-col gap-stack-lg pb-24" id="main-content">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-primary">Pendências Operacionais</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-2">Acompanhamento de situações que permanecem abertas entre plantões.</p>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-6 py-3 rounded-xl font-label-lg font-bold shadow-sm transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                    Nova Pendência
+                </button>
+</div>
+<!-- Resumo do Plantão -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 flex flex-wrap gap-6 items-center shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline">calendar_today</span>
+<div>
+<span class="block text-label-lg font-label-lg text-on-surface-variant">Data</span>
+<span class="text-body-md font-body-md font-semibold text-on-surface">06/06/2026</span>
+</div>
+</div>
+<div class="flex items-center gap-2 border-l border-outline-variant pl-6">
+<span class="material-symbols-outlined text-outline">schedule</span>
+<div>
+<span class="block text-label-lg font-label-lg text-on-surface-variant">Turno</span>
+<span class="text-body-md font-body-md font-semibold text-on-surface">Dia</span>
+</div>
+</div>
+<div class="flex items-center gap-2 border-l border-outline-variant pl-6">
+<span class="material-symbols-outlined text-outline">location_city</span>
+<div>
+<span class="block text-label-lg font-label-lg text-on-surface-variant">Unidade</span>
+<span class="text-body-md font-body-md font-semibold text-on-surface">Central</span>
+</div>
+</div>
+<div class="flex items-center gap-2 border-l border-outline-variant pl-6">
+<span class="material-symbols-outlined text-outline">badge</span>
+<div>
+<span class="block text-label-lg font-label-lg text-on-surface-variant">Responsável</span>
+<span class="text-body-md font-body-md font-semibold text-on-surface">Sgt. Oliveira</span>
+</div>
+</div>
+<div class="ml-auto flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant">
+<div class="w-2 h-2 rounded-full bg-[#eab308]"></div>
+<span class="text-label-lg font-label-lg font-bold text-on-surface">Em preenchimento</span>
+</div>
+</div>
+<!-- Dashboard Summary Cards (Bento style) -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-sm flex flex-col justify-between">
+<span class="text-label-lg font-label-lg text-on-surface-variant">Pendências abertas</span>
+<div class="flex items-end justify-between mt-2">
+<span class="text-headline-md font-headline-md text-primary">5</span>
+<span class="material-symbols-outlined text-primary opacity-50">format_list_bulleted</span>
+</div>
+</div>
+<div class="bg-error-container border border-error/20 rounded-xl p-4 shadow-sm flex flex-col justify-between">
+<span class="text-label-lg font-label-lg text-on-error-container">Pendências críticas</span>
+<div class="flex items-end justify-between mt-2">
+<span class="text-headline-md font-headline-md text-on-error-container">1</span>
+<span class="material-symbols-outlined text-error opacity-50">warning</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-sm flex flex-col justify-between">
+<span class="text-label-lg font-label-lg text-on-surface-variant">Em acompanhamento</span>
+<div class="flex items-end justify-between mt-2">
+<span class="text-headline-md font-headline-md text-secondary">3</span>
+<span class="material-symbols-outlined text-secondary opacity-50">visibility</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-sm flex flex-col justify-between">
+<span class="text-label-lg font-label-lg text-on-surface-variant">Aguardando manutenção</span>
+<div class="flex items-end justify-between mt-2">
+<span class="text-headline-md font-headline-md text-[#d97706]">2</span>
+<span class="material-symbols-outlined text-[#d97706] opacity-50">build</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-sm flex flex-col justify-between">
+<span class="text-label-lg font-label-lg text-on-surface-variant">Com mais de 7 dias</span>
+<div class="flex items-end justify-between mt-2">
+<span class="text-headline-md font-headline-md text-error">1</span>
+<span class="material-symbols-outlined text-error opacity-50">history_toggle_off</span>
+</div>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Quick Tabs -->
+<div class="flex border-b border-outline-variant overflow-x-auto hide-scrollbar">
+<button class="px-6 py-3 border-b-2 border-primary text-primary font-label-lg font-bold whitespace-nowrap">Todas</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-lg whitespace-nowrap">Minhas</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-lg whitespace-nowrap">Críticas</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-lg whitespace-nowrap">Aguardando manutenção</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-lg whitespace-nowrap">Vencidas</button>
+</div>
+<!-- Advanced Filters (Dropdowns) -->
+<div class="p-4 grid grid-cols-2 md:grid-cols-6 gap-3 bg-surface-container-low">
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg text-body-md font-body-md py-2 px-3 text-on-surface">
+<option value="">Status</option>
+</select>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg text-body-md font-body-md py-2 px-3 text-on-surface">
+<option value="">Criticidade</option>
+</select>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg text-body-md font-body-md py-2 px-3 text-on-surface">
+<option value="">Origem</option>
+</select>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg text-body-md font-body-md py-2 px-3 text-on-surface">
+<option value="">Sistema afetado</option>
+</select>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg text-body-md font-body-md py-2 px-3 text-on-surface">
+<option value="">Unidade</option>
+</select>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg text-body-md font-body-md py-2 px-3 text-on-surface">
+<option value="">Responsável</option>
+</select>
+</div>
+</div>
+<!-- Pendency Cards List -->
+<div class="flex flex-col gap-4">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm flex flex-col hover:border-primary transition-colors overflow-hidden relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="p-5 flex flex-col gap-4">
+<div class="flex flex-col md:flex-row justify-between md:items-start gap-4 border-b border-outline-variant pb-4">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<span class="text-label-lg font-label-lg font-bold text-outline">PND-2026-0084</span>
+<span class="px-2 py-0.5 bg-surface-container-high rounded text-label-lg font-label-lg text-on-surface-variant border border-outline-variant flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-error"></div> Aberta
+                                    </span>
+<span class="px-2 py-0.5 bg-error-container text-on-error-container rounded text-label-lg font-label-lg font-bold border border-error/20">
+                                        Crítica
+                                    </span>
+</div>
+<h3 class="text-title-lg font-title-lg text-on-surface">Válvula H-14 travada em posição fechada</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">Válvula da rede de incêndio permanece travada.</p>
+</div>
+<div class="flex flex-col items-end gap-1 bg-error-container/30 px-3 py-2 rounded-lg border border-error/10">
+<span class="text-label-lg font-label-lg text-on-surface-variant">Prazo: Hoje</span>
+<span class="text-label-lg font-label-lg font-bold text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 9 dias aberta
+                                </span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Origem</span>
+<span class="text-body-md font-body-md text-on-surface">Ocorrência do plantão</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Sistema</span>
+<span class="text-body-md font-body-md text-on-surface">Rede de incêndio</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Localização</span>
+<span class="text-body-md font-body-md text-on-surface">Angra 1 • Piso 04</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Responsável</span>
+<span class="text-body-md font-body-md text-on-surface font-semibold">Manutenção Mecânica</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Última atualização</span>
+<span class="text-body-md font-body-md text-on-surface italic">Aguardando atendimento da manutenção.</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low px-5 py-3 border-t border-outline-variant flex justify-end gap-3">
+<button class="px-4 py-2 border border-outline text-on-surface font-label-lg rounded-lg hover:bg-surface-variant transition-colors">Ver histórico</button>
+<button class="px-4 py-2 border border-primary text-primary font-label-lg rounded-lg hover:bg-primary-container transition-colors">Atualizar</button>
+<button class="px-4 py-2 bg-secondary text-on-secondary font-label-lg font-bold rounded-lg hover:bg-secondary-fixed-dim transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Normalizar
+                        </button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm flex flex-col hover:border-primary transition-colors overflow-hidden relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-[#d97706]"></div>
+<div class="p-5 flex flex-col gap-4">
+<div class="flex flex-col md:flex-row justify-between md:items-start gap-4 border-b border-outline-variant pb-4">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<span class="text-label-lg font-label-lg font-bold text-outline">PND-2026-0091</span>
+<span class="px-2 py-0.5 bg-surface-container-high rounded text-label-lg font-label-lg text-on-surface-variant border border-outline-variant flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-[#d97706]"></div> Aguardando manutenção
+                                    </span>
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant rounded text-label-lg font-label-lg border border-outline-variant">
+                                        Média
+                                    </span>
+</div>
+<h3 class="text-title-lg font-title-lg text-on-surface">Sensor de fumaça intermitente no Setor B</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">Sensor apresentou falhas intermitentes.</p>
+</div>
+<div class="flex flex-col items-end gap-1 px-3 py-2">
+<span class="text-label-lg font-label-lg text-on-surface-variant">Prazo: 08/06/2026</span>
+<span class="text-label-lg font-label-lg text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 2 dias aberta
+                                </span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Origem</span>
+<span class="text-body-md font-body-md text-on-surface">Inspeção de rotina</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Sistema</span>
+<span class="text-body-md font-body-md text-on-surface">Detecção e alarme</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Localização</span>
+<span class="text-body-md font-body-md text-on-surface">Unidade Central • Administrativo - Ala Sul</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Responsável</span>
+<span class="text-body-md font-body-md text-on-surface font-semibold">Elétrica</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Última atualização</span>
+<span class="text-body-md font-body-md text-on-surface italic">Ordem de serviço aberta.</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low px-5 py-3 border-t border-outline-variant flex justify-end gap-3">
+<button class="px-4 py-2 border border-outline text-on-surface font-label-lg rounded-lg hover:bg-surface-variant transition-colors">Ver histórico</button>
+<button class="px-4 py-2 border border-primary text-primary font-label-lg rounded-lg hover:bg-primary-container transition-colors">Atualizar</button>
+<button class="px-4 py-2 bg-secondary text-on-secondary font-label-lg font-bold rounded-lg hover:bg-secondary-fixed-dim transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Normalizar
+                        </button>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm flex flex-col hover:border-primary transition-colors overflow-hidden relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="p-5 flex flex-col gap-4">
+<div class="flex flex-col md:flex-row justify-between md:items-start gap-4 border-b border-outline-variant pb-4">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<span class="text-label-lg font-label-lg font-bold text-outline">PND-2026-0078</span>
+<span class="px-2 py-0.5 bg-surface-container-high rounded text-label-lg font-label-lg text-on-surface-variant border border-outline-variant flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-secondary"></div> Em acompanhamento
+                                    </span>
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant rounded text-label-lg font-label-lg border border-outline-variant">
+                                        Média
+                                    </span>
+</div>
+<h3 class="text-title-lg font-title-lg text-on-surface">Extintor de CO2 descarregado</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">Extintor identificado descarregado.</p>
+</div>
+<div class="flex flex-col items-end gap-1 px-3 py-2">
+<span class="text-label-lg font-label-lg text-on-surface-variant">Prazo: 07/06/2026</span>
+<span class="text-label-lg font-label-lg text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 1 dia aberta
+                                </span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Origem</span>
+<span class="text-body-md font-body-md text-on-surface">Conferência de materiais</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Sistema</span>
+<span class="text-body-md font-body-md text-on-surface">Extintores</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Localização</span>
+<span class="text-body-md font-body-md text-on-surface">Unidade Central • C-04</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Responsável</span>
+<span class="text-body-md font-body-md text-on-surface font-semibold">Brigada de Incêndio</span>
+</div>
+<div>
+<span class="block text-label-lg font-label-lg text-outline">Última atualização</span>
+<span class="text-body-md font-body-md text-on-surface italic">Aguardando reposição.</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low px-5 py-3 border-t border-outline-variant flex justify-end gap-3">
+<button class="px-4 py-2 border border-outline text-on-surface font-label-lg rounded-lg hover:bg-surface-variant transition-colors">Ver histórico</button>
+<button class="px-4 py-2 border border-primary text-primary font-label-lg rounded-lg hover:bg-primary-container transition-colors">Atualizar</button>
+<button class="px-4 py-2 bg-secondary text-on-secondary font-label-lg font-bold rounded-lg hover:bg-secondary-fixed-dim transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Normalizar
+                        </button>
+</div>
+</article>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant px-margin-desktop py-stack-md flex justify-between items-center z-10 text-label-lg font-label-lg md:ml-64">
+<div class="flex flex-col">
+<span class="text-safety-blue text-sm">Eletronuclear - Brigada de Incêndio</span>
+</div>
+<div class="flex space-x-6 text-on-surface-variant">
+<a class="hover:text-primary hover:underline transition-opacity duration-200" href="#">Suporte</a>
+<a class="hover:text-primary hover:underline transition-opacity duration-200" href="#">Termos de Uso</a>
+<a class="hover:text-primary hover:underline transition-opacity duration-200" href="#">Privacidade</a>
+</div>
+</footer>
+
+
+</body></html>

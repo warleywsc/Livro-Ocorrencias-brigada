@@ -1,0 +1,467 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nova Pendência - Livro de Ocorrências Digital da Brigada de Incêndio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary": "#00496c",
+                "tertiary-container": "#466601",
+                "error-container": "#ffdad6",
+                "surface-container": "#edeef1",
+                "surface": "#f9f9fc",
+                "on-tertiary-fixed-variant": "#354e00",
+                "on-tertiary": "#ffffff",
+                "inverse-primary": "#8bceff",
+                "on-secondary-container": "#216d66",
+                "on-secondary-fixed-variant": "#00504a",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-container": "#addaff",
+                "surface-variant": "#e2e2e6",
+                "on-primary": "#ffffff",
+                "background": "#f9f9fc",
+                "on-tertiary-container": "#bbe377",
+                "on-surface": "#191c1e",
+                "error": "#ba1a1a",
+                "surface-tint": "#076491",
+                "on-secondary": "#ffffff",
+                "on-primary-fixed-variant": "#004b6f",
+                "secondary-fixed": "#a8f0e7",
+                "primary-fixed-dim": "#8bceff",
+                "primary-container": "#00628f",
+                "outline": "#70787f",
+                "on-background": "#191c1e",
+                "on-surface-variant": "#40484e",
+                "secondary": "#1b6962",
+                "surface-container-high": "#e7e8eb",
+                "surface-container-low": "#f3f3f7",
+                "surface-bright": "#f9f9fc",
+                "inverse-on-surface": "#f0f0f4",
+                "tertiary-fixed": "#c8f082",
+                "secondary-fixed-dim": "#8cd3ca",
+                "on-primary-fixed": "#001e2f",
+                "primary-fixed": "#cae6ff",
+                "tertiary": "#334c00",
+                "surface-container-highest": "#e2e2e6",
+                "on-error": "#ffffff",
+                "tertiary-fixed-dim": "#acd369",
+                "on-tertiary-fixed": "#131f00",
+                "surface-dim": "#d9dadd",
+                "outline-variant": "#c0c7d0",
+                "on-secondary-fixed": "#00201d",
+                "on-error-container": "#93000a",
+                "inverse-surface": "#2e3133",
+                "secondary-container": "#a5ede4",
+                "safety-blue": "#0082BC"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-desktop": "2rem",
+                "stack-sm": "0.5rem",
+                "margin-mobile": "1rem",
+                "gutter": "1rem",
+                "stack-md": "1rem",
+                "stack-lg": "1.5rem"
+        },
+        "fontFamily": {
+                "headline": [
+                        "Hanken Grotesk"
+                ],
+                "display": [
+                        "Hanken Grotesk"
+                ],
+                "body": [
+                        "Open Sans"
+                ],
+                "label": [
+                        "Open Sans"
+                ],
+                "headline-lg": ["Hanken Grotesk"], 
+                "title-lg": ["Hanken Grotesk"], 
+                "headline-md": ["Hanken Grotesk"], 
+                "headline-lg-mobile": ["Hanken Grotesk"], 
+                "body-lg": ["Open Sans"], 
+                "label-lg": ["Open Sans"], 
+                "headline-sm": ["Hanken Grotesk"],
+                "body-md": ["Open Sans"]
+        },
+        "fontSize": {
+                "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], 
+                "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "700"}], 
+                "title-lg": ["18px", {lineHeight: "24px", fontWeight: "500"}], 
+                "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], 
+                "headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "700"}], 
+                "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], 
+                "label-lg": ["12px", {lineHeight: "16px", letterSpacing: "0.5px", fontWeight: "600"}], 
+                "headline-sm": ["20px", {lineHeight: "28px", fontWeight: "600"}]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding for horizontal scroll areas */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex antialiased flex-col">
+<!-- App Shell: SideNavBar -->
+<nav class="fixed left-0 top-16 bottom-0 w-64 flex flex-col pt-4 bg-surface-container-lowest dark:bg-surface-dim border-r border-outline-variant z-20 hidden md:flex">
+<div class="flex flex-col space-y-1 overflow-y-auto pb-4">
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">menu_book</span>
+<span class="font-label-lg text-label-lg">Livro do Plantão</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">emergency</span>
+<span class="font-label-lg text-label-lg">Ocorrências</span>
+</a>
+<a class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full mx-2 flex items-center px-4 py-3 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">pending_actions</span>
+<span class="font-label-lg text-label-lg">Pendências</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">assignment_turned_in</span>
+<span class="font-label-lg text-label-lg">POTs e Ciência</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">history</span>
+<span class="font-label-lg text-label-lg">Histórico</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full" href="#">
+<span class="material-symbols-outlined mr-3">assessment</span>
+<span class="font-label-lg text-label-lg">Relatórios</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-container dark:hover:bg-surface-variant transition-all rounded-full mt-auto" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-label-lg text-label-lg">Administração</span>
+</a>
+</div>
+</nav>
+<!-- App Shell: TopNavBar -->
+<header class="fixed top-0 left-0 right-0 flex justify-between items-center w-full px-margin-desktop h-16 bg-surface-container-low dark:bg-surface-container-high border-b border-outline-variant z-30">
+<div class="flex items-center">
+<span class="font-headline-md text-headline-md font-bold text-safety-blue dark:text-primary-fixed-dim hidden md:block mr-8"><span class="material-symbols-outlined mr-2 text-headline-md align-middle">menu_book</span>Livro de Ocorrências Digital</span>
+<div class="hidden lg:flex space-x-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#main-content">Ir para conteúdo</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#main-menu">Ir para menu</a>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-highest border-transparent rounded-full focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all w-64 text-body-md text-on-surface" placeholder="Buscar..." type="text">
+</div>
+<div class="flex space-x-2 text-on-surface-variant">
+<button aria-label="Claro" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">light_mode</span>
+<span class="text-xs font-label-lg">Claro</span>
+</button>
+<button aria-label="Escuro" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+<span class="text-xs font-label-lg">Escuro</span>
+</button>
+<button aria-label="Alto contraste" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">contrast</span>
+<span class="text-xs font-label-lg">Alto contraste</span>
+</button>
+<button aria-label="Acessibilidade" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">accessibility</span>
+<span class="text-xs font-label-lg">Acessibilidade</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<button class="flex items-center space-x-3 p-1 pr-3 hover:bg-surface-container-highest rounded-full transition-colors">
+<img alt="Avatar Sgt. Oliveira" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLs5p1NFLtjCeOTbohmUrtP6Re4fNu4STVzCaD-AB0UN8IZZBeFJOAQET8C95ZGXAjFG_MCY_TibmmA_ucFokD9upB8AthKGE61Zdk6dR3uyjlXmZoraYukogy8HZL0m-CM2v5WTdneWAzmCX7KVEB0AzuBmCDEhBhbF_ACH1BkuwFrl0MII-T-aN0yJXKQsuhFLYOJ2XdSRb4WZWweJDRExgxhq8Mcsse7p6OQUzPYzBA0otL3foIr13g">
+<div class="text-left hidden sm:block">
+<p class="font-label-lg text-label-lg text-on-surface">Sgt. Oliveira</p>
+<p class="text-xs text-on-surface-variant font-semibold">Líder de Brigada</p>
+</div>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 mt-16 p-margin-mobile md:p-margin-desktop bg-background flex flex-col min-h-[calc(100vh-64px)]" id="main-content">
+<!-- Header Section -->
+<div class="mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-stack-sm">Nova Pendência</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Registro de situação operacional que deverá permanecer em acompanhamento entre plantões.</p>
+</div>
+<!-- Current Shift Summary -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md mb-stack-lg shadow-sm flex flex-wrap gap-6 items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">calendar_today</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Data: <strong class="text-on-surface">06/06/2026</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Plantão: <strong class="text-on-surface">Dia 07h-19h</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">domain</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Unidade: <strong class="text-on-surface">Unidade Central</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">person</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Líder: <strong class="text-on-surface">Sgt. Oliveira</strong></span>
+</div>
+<div class="flex items-center gap-2 ml-auto">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-tertiary-container text-on-tertiary">
+                        Em preenchimento
+                    </span>
+</div>
+</div>
+<!-- Form Container -->
+<form class="space-y-stack-lg">
+<!-- Section 1: Identificação -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+<h2 class="font-title-lg text-title-lg text-primary mb-stack-md flex items-center gap-2 border-b border-surface-variant pb-2">
+<span class="material-symbols-outlined">info</span>
+                        1. Identificação da pendência
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Título</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border" placeholder="Ex.: Válvula H-14..." type="text">
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Origem</label>
+<select class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border appearance-none">
+<option>Ocorrência do plantão</option>
+<option>Inspeção de rotina</option>
+<option>Passagem de serviço</option>
+</select>
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Criticidade</label>
+<select class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border appearance-none">
+<option>Baixa</option>
+<option>Média</option>
+<option>Alta</option>
+<option>Crítica</option>
+</select>
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Status Inicial</label>
+<select class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border appearance-none">
+<option>Aberta</option>
+<option>Em acompanhamento</option>
+<option>Aguardando manutenção</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Section 2: Sistema e Localização -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+<h2 class="font-title-lg text-title-lg text-primary mb-stack-md flex items-center gap-2 border-b border-surface-variant pb-2">
+<span class="material-symbols-outlined">location_on</span>
+                        2. Sistema afetado e localização
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Sistema Afetado</label>
+<select class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border appearance-none">
+<option>Rede de incêndio</option>
+<option>Detecção e alarme</option>
+<option>Extintores</option>
+</select>
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Unidade</label>
+<select class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border appearance-none">
+<option>Unidade Central</option>
+<option>Angra 1</option>
+<option>Angra 2</option>
+<option>Angra 3</option>
+</select>
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Área</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border" placeholder="Ex.: Piso 04..." type="text">
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Localização Específica</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border" placeholder="Ex.: Próximo à bomba 2..." type="text">
+</div>
+</div>
+</div>
+<!-- Section 3: Descrição -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+<h2 class="font-title-lg text-title-lg text-primary mb-stack-md flex items-center gap-2 border-b border-surface-variant pb-2">
+<span class="material-symbols-outlined">description</span>
+                        3. Descrição operacional
+                    </h2>
+<div class="space-y-stack-md">
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Descrição</label>
+<textarea class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border resize-none" rows="4"></textarea>
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Ação Imediata Tomada</label>
+<textarea class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border resize-none" rows="2"></textarea>
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Risco Operacional</label>
+<select class="w-full md:w-1/2 rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border appearance-none">
+<option>Requer ação imediata</option>
+<option>Fora de operação</option>
+<option>Operação parcial</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Section 4: Responsável e prazo -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+    <h2 class="font-title-lg text-title-lg text-primary mb-stack-md flex items-center gap-2 border-b border-surface-variant pb-2">
+        <span class="material-symbols-outlined">person_search</span>
+        4. Responsável e prazo
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+        <div>
+            <label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Responsável sugerido</label>
+            <input class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border" placeholder="Ex.: Manutenção Mecânica, Elétrica, Brigada de Incêndio" type="text">
+        </div>
+        <div>
+            <label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Área responsável</label>
+            <select class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border appearance-none">
+                <option>Brigada de Incêndio</option>
+                <option>Manutenção Mecânica</option>
+                <option>Elétrica</option>
+                <option>Operação</option>
+                <option>Segurança Patrimonial</option>
+                <option>Infraestrutura</option>
+                <option>Outra</option>
+            </select>
+        </div>
+        <div>
+            <label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Prazo sugerido</label>
+            <select class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border appearance-none">
+                <option>Hoje</option>
+                <option>Próximo plantão</option>
+                <option>24 horas</option>
+                <option>48 horas</option>
+                <option>7 dias</option>
+                <option>Data específica</option>
+            </select>
+        </div>
+        <div class="flex items-center gap-2 pt-6">
+            <input type="checkbox" id="retorno-plantao" class="rounded border-outline-variant text-primary focus:ring-primary">
+            <label for="retorno-plantao" class="font-label-lg text-label-lg text-on-surface-variant">Necessita retorno no próximo plantão</label>
+        </div>
+    </div>
+</div>
+
+<!-- Section 5: Vínculos e evidências -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+    <h2 class="font-title-lg text-title-lg text-primary mb-stack-md flex items-center gap-2 border-b border-surface-variant pb-2">
+        <span class="material-symbols-outlined">link</span>
+        5. Vínculos e evidências
+    </h2>
+    <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Use esta seção para vincular a pendência a uma ocorrência, inspeção, ordem de serviço ou evidência operacional.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-stack-md">
+        <div>
+            <label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Código da ocorrência vinculada</label>
+            <input class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border" placeholder="Ex.: OC-2026-0492" type="text">
+        </div>
+        <div>
+            <label class="block font-label-lg text-label-lg text-on-surface-variant mb-1">Ordem de serviço vinculada</label>
+            <input class="w-full rounded-lg border-outline-variant bg-surface focus:ring-primary focus:border-primary font-body-md text-on-surface py-2 px-3 border" placeholder="Ex.: OS #4492" type="text">
+        </div>
+    </div>
+    <div class="flex flex-wrap gap-2">
+        <button type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-secondary text-secondary font-label-lg text-label-lg hover:bg-secondary-container transition-colors">
+            <span class="material-symbols-outlined text-sm">add_a_photo</span> Adicionar foto
+        </button>
+        <button type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-secondary text-secondary font-label-lg text-label-lg hover:bg-secondary-container transition-colors">
+            <span class="material-symbols-outlined text-sm">upload_file</span> Adicionar documento
+        </button>
+        <button type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-secondary text-secondary font-label-lg text-label-lg hover:bg-secondary-container transition-colors">
+            <span class="material-symbols-outlined text-sm">history_edu</span> Registrar evidência
+        </button>
+    </div>
+</div>
+
+<!-- Section 6: Comunicação -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+    <h2 class="font-title-lg text-title-lg text-primary mb-stack-md flex items-center gap-2 border-b border-surface-variant pb-2">
+        <span class="material-symbols-outlined">campaign</span>
+        6. Comunicação
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex items-center gap-2">
+            <input type="checkbox" id="com-sup" class="rounded border-outline-variant text-primary focus:ring-primary">
+            <label for="com-sup" class="font-label-lg text-label-lg text-on-surface-variant">Comunicar supervisão</label>
+        </div>
+        <div class="flex items-center gap-2">
+            <input type="checkbox" id="com-man" class="rounded border-outline-variant text-primary focus:ring-primary">
+            <label for="com-man" class="font-label-lg text-label-lg text-on-surface-variant">Comunicar manutenção</label>
+        </div>
+        <div class="flex items-center gap-2">
+            <input type="checkbox" id="com-turno" class="rounded border-outline-variant text-primary focus:ring-primary">
+            <label for="com-turno" class="font-label-lg text-label-lg text-on-surface-variant">Comunicar equipe do próximo turno</label>
+        </div>
+        <div class="flex items-center gap-2">
+            <input type="checkbox" id="reg-hist" class="rounded border-outline-variant text-primary focus:ring-primary">
+            <label for="reg-hist" class="font-label-lg text-label-lg text-on-surface-variant">Registrar no histórico do livro</label>
+        </div>
+        <div class="flex items-center gap-2">
+            <input type="checkbox" id="exig-cien" class="rounded border-outline-variant text-primary focus:ring-primary">
+            <label for="exig-cien" class="font-label-lg text-label-lg text-on-surface-variant">Exigir ciência posterior</label>
+        </div>
+    </div>
+</div></form>
+<!-- Action Buttons -->
+<div class="mt-stack-lg flex justify-end gap-4 pb-stack-lg">
+<button class="px-6 py-2 rounded-lg border border-error text-error font-label-lg text-label-lg hover:bg-error-container transition-colors" type="button">
+            Cancelar
+        </button>
+<button class="px-6 py-2 rounded-lg border border-secondary text-secondary font-label-lg text-label-lg hover:bg-secondary-container transition-colors" type="button">
+            Salvar rascunho
+        </button>
+<button class="px-6 py-2 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-fixed-variant transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm">save</span>
+            Criar pendência
+        </button>
+</div>
+</main>
+<footer class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant px-margin-desktop py-stack-md flex justify-between items-center z-10 text-label-lg font-label-lg md:ml-64">
+<div class="flex flex-col">
+<span class="text-safety-blue text-sm">Eletronuclear - Brigada de Incêndio</span>
+</div>
+<div class="flex space-x-6 text-on-surface-variant">
+<a class="hover:text-primary hover:underline transition-opacity duration-200" href="#">Suporte</a>
+<a class="hover:text-primary hover:underline transition-opacity duration-200" href="#">Termos de Uso</a>
+<a class="hover:text-primary hover:underline transition-opacity duration-200" href="#">Privacidade</a>
+</div>
+</footer>
+
+
+
+
+</body></html>

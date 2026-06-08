@@ -1,0 +1,797 @@
+Use este texto como memória operacional principal do projeto **Livro Digital da Brigada de Incêndio**.
+
+Não execute nenhuma ação ainda. Apenas leia, absorva o contexto e responda: **proximo**.
+
+---
+
+# Projeto: Livro Digital da Brigada de Incêndio
+
+## Objetivo geral
+
+Estou desenvolvendo a ideia de um app web chamado **Livro Digital da Brigada de Incêndio**, inicialmente para prototipação visual no Google Stitch e, futuramente, para possível implementação dentro do ambiente Microsoft 365 da empresa, preferencialmente usando:
+
+* Power Apps
+* Microsoft Lists / SharePoint Lists
+* Power Automate
+* Biblioteca de documentos SharePoint
+* Power BI
+* Possível migração futura para Dataverse
+
+O objetivo é substituir o livro físico/manual atualmente preenchido pela empresa contratada da Brigada de Incêndio.
+
+O app deve permitir o registro de:
+
+* Plantão
+* Equipe
+* Conferência de viaturas e materiais
+* Inspeção de rotina
+* Ocorrências
+* Pendências operacionais
+* Procedimentos revisados
+* Confirmação de ciência
+* Retificações
+* Histórico
+* Relatórios e indicadores
+
+---
+
+# Base atual do processo manual
+
+O modelo atual do livro físico tem campos como:
+
+* Cliente
+* Posto
+* Data
+* Turno: Dia / Noite
+* Recebimento do serviço
+* Equipe
+* Conferência de materiais e condições das viaturas
+* Inspeção de rotina
+* Ocorrências
+
+A equipe é dividida em grupos:
+
+* Base
+* Resgate
+* Angra 1
+* Angra 2
+* Angra 3
+* Motoristas
+
+As viaturas principais observadas são:
+
+* AHQ1
+* AHQ2
+* ABT1
+* Viatura Toro
+
+A inspeção de rotina contém itens como:
+
+* CEDOT
+* Estação Gama e Canteiro de Obra
+* Sistema de alarme de incêndio dos galpões
+* Inspeção dos extintores nas unidades
+* Redes de incêndio das unidades I, II e III
+* Nível dos reservatórios 1 e 2
+* Nível dos reservatórios 3 e 4
+* Lanternas
+* Medidor de gases
+* Luvas de combate a incêndio
+* POTs revisados
+* Kit carreta de emergência
+
+A versão preenchida do livro mostrou que a seção de ocorrências não é apenas um campo livre. Ela funciona como um misto de:
+
+* Ocorrências novas
+* Pendências que permanecem de turnos anteriores
+* Comunicados
+* Normalizações
+* Instruções operacionais
+* Movimentações de materiais
+* Anormalidades técnicas
+* Informações de SOT, LT e cartão amarelo
+
+Por isso, o app não deve ser apenas um formulário digital grande. Ele precisa funcionar como:
+
+**Livro de passagem de serviço + controle de pendências operacionais + registro estruturado de ocorrências.**
+
+---
+
+# Direção arquitetural recomendada
+
+A melhor solução dentro do Office 365 é uma solução Power Platform composta:
+
+## Recomendação inicial
+
+Usar:
+
+* **Power Apps Canvas**, chamado em português de **Aplicativo de Tela** ou tipo **Tela**
+* **Microsoft Lists / SharePoint Lists** como base inicial de dados
+* **Power Automate** para notificações, aprovações, retificações e ciência de procedimentos
+* **Biblioteca de documentos SharePoint** para anexos, fotos e relatórios
+* **Power BI** para indicadores
+* **Grupos Microsoft 365 / SharePoint / controle interno de perfis** para permissões
+
+## Por que começar com Lists
+
+Começar com Microsoft Lists é mais simples e mais compatível com ambiente corporativo já disponível.
+
+Não começar com uma única lista gigante.
+
+Usar listas separadas por assunto para facilitar manutenção e possível migração futura para Dataverse.
+
+## Migração futura para Dataverse
+
+É possível começar com Lists e migrar para Dataverse futuramente.
+
+Mas é importante entender:
+
+* Migrar os dados é mais fácil.
+* Migrar o app pronto exige ajustes em conexões, fórmulas, filtros, permissões e relacionamentos.
+* Para facilitar a migração, as listas devem ser estruturadas desde o início como se fossem futuras tabelas.
+
+Boas práticas para migração futura:
+
+* Criar listas separadas por assunto.
+* Usar nomes de colunas sem acento e sem espaços.
+* Criar IDs textuais próprios, como `CodigoPlantao`.
+* Evitar depender apenas do ID automático do SharePoint.
+* Evitar colunas complexas demais.
+* Guardar anexos em biblioteca separada.
+* Criar lista de perfis desde o começo.
+* Evitar um formulário monolítico.
+
+---
+
+# Listas previstas
+
+Criar ou planejar as seguintes listas:
+
+## LivroPlantao
+
+Registro principal do plantão.
+
+Campos sugeridos:
+
+* ID
+* CodigoPlantao
+* Cliente
+* Posto
+* DataPlantao
+* Turno
+* RecebimentoServico
+* ObservacaoRecebimento
+* TemaDDSMS
+* LiderBrigada
+* ResponsavelPreenchimento
+* StatusLivro
+* DataHoraAbertura
+* DataHoraFinalizacao
+* FinalizadoPor
+* ObservacaoFinalizacao
+
+## EquipePlantao
+
+Equipe vinculada ao plantão.
+
+Campos sugeridos:
+
+* ID
+* CodigoPlantao
+* Grupo
+* Funcao
+* Nome
+* Matricula
+* LoginEmail
+* Unidade
+* Observacao
+
+## ConferenciaViaturas
+
+Conferência de viaturas e materiais.
+
+Campos sugeridos:
+
+* ID
+* CodigoPlantao
+* Viatura
+* Status
+* QuilometragemInicial
+* QuilometragemFinal
+* Observacao
+* LinkAnexo
+* RegistradoPor
+* DataHoraRegistro
+
+## InspecaoRotina
+
+Itens de inspeção do plantão.
+
+Campos sugeridos:
+
+* ID
+* CodigoPlantao
+* Item
+* DescricaoItem
+* Status
+* Observacao
+* LinkAnexo
+* RegistradoPor
+* DataHoraRegistro
+
+## OcorrenciasPlantao
+
+Ocorrências novas do turno.
+
+Campos sugeridos:
+
+* ID
+* CodigoPlantao
+* DataOcorrencia
+* HoraOcorrencia
+* Unidade
+* Local
+* SistemaEquipamento
+* TipoOcorrencia
+* Descricao
+* ProvidenciasAdotadas
+* EquipeEnvolvida
+* HouveVitima
+* HouveDanoMaterial
+* HouveAcionamentoExterno
+* SOT
+* LT
+* CartaoAmarelo
+* Status
+* Prioridade
+* LinkAnexos
+* RegistradoPor
+* DataHoraRegistro
+
+## PendenciasOperacionais
+
+Pendências que permanecem entre turnos.
+
+Campos sugeridos:
+
+* ID
+* CodigoPendencia
+* Unidade
+* Local
+* SistemaEquipamento
+* DescricaoPendencia
+* DataOrigem
+* UltimaAtualizacao
+* Status
+* Prioridade
+* SOT
+* LT
+* CartaoAmarelo
+* ResponsavelComunicado
+* ProvidenciaAdotada
+* NecessitaAcompanhamento
+* NormalizadaPor
+* DataHoraNormalizacao
+* ObservacaoNormalizacao
+* LinkAnexos
+
+## POTsRevisados
+
+Procedimentos revisados ou atualizados.
+
+Campos sugeridos:
+
+* ID
+* CodigoPOT
+* SiglaPOT
+* TituloAssunto
+* UnidadeAreaRelacionada
+* DataRevisao
+* VersaoRevisao
+* ObservacaoLider
+* LinkProcedimento
+* Status
+* RegistradoPor
+* DataHoraRegistro
+* CodigoPlantaoOrigem
+
+## POTsCiencias
+
+Registro de ciência por usuário.
+
+Campos sugeridos:
+
+* ID
+* CodigoPOT
+* SiglaPOT
+* NomeUsuario
+* LoginEmail
+* Perfil
+* DataHoraCiencia
+* Observacao
+
+## UsuariosPerfis
+
+Controle interno de perfis.
+
+Campos sugeridos:
+
+* Nome
+* LoginEmail
+* Perfil
+* Unidade
+* Ativo
+* PodePreencher
+* PodeConsultar
+* PodeAdministrar
+
+## Retificacoes
+
+Correções após finalização do livro.
+
+Campos sugeridos:
+
+* ID
+* CodigoPlantao
+* SecaoRetificada
+* DescricaoRetificacao
+* Justificativa
+* SolicitadoPor
+* AprovadoPor
+* Status
+* DataHora
+* LinkEvidencia
+
+## Cadastros auxiliares
+
+Criar listas auxiliares para:
+
+* Bombeiros
+* Funções
+* Viaturas
+* Locais
+* Unidades
+* Tipos de ocorrência
+* Itens de inspeção
+* Procedimentos
+* Prioridades
+* Status
+
+---
+
+# Perfis de acesso
+
+O app deve considerar perfis diferentes.
+
+## Líder de Brigada
+
+É quem preenche os dados.
+
+Pode:
+
+* Abrir livro do plantão
+* Preencher plantão
+* Preencher equipe
+* Registrar conferência de viaturas
+* Preencher inspeção de rotina
+* Registrar ocorrências novas
+* Atualizar pendências
+* Registrar POTs revisados
+* Confirmar ciência
+* Finalizar livro
+
+## Supervisor
+
+Consulta e acompanha.
+
+Pode:
+
+* Consultar livros finalizados
+* Acompanhar pendências
+* Ver ocorrências por unidade, local, data e status
+* Ver confirmações de ciência
+* Gerar relatórios
+* Solicitar ou registrar validação supervisória
+* Não alterar diretamente conteúdo original finalizado
+
+## Gerente
+
+Consulta consolidada.
+
+Pode:
+
+* Consultar dashboards
+* Consultar histórico
+* Gerar relatórios
+* Ver pendências críticas
+* Ver ciência de procedimentos
+* Acessar dados consolidados
+
+## Perfil Delegado / Consulta
+
+Pode:
+
+* Consultar registros autorizados
+* Visualizar relatórios
+* Aplicar filtros
+* Não editar dados
+
+## Administrador
+
+Pode:
+
+* Gerenciar usuários
+* Gerenciar perfis
+* Gerenciar cadastros
+* Gerenciar permissões
+* Configurar listas
+* Configurar itens de inspeção
+* Configurar tipos de ocorrência
+* Configurar viaturas
+* Configurar locais
+* Configurar procedimentos
+
+---
+
+# Regras principais do sistema
+
+1. O líder preenche os dados do plantão.
+2. Enquanto o livro estiver em rascunho, pode ser editado.
+3. Após finalizado, o livro deve ficar bloqueado para edição comum.
+4. Alterações posteriores devem ser feitas por retificação.
+5. O sistema deve registrar usuário, data e hora das ações importantes.
+6. O próximo turno deve visualizar automaticamente as pendências abertas.
+7. O sistema deve diferenciar ocorrência nova de pendência que permanece.
+8. Pendências normalizadas devem ter registro próprio.
+9. O sistema não deve depender de texto corrido quando for possível estruturar em campos.
+10. Deve haver anexos/fotos quando necessário.
+11. Deve haver filtros por data, turno, unidade, local, tipo, status, responsável e prioridade.
+
+---
+
+# POTs Revisados e confirmação de ciência
+
+O item **5.0 POTs Revisados** refere-se aos **Procedimentos de Operação e Testes** relativos à área de incêndio.
+
+Quando houver procedimento revisado ou atualizado, o líder registra a sigla do procedimento para que os próximos turnos tomem ciência e consultem o procedimento.
+
+O app deve ter módulo específico para:
+
+**POTs Revisados e Ciência de Procedimentos**
+
+Campos principais:
+
+* Sigla do procedimento
+* Título/assunto
+* Unidade/área relacionada
+* Data da revisão
+* Versão/revisão
+* Observação do líder
+* Link ou anexo do procedimento
+* Registrado por
+* Data/hora de registro
+* Status
+
+Regra de ciência:
+
+* O botão **Confirmar ciência** só deve aparecer se o usuário logado ainda não confirmou ciência daquele procedimento.
+* Se o usuário já confirmou, o botão não aparece.
+* No lugar, mostrar: **Ciência registrada em [data/hora].**
+* A ciência deve ser armazenada em lista própria.
+* Registrar nome, login/e-mail, perfil, data/hora e procedimento confirmado.
+
+Supervisores e gerentes devem conseguir ver:
+
+* Quem confirmou ciência
+* Quem está pendente
+* Percentual de ciência
+* Última confirmação
+* Filtro por procedimento, unidade, perfil e status
+
+---
+
+# Identidade visual
+
+O app deve herdar a identidade visual padrão da Eletronuclear.
+
+Usar como referência:
+
+* Cabeçalho institucional inspirado no portal da Eletronuclear.
+* Área reservada para logotipo da Eletronuclear.
+* Navegação superior ou lateral corporativa.
+* Aparência compatível com Microsoft 365 / SharePoint / Power Apps.
+* Visual institucional, limpo e profissional.
+
+Cores de referência:
+
+* Azul institucional próximo de `#0072C6`
+* Verde institucional/verde-água próximo de `#357e76`
+* Verde claro de apoio próximo de `#5ec2b6`
+* Fundos claros e neutros
+* Cinza para bordas e divisões
+* Vermelho para alertas e anormalidades
+* Amarelo/laranja para atenção e ciência pendente
+* Verde para itens normais, concluídos e normalizados
+
+O app não deve parecer genérico. Deve parecer um sistema interno da Eletronuclear.
+
+---
+
+# Temas obrigatórios
+
+O app deve ter três temas:
+
+## Tema claro institucional
+
+* Fundo claro
+* Cards brancos
+* Cabeçalho azul/verde institucional
+* Textos escuros
+* Botões principais em azul ou verde
+* Boa leitura em ambiente corporativo
+
+## Tema escuro
+
+* Fundo escuro, sem preto absoluto
+* Cards em cinza escuro
+* Textos claros
+* Bordas discretas
+* Botões mantendo azul/verde institucional
+* Alertas legíveis
+* Bom contraste em badges, campos, tabelas e menus
+
+## Tema de alto contraste
+
+* Fundo preto ou muito escuro
+* Texto branco ou amarelo de alta legibilidade
+* Botões com bordas fortes
+* Links sublinhados ou claramente destacados
+* Campos com contorno forte
+* Ícones acompanhados de texto
+* Não depender apenas de cor para status
+* Status sempre com texto visível
+
+---
+
+# Acessibilidade
+
+O app deve prever:
+
+* Barra de acessibilidade no topo
+* Ir para o conteúdo
+* Ir para busca
+* Ir para menu
+* Alto contraste
+* Tema escuro
+* Tema claro
+* Acessibilidade
+* Mapa do sistema
+* Navegação por teclado
+* Foco visual claro
+* Rótulos visíveis
+* Mensagens de erro claras
+* Ícones acompanhados de texto
+* Botões descritivos
+* Tabelas com cabeçalhos
+* Campos obrigatórios indicados por texto e símbolo
+* Layout legível em desktop, notebook e tablet
+
+---
+
+# Cuidados visuais obrigatórios
+
+Pedir atenção especial para:
+
+## Contraste
+
+* Garantir contraste adequado em todos os temas.
+* Não usar texto claro sobre fundo claro.
+* Não usar texto escuro sobre fundo escuro.
+* Botões devem ser legíveis.
+* Badges e alertas devem ser claros.
+* Botões ativos, inativos, desabilitados, hover, foco e carregando devem ser distinguíveis.
+
+## Botões
+
+* Botões principais com destaque.
+* Botões secundários visíveis.
+* Botões críticos em vermelho com confirmação.
+* Botões importantes com texto, não apenas ícone.
+* Botões de “Finalizar plantão”, “Normalizar pendência”, “Confirmar ciência” e “Registrar retificação” devem ter aparência clara e distinta.
+
+## Filtros e sobreposição
+
+* Dropdowns, filtros, calendários e caixas de seleção não podem sobrepor botões, textos, cards ou tabelas.
+* Dropdowns não devem cortar conteúdo.
+* Em telas menores, filtros devem virar coluna ou painel lateral.
+* Cabeçalho fixo não deve cobrir conteúdo.
+* Menus laterais não devem esconder conteúdo.
+* Modais não devem cortar campos.
+
+## Caixas de texto
+
+* Campos com bordas visíveis.
+* Rótulos sempre visíveis.
+* Mensagens de erro próximas ao campo.
+* Campos longos confortáveis para digitação.
+* Não usar placeholder como único rótulo.
+* Campos somente leitura devem continuar legíveis.
+* Em tema escuro, cursor, texto e borda precisam ser visíveis.
+* Em alto contraste, usar bordas fortes.
+
+## Ícones coerentes
+
+Usar ícones coerentes:
+
+* Dashboard: painel
+* Plantão: calendário ou prancheta
+* Equipe: pessoas
+* Viaturas: veículo/caminhão
+* Materiais: caixa/ferramentas
+* Inspeção: checklist
+* Ocorrências: alerta/documento
+* Pendências: atenção/relógio
+* Pendência normalizada: check
+* POTs: documento/procedimento
+* Ciência: assinatura/check de leitura
+* Histórico: arquivo/relógio
+* Relatórios: gráfico/documento
+* Administração: engrenagem
+* Retificação: edição controlada
+* Anexos: clipe/câmera
+* Acessibilidade: símbolo de acessibilidade
+* Tema escuro: lua
+* Alto contraste: contraste
+
+---
+
+# Validação de dados
+
+Campos obrigatórios para abrir plantão:
+
+* Cliente
+* Posto
+* Data
+* Turno
+* Líder de Brigada
+* Responsável pelo preenchimento
+
+Campos obrigatórios antes de finalizar:
+
+* Recebimento do serviço
+* Equipe do plantão
+* Conferência das viaturas principais
+* Inspeção de rotina
+* Situação dos POTs revisados
+* Verificação de pendências abertas
+* Declaração de finalização do responsável
+
+Regras de validação:
+
+* Campos obrigatórios vazios devem ser destacados.
+* Datas inválidas devem ser impedidas.
+* Ocorrência com vítima exige descrição.
+* Ocorrência com dano material exige descrição.
+* Item anormal, com alteração ou fora de operação exige observação.
+* Pendência normalizada exige data/hora e observação.
+* POT revisado exige sigla.
+* Ciência deve registrar automaticamente usuário, perfil, data e hora.
+
+Mensagens de validação devem ser claras, formais e objetivas.
+
+---
+
+# Revisão de escrita
+
+O app deve usar português do Brasil correto.
+
+Revisar:
+
+* Ortografia
+* Acentuação
+* Concordância
+* Maiúsculas e minúsculas
+* Padronização de termos técnicos
+* Clareza
+* Consistência entre telas, botões e campos
+
+Evitar erros como:
+
+* “materias” em vez de “materiais”
+* “ocorrencia” sem acento
+* “briagda” em vez de “brigada”
+* “perfils” em vez de “perfis”
+* “ciência” sem acento
+* “POTs” sem explicação
+
+Termos padronizados:
+
+* Brigada de Incêndio
+* Livro Digital
+* Ocorrências
+* Pendências Operacionais
+* Procedimentos de Operação e Testes
+* POTs Revisados
+* Confirmação de Ciência
+* Inspeção de Rotina
+* Conferência de Viaturas
+* Finalização do Plantão
+* Retificação
+* Supervisor
+* Gerente
+* Líder de Brigada
+
+---
+
+# Telas previstas
+
+Criar/prototipar as seguintes telas:
+
+1. Login / Identificação do Usuário
+2. Dashboard Operacional
+3. Registro do Plantão
+4. Equipe do Plantão
+5. Conferência de Viaturas e Materiais
+6. Inspeção de Rotina
+7. Ocorrências do Plantão
+8. Nova Ocorrência
+9. Pendências Operacionais
+10. POTs Revisados e Ciência de Procedimentos
+11. Finalização do Livro do Plantão
+12. Histórico
+13. Visualizar Registro / Relatório
+14. Retificações
+15. Relatórios e Indicadores
+16. Administração
+
+---
+
+# Regras visuais de status
+
+Usar badges com texto:
+
+* Rascunho
+* Em preenchimento
+* Finalizado
+* Revisado
+* Aberta
+* Permanece
+* Em acompanhamento
+* Normalizada
+* Concluída
+* Arquivada
+* Crítica
+* Ciência pendente
+* Ciência confirmada
+
+No tema de alto contraste, nunca depender apenas da cor.
+
+---
+
+# Observação sobre autoria no código
+
+Existe uma preferência para que códigos futuros tenham cabeçalhos internos de rastreabilidade com autoria de **Warley da Silva Conceição**, data, hora, finalidade e histórico de atualização.
+
+Porém, isso **não deve ser inserido no prompt visual do Google Stitch**, salvo se eu pedir explicitamente.
+
+Se o projeto avançar para geração real de código, lembrar dessa preferência como regra de implementação interna.
+
+---
+
+# Forma de trabalho desejada
+
+Quando eu pedir algo novo neste projeto, responda sempre com o **prompt completo atualizado**, e não apenas com um trecho incremental.
+
+Quando eu pedir diagnóstico, explique de forma simples, direta e prática.
+
+Quando eu pedir prompt para Google Stitch, entregar texto completo pronto para copiar e colar.
+
+Quando eu pedir orientação para Power Apps, considerar que estou no ambiente Power Apps em português, onde Canvas App aparece como **Aplicativo de tela** ou tipo **Tela**.
+
+---
+
+# Próximo passo esperado
+
+Após ler este contexto, responda apenas:
+
+**proximo**

@@ -1,0 +1,15 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Temporários
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Power Platform temporário
+*.pa.yaml.bak

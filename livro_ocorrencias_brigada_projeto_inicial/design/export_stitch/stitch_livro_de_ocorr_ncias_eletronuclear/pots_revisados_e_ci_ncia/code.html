@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>POTs Revisados e Ciência - Livro de Ocorrências Digital</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Open+Sans:wght@400;600&amp;family=Segoe+UI:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-primary-fixed": "#001e2f",
+                  "outline-variant": "#bfc7d1",
+                  "surface-container-low": "#f1f4f9",
+                  "on-surface-variant": "#3f484f",
+                  "on-secondary-fixed-variant": "#00504a",
+                  "on-primary-fixed-variant": "#004b6f",
+                  "on-surface": "#181c20",
+                  "on-secondary-container": "#216e66",
+                  "surface-container": "#ebeef3",
+                  "on-secondary-fixed": "#00201d",
+                  "surface-bright": "#f7f9ff",
+                  "secondary-container": "#a5ede3",
+                  "inverse-surface": "#2d3135",
+                  "surface": "#f7f9ff",
+                  "on-primary": "#ffffff",
+                  "on-secondary": "#ffffff",
+                  "on-tertiary": "#ffffff",
+                  "on-tertiary-container": "#faffe8",
+                  "primary": "#00628f",
+                  "surface-tint": "#006492",
+                  "surface-container-high": "#e5e8ee",
+                  "tertiary-fixed": "#b8f649",
+                  "on-tertiary-fixed": "#131f00",
+                  "primary-fixed-dim": "#8cceff",
+                  "tertiary": "#456500",
+                  "on-tertiary-fixed-variant": "#354e00",
+                  "surface-container-lowest": "#ffffff",
+                  "outline": "#6f7881",
+                  "secondary-fixed": "#a8f0e6",
+                  "on-error-container": "#93000a",
+                  "surface-container-highest": "#e0e3e8",
+                  "secondary": "#1b6962",
+                  "error-container": "#ffdad6",
+                  "primary-container": "#007cb3",
+                  "on-primary-container": "#fcfcff",
+                  "inverse-primary": "#8cceff",
+                  "surface-variant": "#e0e3e8",
+                  "on-error": "#ffffff",
+                  "tertiary-fixed-dim": "#9dd82c",
+                  "inverse-on-surface": "#eef1f6",
+                  "error": "#ba1a1a",
+                  "background": "#f7f9ff",
+                  "tertiary-container": "#588000",
+                  "surface-dim": "#d7dae0",
+                  "primary-fixed": "#cae6ff",
+                  "secondary-fixed-dim": "#8cd4ca",
+                  "on-background": "#181c20"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {
+                  "stack-sm": "0.5rem",
+                  "header-height": "64px",
+                  "stack-lg": "1.5rem",
+                  "margin-mobile": "1rem",
+                  "gutter": "1rem",
+                  "sidebar-width": "260px",
+                  "margin-desktop": "2rem",
+                  "stack-md": "1rem"
+          },
+          "fontFamily": {
+                  "headline-lg": [
+                          "Hanken Grotesk"
+                  ],
+                  "title-lg": [
+                          "Hanken Grotesk"
+                  ],
+                  "headline-sm": [
+                          "Hanken Grotesk"
+                  ],
+                  "body-lg": [
+                          "Open Sans"
+                  ],
+                  "label-sm": [
+                          "Segoe UI"
+                  ],
+                  "headline-lg-mobile": [
+                          "Hanken Grotesk"
+                  ],
+                  "headline-md": [
+                          "Hanken Grotesk"
+                  ],
+                  "label-lg": [
+                          "Open Sans"
+                  ],
+                  "body-md": [
+                          "Open Sans"
+                  ]
+          },
+          "fontSize": {
+                  "headline-lg": [
+                          "32px",
+                          {
+                                  "lineHeight": "40px",
+                                  "fontWeight": "700"
+                          }
+                  ],
+                  "title-lg": [
+                          "18px",
+                          {
+                                  "lineHeight": "24px",
+                                  "fontWeight": "500"
+                          }
+                  ],
+                  "headline-sm": [
+                          "20px",
+                          {
+                                  "lineHeight": "28px",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "body-lg": [
+                          "16px",
+                          {
+                                  "lineHeight": "24px",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "label-sm": [
+                          "11px",
+                          {
+                                  "lineHeight": "14px",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "headline-lg-mobile": [
+                          "28px",
+                          {
+                                  "lineHeight": "36px",
+                                  "fontWeight": "700"
+                          }
+                  ],
+                  "headline-md": [
+                          "24px",
+                          {
+                                  "lineHeight": "32px",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "label-lg": [
+                          "12px",
+                          {
+                                  "lineHeight": "16px",
+                                  "letterSpacing": "0.5px",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "body-md": [
+                          "14px",
+                          {
+                                  "lineHeight": "20px",
+                                  "fontWeight": "400"
+                          }
+                  ]
+          }
+  },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-lg antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 flex justify-between items-center w-full px-margin-desktop h-16 bg-surface-container-low dark:bg-surface-container-high border-b border-outline-variant z-30"><div class="flex items-center"><span class="font-headline-md text-headline-md font-bold text-safety-blue dark:text-primary-fixed-dim hidden md:block mr-8"><span class="material-symbols-outlined mr-2 text-headline-md align-middle">menu_book</span>Livro de Ocorrências Digital</span><div class="hidden lg:flex space-x-4"><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#main-content">Ir para conteúdo</a><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#sidebar">Ir para menu</a></div></div><div class="flex items-center space-x-4"><div class="relative hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span><input class="pl-10 pr-4 py-2 bg-surface-container-highest border-transparent rounded-full focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all w-64 text-body-md text-on-surface" placeholder="Buscar..." type="text"></div><div class="flex space-x-2 text-on-surface-variant"><button aria-label="Claro" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors"><span class="material-symbols-outlined">light_mode</span><span class="text-xs font-label-lg">Claro</span></button><button aria-label="Escuro" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors"><span class="material-symbols-outlined">dark_mode</span><span class="text-xs font-label-lg">Escuro</span></button><button aria-label="Alto contraste" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors"><span class="material-symbols-outlined">contrast</span><span class="text-xs font-label-lg">Alto contraste</span></button><button aria-label="Acessibilidade" class="flex items-center space-x-2 p-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-full transition-colors"><span class="material-symbols-outlined">accessibility</span><span class="text-xs font-label-lg">Acessibilidade</span></button></div><div class="h-8 w-px bg-outline-variant mx-2"></div><button class="flex items-center space-x-3 p-1 pr-3 hover:bg-surface-container-highest rounded-full transition-colors"><img alt="Avatar Sgt. Oliveira" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLs5p1NFLtjCeOTbohmUrtP6Re4fNu4STVzCaD-AB0UN8IZZBeFJOAQET8C95ZGXAjFG_MCY_TibmmA_ucFokD9upB8AthKGE61Zdk6dR3uyjlXmZoraYukogy8HZL0m-CM2v5WTdneWAzmCX7KVEB0AzuBmCDEhBhbF_ACH1BkuwFrl0MII-T-aN0yJXKQsuhFLYOJ2XdSRb4WZWweJDRExgxhq8Mcsse7p6OQUzPYzBA0otL3foIr13g"><div class="text-left hidden sm:block"><p class="font-label-lg text-label-lg text-on-surface">Sgt. Oliveira</p><p class="text-xs text-on-surface-variant font-semibold">Líder de Brigada</p></div></button></div></header>
+<div class="flex pt-header-height min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-surface-container dark:bg-surface-container-low fixed left-0 top-header-height h-[calc(100vh-64px)] w-sidebar-width border-r border-outline-variant dark:border-outline flex flex-col py-stack-lg gap-stack-sm z-40 hidden md:flex overflow-y-auto" id="sidebar">
+<nav class="flex flex-col gap-1 px-4 w-full">
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+<span class="font-label-lg text-label-lg">Livro do Plantão</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">report_problem</span>
+<span class="font-label-lg text-label-lg">Ocorrências</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">pending_actions</span>
+<span class="font-label-lg text-label-lg">Pendências</span>
+</a>
+<a aria-current="page" class="flex items-center gap-3 px-4 py-3 rounded bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary font-bold hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+<span class="font-label-lg text-label-lg">POTs e Ciência</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">history</span>
+<span class="font-label-lg text-label-lg">Histórico</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">assessment</span>
+<span class="font-label-lg text-label-lg">Relatórios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-label-lg text-label-lg">Administração</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-sidebar-width p-margin-mobile md:p-margin-desktop flex flex-col gap-stack-lg max-w-7xl mx-auto w-full" id="main-content">
+<!-- Header Section -->
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-on-surface">POTs Revisados e Ciência</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Controle de procedimentos revisados que exigem ciência da equipe da Brigada de Incêndio.</p>
+</div>
+<!-- Resumo do Plantão -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex flex-wrap gap-6 items-center shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="font-body-md text-body-md text-on-surface">06/06/2026</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">schedule</span>
+<span class="font-body-md text-body-md text-on-surface">Dia</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">location_on</span>
+<span class="font-body-md text-body-md text-on-surface">Unidade Central</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-body-md text-body-md text-on-surface">Sgt. Oliveira</span>
+</div>
+<div class="flex items-center gap-2 ml-auto">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 0;">edit_document</span>
+            Em preenchimento
+          </span>
+</div>
+</div>
+<!-- Cards de Resumo -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex flex-col gap-2">
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">POTs revisados</p>
+<p class="font-headline-lg text-headline-lg text-primary">4</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex flex-col gap-2">
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">Ciência pendente</p>
+<p class="font-headline-lg text-headline-lg text-error">12</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex flex-col gap-2">
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">Ciência concluída</p>
+<p class="font-headline-lg text-headline-lg text-[#1b6962]">8</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex flex-col gap-2 justify-between">
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">Revisões críticas</p>
+<div class="flex items-center justify-between">
+<p class="font-headline-lg text-headline-lg text-on-surface">1</p>
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded bg-error text-on-error font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+              Crítica
+            </span>
+</div>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex flex-col lg:flex-row gap-gutter items-start"><div class="flex-1 flex flex-col gap-stack-md w-full"><div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex flex-col gap-stack-sm"><div class="flex border-b border-outline-variant overflow-x-auto"><button class="px-4 py-2 border-b-2 border-primary text-primary font-label-lg text-label-lg whitespace-nowrap">Todos</button><button class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-low font-label-lg text-label-lg whitespace-nowrap">Pendentes</button><button class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-low font-label-lg text-label-lg whitespace-nowrap">Concluídos</button><button class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-low font-label-lg text-label-lg whitespace-nowrap">Críticos</button><button class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-low font-label-lg text-label-lg whitespace-nowrap">Meus POTs</button></div></div><div class="flex flex-col gap-stack-md"><div class="bg-surface-container-lowest border border-outline-variant rounded overflow-hidden flex flex-col shadow-sm"><div class="p-4 border-b border-outline-variant flex flex-col gap-2"><div class="flex justify-between items-start gap-4"><h3 class="font-title-lg text-title-lg text-on-surface">POT-PCI-014 — Atendimento a princípio de incêndio em painel elétrico</h3><span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded bg-error text-on-error font-label-sm text-label-sm shrink-0"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">warning</span> Crítica</span></div><div class="flex flex-wrap gap-4 text-on-surface-variant font-body-md text-body-md"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">update</span> Rev. 03 (05/06/2026)</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">domain</span> Área: Brigada de Incêndio</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">group</span> 4 pendentes</span><span class="flex items-center gap-1"><span class="inline-flex items-center gap-1 py-0.5 px-2 rounded-full bg-[#fff8e1] text-[#795548] border border-[#ffecb3] text-xs font-semibold">Pendente</span></span></div></div><div class="p-4 bg-surface-bright flex flex-col gap-3"><div><span class="font-label-lg text-label-lg text-on-surface-variant">Resumo da Revisão:</span><p class="font-body-md text-body-md text-on-surface mt-1">Incluído novo passo de isolamento da área e confirmação de energia desenergizada antes da aproximação.</p></div><div class="flex gap-2 mt-2"><button class="px-4 py-2 border border-outline-variant text-[#357E76] rounded font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Ver revisão</button><button class="px-4 py-2 bg-[#0082BC] text-white rounded font-label-lg text-label-lg hover:bg-[#006A9A] transition-colors">Registrar ciência</button><button class="px-4 py-2 text-on-surface-variant rounded font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Ver histórico</button></div></div></div><div class="bg-surface-container-lowest border border-outline-variant rounded overflow-hidden flex flex-col shadow-sm"><div class="p-4 border-b border-outline-variant flex flex-col gap-2"><div class="flex justify-between items-start gap-4"><h3 class="font-title-lg text-title-lg text-on-surface">POT-PCI-021 — Inspeção de extintores portáteis</h3></div><div class="flex flex-wrap gap-4 text-on-surface-variant font-body-md text-body-md"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">update</span> Rev. 05 (03/06/2026)</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">domain</span> Área: Prevenção e Combate a Incêndio</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">priority_high</span> Média</span><span class="flex items-center gap-1"><span class="inline-flex items-center gap-1 py-0.5 px-2 rounded-full bg-[#e3f2fd] text-[#1565c0] border border-[#bbdefb] text-xs font-semibold">Em andamento</span></span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">group</span> 6 pendentes</span></div></div><div class="p-4 bg-surface-bright flex flex-col gap-3"><div><span class="font-label-lg text-label-lg text-on-surface-variant">Resumo da Revisão:</span><p class="font-body-md text-body-md text-on-surface mt-1">Atualizados critérios de conferência de lacre, validade e pressão operacional.</p></div><div class="flex gap-2 mt-2"><button class="px-4 py-2 border border-outline-variant text-[#357E76] rounded font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Ver revisão</button><button class="px-4 py-2 bg-[#0082BC] text-white rounded font-label-lg text-label-lg hover:bg-[#006A9A] transition-colors">Registrar ciência</button><button class="px-4 py-2 text-on-surface-variant rounded font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Ver histórico</button></div></div></div><div class="bg-surface-container-lowest border border-outline-variant rounded overflow-hidden flex flex-col shadow-sm"><div class="p-4 border-b border-outline-variant flex flex-col gap-2"><div class="flex justify-between items-start gap-4"><h3 class="font-title-lg text-title-lg text-on-surface">POT-PCI-032 — Conferência de viaturas operacionais</h3></div><div class="flex flex-wrap gap-4 text-on-surface-variant font-body-md text-body-md"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">update</span> Rev. 02 (01/06/2026)</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">domain</span> Área: Brigada de Incêndio</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">low_priority</span> Baixa</span><span class="flex items-center gap-1"><span class="inline-flex items-center gap-1 py-0.5 px-2 rounded-full bg-[#e8f5e9] text-[#2e7d32] border border-[#c8e6c9] text-xs font-semibold">Concluída</span></span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">group</span> 0 pendentes</span></div></div><div class="p-4 bg-surface-bright flex flex-col gap-3"><div><span class="font-label-lg text-label-lg text-on-surface-variant">Resumo da Revisão:</span><p class="font-body-md text-body-md text-on-surface mt-1">Ajustado checklist de materiais obrigatórios por tipo de viatura.</p></div><div class="flex gap-2 mt-2"><button class="px-4 py-2 border border-outline-variant text-[#357E76] rounded font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Ver revisão</button><button class="px-4 py-2 text-on-surface-variant rounded font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Ver histórico</button></div></div></div></div></div><aside class="w-full lg:w-80 flex flex-col gap-stack-md"><div class="bg-surface-container-lowest border border-outline-variant rounded overflow-hidden flex flex-col shadow-sm"><div class="p-4 border-b border-outline-variant bg-surface-container-low"><h3 class="font-title-lg text-title-lg text-on-surface">Ciência da Equipe</h3></div><div class="p-4 flex flex-col gap-4"><div class="grid grid-cols-3 gap-2 text-center"><div class="flex flex-col"><span class="text-xs text-on-surface-variant font-label-lg uppercase">Integrantes</span><span class="font-headline-sm text-on-surface">5</span></div><div class="flex flex-col"><span class="text-xs text-on-surface-variant font-label-lg uppercase">Ciências</span><span class="font-headline-sm text-[#1b6962]">3</span></div><div class="flex flex-col"><span class="text-xs text-on-surface-variant font-label-lg uppercase">Pendentes</span><span class="font-headline-sm text-error">2</span></div></div><div class="flex flex-col gap-2 mt-2"><div class="flex items-center justify-between p-2 rounded bg-surface-container-low"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-body-md">Sgt. Oliveira</span></div><span class="text-xs text-[#1b6962] font-semibold">Registrada</span></div><div class="flex items-center justify-between p-2 rounded bg-surface-container-low"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-body-md">Roberto Costa</span></div><span class="text-xs text-[#1b6962] font-semibold">Registrada</span></div><div class="flex items-center justify-between p-2 rounded bg-surface-container-low"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-body-md">Ana Lima</span></div><span class="text-xs text-[#1b6962] font-semibold">Registrada</span></div><div class="flex items-center justify-between p-2 rounded border border-outline-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-outline">radio_button_unchecked</span><span class="text-body-md">Marcos Silva</span></div><span class="text-xs text-error font-semibold">Pendente</span></div><div class="flex items-center justify-between p-2 rounded border border-outline-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-outline">radio_button_unchecked</span><span class="text-body-md">Fernando Souza</span></div><span class="text-xs text-error font-semibold">Pendente</span></div></div><button class="w-full py-2 bg-[#0082BC] text-white rounded font-label-lg text-label-lg hover:bg-[#006A9A] transition-colors mt-2">Registrar ciência coletiva</button></div></div></aside></div>
+<!-- Ações Finais -->
+<div class="flex flex-col sm:flex-row gap-4 justify-end border-t border-outline-variant pt-6 mt-4">
+<button class="px-6 py-2.5 border border-outline-variant text-on-surface rounded font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Voltar</button>
+<button class="px-6 py-2.5 border border-outline-variant text-[#357E76] rounded font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Salvar rascunho</button>
+<button class="px-6 py-2.5 bg-[#0082BC] text-white rounded font-label-lg text-label-lg hover:bg-[#006A9A] transition-colors shadow-sm">Confirmar ciências registradas</button>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant px-margin-desktop py-stack-md flex justify-between items-center z-10 text-label-lg font-label-lg md:ml-64"><div class="flex flex-col"><span class="text-safety-blue text-sm">Eletronuclear - Brigada de Incêndio</span></div><div class="flex space-x-6 text-on-surface-variant"><a class="hover:text-primary hover:underline transition-opacity duration-200" href="#">Suporte</a><a class="hover:text-primary hover:underline transition-opacity duration-200" href="#">Termos de Uso</a><a class="hover:text-primary hover:underline transition-opacity duration-200" href="#">Privacidade</a></div></footer>
+
+
+</body></html>
