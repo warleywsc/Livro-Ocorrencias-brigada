@@ -174,3 +174,24 @@ Decisão registrada:
 Próxima etapa:
 
 - Usar o guia para criar manualmente as listas essenciais no Microsoft Lists / SharePoint.
+
+---
+
+## Registro — Script de Teste de Conexão SharePoint
+
+Data: 07/06/2026  
+Status: Script preparado
+
+Arquivo criado:
+
+- scripts/03_testar_conexao_sharepoint_pnp.ps1
+
+Decisão registrada:
+
+- Antes de criar listas via PnP.PowerShell, testar a conexão com o site SharePoint.
+- O script apenas conecta, lê informações do site e lista as listas existentes.
+- O script não cria, altera nem apaga dados.
+
+Próxima etapa:
+
+- Executar o teste de conexão informando a URL correta do site SharePoint.
