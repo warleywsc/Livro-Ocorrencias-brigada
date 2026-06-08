@@ -217,3 +217,24 @@ Decisao registrada:
 Proxima etapa:
 
 - Decidir se as listas serao criadas no site SGES ou em um site SharePoint separado.
+
+---
+
+## Registro — Site SharePoint Brigada de Incendio
+
+Data: 08/06/2026
+Status: Site criado
+
+Site criado:
+
+- https://etnweb.sharepoint.com/sites/BrigadaIncendio
+
+Decisao registrada:
+
+- O site Brigada de Incendio sera usado como base do Livro de Ocorrencias Digital da Brigada de Incendio.
+- O site SGES atual sera mantido como legado/provisorio.
+- A criacao das listas da Fase 1 deve ocorrer no novo site.
+
+Proxima etapa:
+
+- Criar manualmente as listas essenciais da Fase 1 no site Brigada de Incendio.
