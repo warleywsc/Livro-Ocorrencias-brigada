@@ -1,4 +1,4 @@
-﻿# Fase 1 — Listas Essenciais do SharePoint
+# Fase 1 — Listas Essenciais do SharePoint
 
 Projeto: Livro de Ocorrências Digital da Brigada de Incêndio  
 Versão: 0.1  
@@ -104,7 +104,7 @@ Registrar o cabeçalho principal de cada livro de plantão.
 | Title | Texto uma linha | Sim | Código do plantão |
 | CodigoPlantao | Texto uma linha | Sim | Código único |
 | DataPlantao | Data | Sim | Data do plantão |
-| Turno | Escolha | Sim | Dia, Noite, Administrativo, Extra |
+| Turno | Escolha | Sim | Dia, Noite, Horario Comercial |
 | Unidade | Escolha | Sim | Unidade operacional |
 | LiderPlantao | Pessoa | Sim | Responsável |
 | StatusLivro | Escolha | Sim | Em preenchimento, Finalizado, Reaberto, Cancelado |
@@ -314,4 +314,5 @@ Ainda não criar listas reais no SharePoint antes de confirmar:
 - prioridades;
 - status;
 - se "Unidade Central" será mantida como unidade real ou apenas como dado fictício.
+
 

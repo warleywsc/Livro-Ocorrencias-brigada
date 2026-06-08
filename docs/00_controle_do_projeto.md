@@ -264,3 +264,29 @@ Proxima etapa:
 
 - Corrigir referencias documentais antigas a PostoServico e seguir a criacao manual das listas usando PostoServico.
 
+
+---
+
+## Registro — Ajuste de Turno e Plantao Extra
+
+Data: 08/06/2026
+Status: Ajuste operacional registrado
+
+Arquivo criado:
+
+- sharepoint/13_ajuste_turno_plantao_extra.md
+
+Decisao registrada:
+
+- Substituir Administrativo por Horario Comercial no campo Turno.
+- Remover Extra do campo Turno.
+- Criar a coluna PlantaoExtra do tipo Sim/Nao.
+- Considerar Extra como condicao do plantao, nao como turno.
+
+Validacao manual:
+
+- Lista Plantoes criada no SharePoint.
+
+Proxima etapa:
+
+- Criar a lista EquipePlantao.

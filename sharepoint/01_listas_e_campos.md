@@ -1,4 +1,4 @@
-﻿# Estrutura de Dados — Microsoft Lists / SharePoint
+# Estrutura de Dados — Microsoft Lists / SharePoint
 
 Projeto: Livro de Ocorrências Digital da Brigada de Incêndio  
 Versão: 0.2  
@@ -124,7 +124,7 @@ Registrar o cabeçalho principal de cada livro de plantão.
 | Title | Texto uma linha | Sim | Código ou identificação do plantão |
 | CodigoPlantao | Texto uma linha | Sim | Código único do plantão |
 | DataPlantao | Data | Sim | Data do plantão |
-| Turno | Escolha | Sim | Dia, Noite, Administrativo, Extra |
+| Turno | Escolha | Sim | Dia, Noite, Horario Comercial |
 | Unidade | Escolha | Sim | Unidade do plantão |
 | LiderPlantao | Pessoa | Sim | Responsável pelo plantão |
 | StatusLivro | Escolha | Sim | Em preenchimento, Finalizado, Reaberto, Cancelado |
@@ -558,4 +558,5 @@ Próxima etapa:
 - confirmar escolhas de status;
 - revisar permissões;
 - só depois criar as listas no SharePoint.
+
 

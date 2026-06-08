@@ -1,4 +1,4 @@
-﻿# Guia de Execução Manual — Microsoft Lists / SharePoint — Fase 1
+# Guia de Execução Manual — Microsoft Lists / SharePoint — Fase 1
 
 Projeto: Livro de Ocorrências Digital da Brigada de Incêndio  
 Fase: 1 — Listas essenciais  
@@ -105,7 +105,7 @@ Registro principal dos livros de plantão da Brigada de Incêndio.
 |---|---|---:|---|
 | CodigoPlantao | Texto uma linha | Sim | Livre |
 | DataPlantao | Data | Sim | Data |
-| Turno | Escolha | Sim | Dia; Noite; Administrativo; Extra |
+| Turno | Escolha | Sim | Dia; Noite; Horario Comercial |
 | Unidade | Escolha | Sim | Unidade Central; Angra 1; Angra 2; Angra 3; Apoio Externo; Outro |
 | LiderPlantao | Pessoa | Sim | Usuários institucionais |
 | StatusLivro | Escolha | Sim | Em preenchimento; Finalizado; Reaberto; Cancelado |
@@ -394,4 +394,5 @@ Após criação manual e validação:
 3. preparar Power Apps Canvas App;
 4. criar AppShell;
 5. conectar listas essenciais.
+
 

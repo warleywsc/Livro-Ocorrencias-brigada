@@ -1,4 +1,4 @@
-﻿# Roteiro de Criação Manual — Fase 1
+# Roteiro de Criação Manual — Fase 1
 
 Projeto: Livro de Ocorrências Digital da Brigada de Incêndio  
 Etapa: Microsoft Lists / SharePoint  
@@ -135,8 +135,8 @@ Registrar o cabeçalho principal do livro de plantão.
 
 - Dia
 - Noite
-- Administrativo
-- Extra
+- Horario Comercial
+
 
 ### Valores de escolha — Unidade
 
@@ -456,4 +456,5 @@ Antes de criar as listas reais, confirmar:
 Este roteiro está preparado para validação.
 
 Ainda não executar criação real das listas sem confirmação.
+
 
