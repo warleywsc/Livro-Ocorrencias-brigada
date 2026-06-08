@@ -365,3 +365,54 @@ Colunas principais esperadas:
 Proxima etapa:
 
 - Criar a lista PendenciasOperacionais.
+
+---
+
+## Registro — Lista LocaisOperacionais criada no SharePoint
+
+Data: 08/06/2026
+Status: Criada manualmente
+
+Site:
+
+- https://etnweb.sharepoint.com/sites/BrigadaIncendio
+
+Lista criada:
+
+- LocaisOperacionais
+
+Finalidade:
+
+- Servir como cadastro pesquisavel de locais operacionais detalhados.
+- Apoiar ocorrencias, inspecoes, pendencias e demais registros que exigem localizacao precisa.
+- Separar PostoServico de LocalOperacional.
+
+Decisao registrada:
+
+- PostoServico sera usado para lotacao/posto amplo: Angra 1, Angra 2, Angra 3 e Brigada de Incendio.
+- LocalOperacional sera usado para detalhamento do fato, incluindo Zona, Local, Area, Elevacao, Complemento e Referencias.
+- Locais mutaveis devem ser cadastrados, pesquisados e validados.
+- Registros futuros devem guardar tambem copia textual do local no momento do registro, para preservar historico.
+
+Lista LocaisOperacionais criada com estrutura baseada em:
+
+- Titulo
+- CodigoLocalOperacional
+- PostoServico
+- Zona
+- Local
+- Area
+- Elevacao
+- LocalArea
+- Complemento
+- DescricaoReferencia
+- StatusCadastro
+- FonteCadastro
+- Ativo
+- ValidadoPor
+- DataValidacao
+- Observacoes
+
+Proxima etapa:
+
+- Ajustar PendenciasOperacionais para usar LocalOperacional e campos de snapshot textual do local.
