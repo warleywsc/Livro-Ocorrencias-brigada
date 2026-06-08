@@ -195,3 +195,25 @@ Decisão registrada:
 Próxima etapa:
 
 - Executar o teste de conexão informando a URL correta do site SharePoint.
+
+---
+
+## Registro — Bloqueio de Autenticacao PnP
+
+Data: 08/06/2026
+Status: Bloqueio identificado
+
+Arquivo criado:
+
+- sharepoint/10_bloqueio_autenticacao_pnp.md
+
+Decisao registrada:
+
+- O PnP.PowerShell foi instalado e reconhecido.
+- A conexao falhou por necessidade de ClientId / App Registration no Entra ID.
+- A criacao automatizada via PnP fica pausada.
+- A criacao manual das listas volta a ser o caminho principal.
+
+Proxima etapa:
+
+- Decidir se as listas serao criadas no site SGES ou em um site SharePoint separado.
