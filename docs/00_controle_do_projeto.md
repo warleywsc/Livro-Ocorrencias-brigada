@@ -110,3 +110,24 @@ Observação:
 Próxima etapa:
 
 - Validar se a Fase 1 pode ser usada como base para criação manual das listas no Microsoft Lists / SharePoint.
+
+---
+
+## Registro — Roteiro de Criação Manual da Fase 1
+
+Data: 07/06/2026  
+Status: Roteiro preparado
+
+Arquivo criado:
+
+- sharepoint/06_roteiro_criacao_manual_fase1.md
+
+Decisão registrada:
+
+- Preparar roteiro manual para criação futura das listas da Fase 1.
+- Ainda não criar listas reais no Microsoft Lists / SharePoint.
+- Validar roteiro antes de qualquer execução real.
+
+Próxima etapa:
+
+- Decidir se a criação das listas será manual no SharePoint ou preparada por script/documentação passo a passo.
