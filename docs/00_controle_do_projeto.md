@@ -131,3 +131,25 @@ Decisão registrada:
 Próxima etapa:
 
 - Decidir se a criação das listas será manual no SharePoint ou preparada por script/documentação passo a passo.
+
+---
+
+## Registro — Checklist de Criação Manual da Fase 1
+
+Data: 07/06/2026  
+Status: Checklist preparado
+
+Arquivo criado:
+
+- sharepoint/07_checklist_criacao_manual_fase1.md
+
+Decisão registrada:
+
+- A criação inicial das listas será manual no Microsoft Lists / SharePoint.
+- Não usar script de criação automática neste momento.
+- Não criar Power Apps ainda.
+- Criar primeiro as listas essenciais com dados fictícios.
+
+Próxima etapa:
+
+- Criar manualmente as listas da Fase 1 no Microsoft Lists / SharePoint quando houver ambiente disponível.
