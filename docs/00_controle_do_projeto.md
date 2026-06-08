@@ -81,3 +81,32 @@ Decisão registrada:
 Próxima etapa:
 
 - Validar unidades, turnos, funções, tipos de ocorrência, status, prioridades e perfis de acesso.
+
+---
+
+## Registro — Fase 1 das Listas Essenciais
+
+Data: 07/06/2026  
+Status: Preparada para validação
+
+Arquivo criado:
+
+- sharepoint/05_fase1_listas_essenciais.md
+
+Decisão registrada:
+
+- Preparar a Fase 1 com as listas essenciais:
+  - Usuarios
+  - Plantoes
+  - EquipePlantao
+  - Ocorrencias
+  - PendenciasOperacionais
+
+Observação:
+
+- Ainda não criar listas reais no SharePoint.
+- Validar primeiro campos obrigatórios, valores de escolha e dados fictícios de teste.
+
+Próxima etapa:
+
+- Validar se a Fase 1 pode ser usada como base para criação manual das listas no Microsoft Lists / SharePoint.
