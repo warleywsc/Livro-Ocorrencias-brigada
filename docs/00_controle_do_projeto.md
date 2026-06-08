@@ -38,3 +38,25 @@ Consolidar o MVP visual aprovado no Google Stitch e preparar a implementação r
 - Footer no fluxo normal da página.
 - Botões finais antes do footer.
 - Não usar HTML exportado como arquitetura final sem refatoração.
+
+---
+
+## Registro — Validação da Modelagem das Listas
+
+Data: 07/06/2026  
+Status: Validado para refinamento
+
+Decisão registrada:
+
+- Manter a estrutura inicial com 12 listas.
+- Criar as listas no SharePoint por fases.
+- Começar pela base operacional mínima.
+- Não criar listas no SharePoint antes de validar os campos de escolha oficiais.
+
+Arquivo criado:
+
+- sharepoint/03_validacao_modelagem_listas.md
+
+Próxima etapa:
+
+- Validar os valores oficiais dos campos de escolha.
