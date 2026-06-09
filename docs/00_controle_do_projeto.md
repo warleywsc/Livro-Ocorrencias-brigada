@@ -668,3 +668,24 @@ Decisoes registradas:
 Proxima etapa:
 
 - Preparar prompt mestre tecnico para orientar a implementacao inicial do Power Apps.
+
+---
+
+## Registro — Prompt Mestre Tecnico Power Apps
+
+Data: 09/06/2026
+Status: Prompt mestre tecnico preparado
+
+Arquivos criados:
+
+- prompts/PROMPT_MESTRE_TECNICO_POWERAPPS.md
+- powerapps/04_prompt_mestre_tecnico_powerapps.md
+
+Decisoes registradas:
+
+- Consolidado prompt mestre tecnico para orientar a implementacao inicial no Power Apps.
+- Preservadas as regras de listas SharePoint, navegacao, componentes reutilizaveis, permissoes, substituicao de lider, ocorrencias e locais operacionais.
+
+Proxima etapa:
+
+- Preparar roteiro pratico para conectar as listas SharePoint no Power Apps e criar o AppShell inicial.
