@@ -711,3 +711,28 @@ Decisoes registradas:
 Proxima etapa:
 
 - Executar manualmente a criacao do app canvas no Power Apps e conectar as listas SharePoint.
+
+---
+
+## Registro — Prompt Mestre Atualizado para Novo Chat
+
+Data: 09/06/2026
+Status: Prompt mestre atualizado salvo localmente
+
+Arquivo salvo:
+
+- prompts/prompt_mestre_livro_ocorrencias_brigada_2026-06-09_powerapps_inicial.md
+
+Conteudo consolidado:
+
+- Estrutura SharePoint validada.
+- Dados ficticios validados.
+- Listas conectadas no Power Apps.
+- App Canvas inicial criado em formato desktop/tablet.
+- scrDashboard criado.
+- varPlantaoAtual carregando o plantao ficticio.
+- Dashboard inicial exibindo plantao atual, pendencias abertas e ocorrencias do plantao.
+
+Proxima etapa:
+
+- Continuar em novo chat usando este arquivo como memoria operacional principal.
