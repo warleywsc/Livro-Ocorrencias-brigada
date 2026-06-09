@@ -689,3 +689,25 @@ Decisoes registradas:
 Proxima etapa:
 
 - Preparar roteiro pratico para conectar as listas SharePoint no Power Apps e criar o AppShell inicial.
+
+---
+
+## Registro — Roteiro Pratico de Conexao e AppShell
+
+Data: 09/06/2026
+Status: Roteiro pratico preparado
+
+Arquivo criado:
+
+- powerapps/05_roteiro_conexao_listas_appshell.md
+
+Decisoes registradas:
+
+- A primeira etapa pratica no Power Apps sera conectar as listas SharePoint.
+- O app inicial deve montar AppShell, Header, Sidebar, AreaConteudo e Footer.
+- O Dashboard inicial deve usar dados ficticios ja cadastrados.
+- Ainda nao criar automacoes, permissoes complexas nem publicacao para usuarios finais.
+
+Proxima etapa:
+
+- Executar manualmente a criacao do app canvas no Power Apps e conectar as listas SharePoint.
