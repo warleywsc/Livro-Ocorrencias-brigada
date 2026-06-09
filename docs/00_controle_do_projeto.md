@@ -598,3 +598,29 @@ Decisao registrada:
 Proxima etapa:
 
 - Executar manualmente a validacao com dados ficticios no SharePoint.
+
+---
+
+## Registro — Validacao com Dados Ficticios
+
+Data: 09/06/2026
+Status: Validacao manual principal realizada
+
+Arquivo criado:
+
+- sharepoint/20_validacao_dados_ficticios.md
+
+Resultado registrado:
+
+- Locais operacionais ficticios cadastrados.
+- Plantao ficticio criado.
+- Pendencia ficticia criada.
+- Ocorrencia ficticia criada.
+- Relacionamentos entre listas validados manualmente.
+- Campos de consulta validados por selecao de item sugerido.
+- Lista LocaisOperacionais corrigida para URL propria.
+- Coluna Observacoes duplicada corrigida em LocaisOperacionais.
+
+Proxima etapa:
+
+- Preparar ajustes de exibicoes das listas e organizar a fase inicial do Power Apps.
