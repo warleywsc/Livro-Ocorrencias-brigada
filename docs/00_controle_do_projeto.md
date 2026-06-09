@@ -576,3 +576,25 @@ Decisao registrada:
 Proxima etapa:
 
 - Preparar roteiro de validacao com dados ficticios.
+
+---
+
+## Registro — Roteiro de Validacao com Dados Ficticios
+
+Data: 08/06/2026
+Status: Roteiro preparado
+
+Arquivo criado:
+
+- sharepoint/19_roteiro_validacao_dados_ficticios.md
+
+Decisao registrada:
+
+- A validacao inicial sera feita apenas com dados ficticios.
+- Nao usar dados reais sensiveis.
+- Validar usuarios, locais operacionais, plantao, equipe, pendencia e ocorrencia.
+- Validar relacionamentos entre Plantoes, EquipePlantao, LocaisOperacionais, PendenciasOperacionais e Ocorrencias.
+
+Proxima etapa:
+
+- Executar manualmente a validacao com dados ficticios no SharePoint.
