@@ -646,3 +646,25 @@ Decisoes registradas:
 Proxima etapa:
 
 - Criar mapa de navegacao e componentes reutilizaveis para o Power Apps.
+
+---
+
+## Registro — Mapa de Navegacao e Componentes Power Apps
+
+Data: 09/06/2026
+Status: Planejamento preparado
+
+Arquivos criados:
+
+- powerapps/02_mapa_navegacao_powerapps.md
+- powerapps/03_componentes_reutilizaveis_powerapps.md
+
+Decisoes registradas:
+
+- Definido mapa inicial de navegacao do Power Apps.
+- Definidos componentes reutilizaveis obrigatorios.
+- Definidos componentes especificos para selecao de local, responsabilidade do lider e responsabilidade/autoria de ocorrencias.
+
+Proxima etapa:
+
+- Preparar prompt mestre tecnico para orientar a implementacao inicial do Power Apps.
