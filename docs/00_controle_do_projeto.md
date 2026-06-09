@@ -475,3 +475,74 @@ Decisoes registradas:
 Proxima etapa:
 
 - Criar a lista Ocorrencias com responsabilidade/autoria e LocalOperacional.
+
+---
+
+## Registro — Lista Ocorrencias criada no SharePoint
+
+Data: 08/06/2026
+Status: Criada manualmente
+
+Site:
+
+- https://etnweb.sharepoint.com/sites/BrigadaIncendio
+
+Lista criada:
+
+- Ocorrencias
+
+Finalidade:
+
+- Registrar ocorrencias operacionais vinculadas aos plantoes da Brigada de Incendio.
+- Controlar local operacional detalhado.
+- Registrar responsabilidade no momento do fato.
+- Registrar autoria do lancamento.
+- Registrar acompanhamento atual da ocorrencia.
+- Permitir vinculo com pendencia operacional gerada.
+
+Decisoes registradas:
+
+- A coluna padrao Titulo sera usada como titulo curto da ocorrencia.
+- Nao foi criada coluna separada chamada Titulo.
+- Plantao consulta a lista Plantoes.
+- LocalOperacional consulta a lista LocaisOperacionais.
+- PendenciaGerada consulta a lista PendenciasOperacionais.
+- Foram criados campos de snapshot textual do local para preservar historico.
+- Foram criados campos para separar lider responsavel no momento do fato, usuario que registrou e responsavel pelo acompanhamento.
+- ComplementoLocal foi corrigido para texto com varias linhas.
+
+Colunas principais criadas:
+
+- Titulo
+- Plantao
+- NumeroOcorrencia
+- DataHoraOcorrencia
+- TipoOcorrencia
+- PostoServico
+- LocalOperacional
+- ZonaRegistro
+- LocalRegistro
+- AreaRegistro
+- ElevacaoRegistro
+- ComplementoLocal
+- Gravidade
+- Descricao
+- AcoesTomadas
+- Envolvidos
+- StatusOcorrencia
+- GeraPendencia
+- PendenciaGerada
+- LiderResponsavelNoMomento
+- RegistradoPor
+- DataRegistro
+- RegistroPosteriorPorTerceiro
+- MotivoRegistroPosterior
+- InformadoPor
+- ResponsavelAcompanhamentoOcorrencia
+- Observacoes
+
+Proxima etapa:
+
+- Registrar fechamento da criacao estrutural das listas principais.
+- Conferir todas as listas no SharePoint.
+- Preparar validacao com dados ficticios.
