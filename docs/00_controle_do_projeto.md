@@ -416,3 +416,62 @@ Lista LocaisOperacionais criada com estrutura baseada em:
 Proxima etapa:
 
 - Ajustar PendenciasOperacionais para usar LocalOperacional e campos de snapshot textual do local.
+
+---
+
+## Registro — Lista PendenciasOperacionais criada no SharePoint
+
+Data: 08/06/2026
+Status: Criada manualmente
+
+Site:
+
+- https://etnweb.sharepoint.com/sites/BrigadaIncendio
+
+Lista criada:
+
+- PendenciasOperacionais
+
+Finalidade:
+
+- Controlar pendencias operacionais abertas, em acompanhamento, aguardando manutencao, concluidas ou canceladas entre plantoes.
+- Permitir vinculo com Plantoes.
+- Permitir vinculo opcional com LocaisOperacionais.
+- Guardar snapshot textual do local no momento do registro.
+
+Colunas principais criadas:
+
+- Titulo
+- NumeroPendencia
+- PlantaoOrigem
+- OrigemPendencia
+- Descricao
+- PostoServico
+- LocalOperacional
+- PendenciaComLocalEspecifico
+- ZonaRegistro
+- LocalRegistro
+- AreaRegistro
+- ElevacaoRegistro
+- ComplementoLocal
+- Prioridade
+- StatusPendencia
+- ResponsavelAcompanhamento
+- Prazo
+- DataAbertura
+- DataConclusao
+- Conclusao
+- ConcluidoPor
+- Observacoes
+
+Decisoes registradas:
+
+- A coluna padrao Titulo sera usada como resumo curto da pendencia.
+- Nao foi criada coluna separada chamada Titulo.
+- LocalOperacional e campo de consulta para LocaisOperacionais.
+- PlantaoOrigem e campo de consulta para Plantoes.
+- Campos ZonaRegistro, LocalRegistro, AreaRegistro, ElevacaoRegistro e ComplementoLocal preservam o historico textual do local.
+
+Proxima etapa:
+
+- Criar a lista Ocorrencias com responsabilidade/autoria e LocalOperacional.
