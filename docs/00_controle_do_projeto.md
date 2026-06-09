@@ -736,3 +736,28 @@ Conteudo consolidado:
 Proxima etapa:
 
 - Continuar em novo chat usando este arquivo como memoria operacional principal.
+
+---
+
+## Registro — Validacao Inicial do Power Apps
+
+Data: 09/06/2026
+Status: Validacao inicial realizada
+
+Arquivo criado:
+
+- powerapps/06_validacao_inicial_powerapps.md
+
+Resultado:
+
+- App Canvas criado em formato Tablet.
+- Listas SharePoint conectadas.
+- Tela scrDashboard criada.
+- App.OnStart configurado.
+- Plantao ficticio carregado.
+- Contagem de pendencias abertas retornou 1.
+- Contagem de ocorrencias do plantao retornou 1.
+
+Proxima etapa:
+
+- Organizar AppShell visual e transformar rotulos de teste em cards do Dashboard.
