@@ -624,3 +624,25 @@ Resultado registrado:
 Proxima etapa:
 
 - Preparar ajustes de exibicoes das listas e organizar a fase inicial do Power Apps.
+
+---
+
+## Registro — Exibicoes e Fase Inicial do Power Apps
+
+Data: 09/06/2026
+Status: Planejamento inicial preparado
+
+Arquivos criados:
+
+- sharepoint/21_exibicoes_recomendadas_listas.md
+- powerapps/01_fase_inicial_powerapps.md
+
+Decisoes registradas:
+
+- Preparar exibicoes uteis para conferencia e administracao das listas.
+- Organizar a primeira fase do Power Apps com base nas listas SharePoint ja criadas.
+- Iniciar pelo Dashboard Operacional, Registro do Plantao, Equipe do Plantao, Ocorrencias e Pendencias.
+
+Proxima etapa:
+
+- Criar mapa de navegacao e componentes reutilizaveis para o Power Apps.
