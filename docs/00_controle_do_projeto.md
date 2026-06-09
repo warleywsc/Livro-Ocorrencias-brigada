@@ -546,3 +546,33 @@ Proxima etapa:
 - Registrar fechamento da criacao estrutural das listas principais.
 - Conferir todas as listas no SharePoint.
 - Preparar validacao com dados ficticios.
+
+---
+
+## Registro — Fechamento Estrutural das Listas Principais
+
+Data: 08/06/2026
+Status: Criacao estrutural principal concluida
+
+Arquivo criado:
+
+- sharepoint/18_fechamento_estrutural_listas_principais.md
+
+Listas criadas no SharePoint:
+
+- Usuarios
+- Plantoes
+- EquipePlantao
+- LocaisOperacionais
+- PendenciasOperacionais
+- Ocorrencias
+
+Decisao registrada:
+
+- A estrutura principal de listas do Livro de Ocorrencias Digital da Brigada de Incendio foi criada manualmente no SharePoint.
+- O site oficial usado foi https://etnweb.sharepoint.com/sites/BrigadaIncendio.
+- A proxima etapa sera validacao com dados ficticios.
+
+Proxima etapa:
+
+- Preparar roteiro de validacao com dados ficticios.
