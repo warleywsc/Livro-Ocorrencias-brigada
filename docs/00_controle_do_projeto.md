@@ -784,3 +784,26 @@ Resultado:
 Proxima etapa:
 
 - Organizar HeaderContainer1 com titulo institucional e contexto operacional.
+
+---
+
+## Registro — Validacao Visual do Header do Dashboard
+
+Data: 09/06/2026
+Status: Validado
+
+Arquivo criado:
+
+- powerapps/08_validacao_visual_header_dashboard.md
+
+Resultado:
+
+- HeaderContainer1 validado visualmente.
+- Titulo institucional exibido corretamente.
+- Subtitulo operacional exibiu plantao e status do livro.
+- Cards do Dashboard permaneceram organizados.
+- Sem footer nesta fase.
+
+Proxima etapa:
+
+- Organizar SidebarContainer1 com menu lateral inicial.
