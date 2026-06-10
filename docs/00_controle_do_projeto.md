@@ -831,3 +831,26 @@ Resultado:
 Proxima etapa:
 
 - Organizar conteudo principal do Dashboard abaixo dos cards.
+
+---
+
+## Registro — Validacao Visual do Conteudo Principal do Dashboard
+
+Data: 09/06/2026
+Status: Validado
+
+Arquivo criado:
+
+- powerapps/10_validacao_visual_conteudo_dashboard.md
+
+Resultado:
+
+- Conteudo principal inferior do Dashboard validado.
+- Secoes Resumo Operacional, Pendencias em Aberto e Ultimas Ocorrencias criadas.
+- Titulos corrigidos para nao ficarem cortados.
+- Header, menu lateral com POTS e cards permaneceram corretos.
+- Sem footer nesta fase.
+
+Proxima etapa:
+
+- Preparar galeria resumida de Pendencias em Aberto vinculada a PendenciasOperacionais.
