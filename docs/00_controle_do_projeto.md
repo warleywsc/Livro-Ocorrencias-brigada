@@ -927,3 +927,29 @@ Resultado:
 Proxima etapa:
 
 - Preparar area Equipe do Plantao dentro da tela Livro do Plantao.
+
+---
+
+## Registro — Validacao da Area Equipe do Plantao
+
+Data: 10/06/2026
+Status: Validado
+
+Arquivo criado:
+
+- powerapps/14_validacao_area_equipe_livro_plantao.md
+
+Resultado:
+
+- Area Equipe do Plantao criada e validada dentro de Livro do Plantao.
+- Galeria galLivroPlantaoEquipe vinculada a lista EquipePlantao.
+- Integrantes ficticios exibidos corretamente.
+- Mensagem de lista vazia corrigida.
+- Titulos principais destacados visualmente.
+- Cards Passagem de Servico e Equipe do Plantao alinhados.
+- Header, menu lateral com POTS e troca visual Dashboard/Livro do Plantao permaneceram corretos.
+- Sem footer nesta fase.
+
+Proxima etapa:
+
+- Preparar area Ocorrencias do Plantao dentro da tela Livro do Plantao.
