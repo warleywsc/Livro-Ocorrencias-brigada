@@ -878,3 +878,27 @@ Resultado:
 Proxima etapa:
 
 - Preparar galeria resumida de Ultimas Ocorrencias vinculada a lista Ocorrencias.
+
+---
+
+## Registro — Validacao da Galeria de Ultimas Ocorrencias no Dashboard
+
+Data: 10/06/2026
+Status: Validado
+
+Arquivo criado:
+
+- powerapps/12_validacao_galeria_ocorrencias_dashboard.md
+
+Resultado:
+
+- Galeria galUltimasOcorrenciasDashboard criada e validada.
+- Galeria vinculada a lista Ocorrencias.
+- Ocorrencia ficticia OCO-TESTE-001 exibida corretamente.
+- Rotulo unico lblGalOcorrenciaResumo adotado para evitar sobreposicao.
+- Header, menu lateral com POTS, cards, Pendencias em Aberto e Ultimas Ocorrencias permaneceram corretos.
+- Sem footer nesta fase.
+
+Proxima etapa:
+
+- Preparar a tela inicial do Livro do Plantao, iniciando pela resposta visual do botao Livro do Plantao no menu lateral.
