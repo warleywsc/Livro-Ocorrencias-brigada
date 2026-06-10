@@ -902,3 +902,28 @@ Resultado:
 Proxima etapa:
 
 - Preparar a tela inicial do Livro do Plantao, iniciando pela resposta visual do botao Livro do Plantao no menu lateral.
+
+---
+
+## Registro — Validacao da Resposta Visual do Livro do Plantao
+
+Data: 10/06/2026
+Status: Validado
+
+Arquivo criado:
+
+- powerapps/13_validacao_resposta_visual_livro_plantao.md
+
+Resultado:
+
+- Botao Livro do Plantao validado visualmente.
+- Dashboard passou a ser ocultado ao selecionar Livro do Plantao.
+- Container ctnLivroPlantao exibido corretamente.
+- Header passou a refletir o menu selecionado.
+- Card Passagem de Servico exibido com dado ficticio.
+- Menu lateral com POTS permaneceu correto.
+- Sem footer nesta fase.
+
+Proxima etapa:
+
+- Preparar area Equipe do Plantao dentro da tela Livro do Plantao.
