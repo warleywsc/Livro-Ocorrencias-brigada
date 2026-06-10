@@ -761,3 +761,26 @@ Resultado:
 Proxima etapa:
 
 - Organizar AppShell visual e transformar rotulos de teste em cards do Dashboard.
+
+---
+
+## Registro — Validacao Visual dos Cards do Dashboard
+
+Data: 09/06/2026
+Status: Validado
+
+Arquivo criado:
+
+- powerapps/07_validacao_visual_cards_dashboard.md
+
+Resultado:
+
+- Cards do Dashboard criados dentro do MainContainer1.
+- Container ctnCardsDashboard validado.
+- Cards de Plantao Atual, Status do Livro, Lider Responsavel, Pendencias Abertas e Ocorrencias do Plantao validados.
+- Dados ficticios exibidos corretamente.
+- Avisos amarelos conhecidos nao bloquearam a etapa.
+
+Proxima etapa:
+
+- Organizar HeaderContainer1 com titulo institucional e contexto operacional.
