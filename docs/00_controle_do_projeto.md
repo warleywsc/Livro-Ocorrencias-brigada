@@ -807,3 +807,27 @@ Resultado:
 Proxima etapa:
 
 - Organizar SidebarContainer1 com menu lateral inicial.
+
+---
+
+## Registro — Validacao Visual do Menu Lateral do Dashboard
+
+Data: 09/06/2026
+Status: Validado
+
+Arquivo criado:
+
+- powerapps/09_validacao_visual_sidebar_dashboard.md
+
+Resultado:
+
+- SidebarContainer1 validado visualmente.
+- Menu Operacional exibido no topo da lateral.
+- Botoes do menu organizados e empilhados.
+- Opcao POTS aplicada no lugar de POTs e Ciencia.
+- Header e cards permaneceram corretos.
+- Sem footer nesta fase.
+
+Proxima etapa:
+
+- Organizar conteudo principal do Dashboard abaixo dos cards.
