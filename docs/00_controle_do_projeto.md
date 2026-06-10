@@ -854,3 +854,27 @@ Resultado:
 Proxima etapa:
 
 - Preparar galeria resumida de Pendencias em Aberto vinculada a PendenciasOperacionais.
+
+---
+
+## Registro — Validacao da Galeria de Pendencias em Aberto no Dashboard
+
+Data: 10/06/2026
+Status: Validado
+
+Arquivo criado:
+
+- powerapps/11_validacao_galeria_pendencias_dashboard.md
+
+Resultado:
+
+- Galeria galPendenciasAbertasDashboard criada e validada.
+- Galeria vinculada a lista PendenciasOperacionais.
+- Pendencia ficticia PEN-TESTE-001 exibida corretamente.
+- Rotulo unico lblGalPendenciaResumo adotado para evitar sobreposicao.
+- Header, menu lateral com POTS, cards e secoes inferiores permaneceram corretos.
+- Sem footer nesta fase.
+
+Proxima etapa:
+
+- Preparar galeria resumida de Ultimas Ocorrencias vinculada a lista Ocorrencias.
