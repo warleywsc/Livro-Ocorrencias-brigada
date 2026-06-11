@@ -953,3 +953,11 @@ Resultado:
 Proxima etapa:
 
 - Preparar area Ocorrencias do Plantao dentro da tela Livro do Plantao.
+
+## V051 - Formulário visual inicial de Nova Ocorrência
+
+- Data: 11/06/2026 16:01:03
+- Status: validado
+- Área: Power Apps / scrDashboard / Nova Ocorrência
+- Resultado: formulário visual inicial criado e validado sem gravação real.
+- Próxima etapa sugerida: preparar validações obrigatórias e Patch controlado para gravação da ocorrência.
