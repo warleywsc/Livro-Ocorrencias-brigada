@@ -986,3 +986,11 @@ Proxima etapa:
 - Resultado: ocorrência gravada com numeração definitiva baseada no ID nativo do SharePoint.
 - Evidência visual: ocorrência exibida como OCO-000004 e total de ocorrências atualizado para 4.
 - Próxima etapa sugerida: melhorar a exibição da lista de ocorrências e preparar detalhe da ocorrência.
+
+## V055 - Exibição melhorada da lista de Ocorrências
+
+- Data: 11/06/2026 20:36:44
+- Status: validado
+- Área: Power Apps / scrDashboard / Ocorrências
+- Resultado: lista principal de Ocorrências melhorada visualmente, com dados principais em formato de card e ordenação decrescente por ID.
+- Próxima etapa sugerida: preparar painel ou tela de detalhe da ocorrência selecionada.
