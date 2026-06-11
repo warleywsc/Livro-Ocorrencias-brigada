@@ -961,3 +961,11 @@ Proxima etapa:
 - Área: Power Apps / scrDashboard / Nova Ocorrência
 - Resultado: formulário visual inicial criado e validado sem gravação real.
 - Próxima etapa sugerida: preparar validações obrigatórias e Patch controlado para gravação da ocorrência.
+
+## V052 - Validação dos campos obrigatórios da Nova Ocorrência
+
+- Data: 11/06/2026 16:12:21
+- Status: validado
+- Área: Power Apps / scrDashboard / Nova Ocorrência
+- Resultado: validações obrigatórias iniciais funcionando antes da gravação real.
+- Próxima etapa sugerida: preparar Patch controlado da Nova Ocorrência com dados fictícios.
