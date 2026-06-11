@@ -969,3 +969,11 @@ Proxima etapa:
 - Área: Power Apps / scrDashboard / Nova Ocorrência
 - Resultado: validações obrigatórias iniciais funcionando antes da gravação real.
 - Próxima etapa sugerida: preparar Patch controlado da Nova Ocorrência com dados fictícios.
+
+## V053 - Patch controlado da Nova Ocorrência
+
+- Data: 11/06/2026 20:22:35
+- Status: validado
+- Área: Power Apps / scrDashboard / Nova Ocorrência
+- Resultado: Patch controlado gravou ocorrência fictícia na lista Ocorrencias e atualizou a galeria.
+- Próxima etapa sugerida: definir numeração definitiva da ocorrência e limpeza visual do formulário após salvar.
