@@ -994,3 +994,12 @@ Proxima etapa:
 - Área: Power Apps / scrDashboard / Ocorrências
 - Resultado: lista principal de Ocorrências melhorada visualmente, com dados principais em formato de card e ordenação decrescente por ID.
 - Próxima etapa sugerida: preparar painel ou tela de detalhe da ocorrência selecionada.
+
+## V056 - Retorno pós-salvamento da Nova Ocorrência
+
+- Data: 11/06/2026 20:41:34
+- Status: validado
+- Área: Power Apps / scrDashboard / Nova Ocorrência / Ocorrências
+- Resultado: após salvar uma nova ocorrência, o app retorna para Ocorrências, atualiza a lista, exibe a ocorrência recém-salva no topo e destaca o card em verde claro.
+- Evidência visual: ocorrência OCO-000006 exibida no topo, destacada, com total de ocorrências atualizado para 6.
+- Próxima etapa sugerida: preparar painel ou tela de detalhe da ocorrência selecionada.
