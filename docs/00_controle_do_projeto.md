@@ -1003,3 +1003,12 @@ Proxima etapa:
 - Resultado: após salvar uma nova ocorrência, o app retorna para Ocorrências, atualiza a lista, exibe a ocorrência recém-salva no topo e destaca o card em verde claro.
 - Evidência visual: ocorrência OCO-000006 exibida no topo, destacada, com total de ocorrências atualizado para 6.
 - Próxima etapa sugerida: preparar painel ou tela de detalhe da ocorrência selecionada.
+
+## V057 - Painel de detalhe da Ocorrência
+
+- Data: 11/06/2026 21:40:07
+- Status: validado
+- Área: Power Apps / scrDashboard / Ocorrências
+- Resultado: painel de detalhe da ocorrência selecionada validado, com exibição dos dados principais e botão Fechar detalhe funcional.
+- Observação técnica: campo LiderResponsavelNoMomento exibido corretamente por DisplayName.
+- Próxima etapa sugerida: preparar filtros da lista de Ocorrências ou melhorar layout definitivo dos cards.
