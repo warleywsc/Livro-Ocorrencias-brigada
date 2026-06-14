@@ -1033,3 +1033,13 @@ Proxima etapa:
 - Evidência visual: OCO-000006 passou de Aberta para Encerrada e mensagem de sucesso foi exibida.
 - Observação: melhorias visuais foram pausadas para priorizar funcionalidades.
 - Próxima etapa sugerida: exigir ou registrar ações tomadas no encerramento da ocorrência.
+
+## V060 - Ações tomadas no encerramento da Ocorrência
+
+- Data: 14/06/2026 12:35:59
+- Status: validado funcionalmente
+- Área: Power Apps / scrDashboard / Ocorrências / Detalhe da Ocorrência
+- Resultado: encerramento de ocorrência passou a exigir e registrar ações tomadas, incluindo data, hora e usuário no texto do encerramento.
+- Evidência visual: ocorrência encerrada com ações registradas e detalhe exibindo o texto de encerramento.
+- Observação: melhorias visuais permanecem pausadas para priorização das funcionalidades principais.
+- Próxima etapa sugerida: preparar reabertura de ocorrência ou criação de pendência a partir da ocorrência.
