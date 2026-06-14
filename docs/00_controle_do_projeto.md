@@ -1063,3 +1063,13 @@ Proxima etapa:
 - Evidência visual: pendência PEN-000002 exibida com status, prioridade, origem, data de abertura, local, posto, responsável, descrição e observações.
 - Observação: melhorias visuais permanecem pausadas para priorização das funcionalidades principais.
 - Próxima etapa sugerida: criar fluxo para concluir pendência.
+
+## V063 - Conclusão de Pendência
+
+- Data: 14/06/2026 13:28:20
+- Status: validado funcionalmente
+- Área: Power Apps / scrDashboard / Pendências / Detalhe da Pendência
+- Resultado: pendência selecionada concluída com sucesso, exigindo texto de solução/conclusão antes do Patch.
+- Evidência visual: pendência PEN-TESTE-001 passou para Concluída e observações receberam registro de conclusão com data, hora, usuário e texto informado.
+- Observação: cores atuais das áreas Ocorrências e Pendências foram consideradas aceitáveis.
+- Próxima etapa sugerida: ajustar layout funcional das áreas Ocorrências e Pendências, sem alterar cores.
