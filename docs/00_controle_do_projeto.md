@@ -1012,3 +1012,14 @@ Proxima etapa:
 - Resultado: painel de detalhe da ocorrência selecionada validado, com exibição dos dados principais e botão Fechar detalhe funcional.
 - Observação técnica: campo LiderResponsavelNoMomento exibido corretamente por DisplayName.
 - Próxima etapa sugerida: preparar filtros da lista de Ocorrências ou melhorar layout definitivo dos cards.
+
+## V058 - Filtros da lista de Ocorrências
+
+- Data: 14/06/2026 12:15:06
+- Status: validado funcional e visualmente
+- Área: Power Apps / scrDashboard / Ocorrências
+- Resultado: filtros por busca textual, tipo, status e gravidade validados na lista principal de Ocorrências.
+- Evidência funcional: busca por UBA retornou 1 ocorrência; limpeza voltou a exibir 6; filtro combinado Incêndio/Aberta/Informativa retornou 5.
+- Evidência visual: barra de filtros alinhada, botão Limpar sem quebra de texto e contraste original dos suspensos preservado.
+- Observação: alertas amarelos do Power Apps permanecem como pendência técnica futura, sem bloqueio da validação.
+- Próxima etapa sugerida: melhorar o layout definitivo dos cards de Ocorrências.
