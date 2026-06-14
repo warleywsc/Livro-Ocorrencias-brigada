@@ -1023,3 +1023,13 @@ Proxima etapa:
 - Evidência visual: barra de filtros alinhada, botão Limpar sem quebra de texto e contraste original dos suspensos preservado.
 - Observação: alertas amarelos do Power Apps permanecem como pendência técnica futura, sem bloqueio da validação.
 - Próxima etapa sugerida: melhorar o layout definitivo dos cards de Ocorrências.
+
+## V059 - Encerramento de Ocorrência
+
+- Data: 14/06/2026 12:29:53
+- Status: validado funcionalmente
+- Área: Power Apps / scrDashboard / Ocorrências / Detalhe da Ocorrência
+- Resultado: ocorrência selecionada encerrada com sucesso, status atualizado para Encerrada e botão Encerrar ocultado após o encerramento.
+- Evidência visual: OCO-000006 passou de Aberta para Encerrada e mensagem de sucesso foi exibida.
+- Observação: melhorias visuais foram pausadas para priorizar funcionalidades.
+- Próxima etapa sugerida: exigir ou registrar ações tomadas no encerramento da ocorrência.
