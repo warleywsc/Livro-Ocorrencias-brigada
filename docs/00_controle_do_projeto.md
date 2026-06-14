@@ -1053,3 +1053,13 @@ Proxima etapa:
 - Evidência visual: detalhe da ocorrência passou a mostrar Pendência gerada e área Pendências passou a exibir total de pendências igual a 2.
 - Observação: melhorias visuais permanecem pausadas para priorização das funcionalidades principais.
 - Próxima etapa sugerida: criar painel de detalhe da pendência selecionada ou concluir pendência.
+
+## V062 - Painel de detalhe da Pendência
+
+- Data: 14/06/2026 12:59:33
+- Status: validado funcionalmente
+- Área: Power Apps / scrDashboard / Pendências
+- Resultado: painel de detalhe da pendência selecionada validado, com exibição dos dados principais e botão Fechar detalhe funcional.
+- Evidência visual: pendência PEN-000002 exibida com status, prioridade, origem, data de abertura, local, posto, responsável, descrição e observações.
+- Observação: melhorias visuais permanecem pausadas para priorização das funcionalidades principais.
+- Próxima etapa sugerida: criar fluxo para concluir pendência.
