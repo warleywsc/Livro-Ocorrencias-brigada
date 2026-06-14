@@ -1043,3 +1043,13 @@ Proxima etapa:
 - Evidência visual: ocorrência encerrada com ações registradas e detalhe exibindo o texto de encerramento.
 - Observação: melhorias visuais permanecem pausadas para priorização das funcionalidades principais.
 - Próxima etapa sugerida: preparar reabertura de ocorrência ou criação de pendência a partir da ocorrência.
+
+## V061 - Geração de Pendência a partir da Ocorrência
+
+- Data: 14/06/2026 12:43:27
+- Status: validado funcionalmente
+- Área: Power Apps / scrDashboard / Ocorrências / Pendências
+- Resultado: ocorrência selecionada gerou pendência operacional vinculada, com número definitivo PEN-000002.
+- Evidência visual: detalhe da ocorrência passou a mostrar Pendência gerada e área Pendências passou a exibir total de pendências igual a 2.
+- Observação: melhorias visuais permanecem pausadas para priorização das funcionalidades principais.
+- Próxima etapa sugerida: criar painel de detalhe da pendência selecionada ou concluir pendência.
