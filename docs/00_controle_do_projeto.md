@@ -1073,3 +1073,13 @@ Proxima etapa:
 - Evidência visual: pendência PEN-TESTE-001 passou para Concluída e observações receberam registro de conclusão com data, hora, usuário e texto informado.
 - Observação: cores atuais das áreas Ocorrências e Pendências foram consideradas aceitáveis.
 - Próxima etapa sugerida: ajustar layout funcional das áreas Ocorrências e Pendências, sem alterar cores.
+
+## V064 - Modal de detalhe da Ocorrência
+
+- Data: 15/06/2026 07:19:09
+- Status: validado funcionalmente
+- Área: Power Apps / scrDashboard / Ocorrências
+- Resultado: painel inferior de detalhe foi substituído funcionalmente por modal central, aberto pelo botão Detalhe no item selecionado da galeria.
+- Evidência visual: modal exibiu detalhes da ocorrência com botões Encerrar ocorrência, Gerar pendência e Fechar acessíveis.
+- Observação técnica: botão Detalhe exigiu ajuste de sobreposição dentro da galeria, com botão trazido para frente e rótulo do card reduzido.
+- Próxima etapa sugerida: aplicar modal de detalhe também na área Pendências.
