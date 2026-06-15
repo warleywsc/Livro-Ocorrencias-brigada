@@ -1093,3 +1093,32 @@ Proxima etapa:
 - Evidência visual: lista de Pendências ajustada sem corte da primeira linha, botão Detalhe alinhado à direita e modal exibindo dados e ações da pendência.
 - Observação técnica: botão Detalhe exigiu ajuste de sobreposição dentro da galeria, com botão trazido para frente e rótulo do card reduzido.
 - Próxima etapa sugerida: avançar para próxima funcionalidade operacional do Livro do Plantão.
+
+---
+
+## Registro - V066 - Decisão de fluxo contínuo do Livro do Plantão
+
+Data do registro: 15/06/2026 14:58:12
+
+Status: Decisão registrada.
+
+Motivo:
+
+Durante conversa com analista de sistemas, foi identificado que o modelo inicial do app poderia gerar resistência operacional, pois o Líder de Equipe está acostumado a preencher o livro de forma contínua, em sequência, sem alternar entre várias telas ou depender de muitos botões.
+
+Decisão registrada:
+
+- O Livro do Plantão passa a ser a tela principal de preenchimento diário.
+- O preenchimento deverá seguir fluxo contínuo, de cima para baixo.
+- A navegação por TAB deverá ser considerada requisito de usabilidade.
+- As áreas Ocorrências e Pendências permanecem como consulta, filtro, detalhe, auditoria e acompanhamento.
+- Os modais já criados serão reaproveitados para detalhe, edição pontual e ações complementares.
+- A implementação será feita em etapas, sem apagar funcionalidades já validadas.
+
+Documento criado:
+
+- docs/powerapps/30_decisao_fluxo_continuo_livro_plantao.md
+
+Próxima etapa:
+
+- V067 - Preparar layout base do Livro do Plantão em fluxo contínuo.
