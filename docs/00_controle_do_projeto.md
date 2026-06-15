@@ -1083,3 +1083,13 @@ Proxima etapa:
 - Evidência visual: modal exibiu detalhes da ocorrência com botões Encerrar ocorrência, Gerar pendência e Fechar acessíveis.
 - Observação técnica: botão Detalhe exigiu ajuste de sobreposição dentro da galeria, com botão trazido para frente e rótulo do card reduzido.
 - Próxima etapa sugerida: aplicar modal de detalhe também na área Pendências.
+
+## V065 - Modal de detalhe da Pendência
+
+- Data: 15/06/2026 09:02:48
+- Status: validado funcional e visualmente
+- Área: Power Apps / scrDashboard / Pendências
+- Resultado: painel inferior de detalhe foi substituído funcionalmente por modal central, aberto pelo botão Detalhe no item selecionado da galeria.
+- Evidência visual: lista de Pendências ajustada sem corte da primeira linha, botão Detalhe alinhado à direita e modal exibindo dados e ações da pendência.
+- Observação técnica: botão Detalhe exigiu ajuste de sobreposição dentro da galeria, com botão trazido para frente e rótulo do card reduzido.
+- Próxima etapa sugerida: avançar para próxima funcionalidade operacional do Livro do Plantão.
