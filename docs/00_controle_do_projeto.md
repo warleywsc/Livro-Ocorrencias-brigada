@@ -1137,3 +1137,18 @@ A tela Livro do Plantão foi reorganizada para iniciar o modelo de preenchimento
 ### Próxima etapa
 
 V068 - Inserir campos iniciais do Cabeçalho do Plantão no fluxo contínuo.
+---
+
+## V068 - registra campos iniciais do Cabeçalho do Plantão no fluxo contínuo
+
+**Data:** 15/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** docs/powerapps/32_campos_iniciais_cabecalho_livro_plantao.md
+
+### Resultado
+
+A seção Cabeçalho do Plantão recebeu os campos iniciais do plantão em duas linhas, exibindo código, data, turno, posto de serviço, status do livro e líder responsável atual.
+
+### Próxima etapa
+
+V069 - Inserir campos da seção Recebimento do Serviço no fluxo contínuo.
