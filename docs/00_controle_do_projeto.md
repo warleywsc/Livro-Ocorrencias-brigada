@@ -1203,3 +1203,24 @@ Nas próximas etapas, poderá ser testada a criação de novos controles por blo
 ### Próxima etapa
 
 V072 - Inserir estrutura inicial da Inspeção de Rotina no fluxo contínuo.
+---
+
+## V072 - registra Inspeção de Rotina no fluxo contínuo
+
+**Data:** 16/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** `docs/powerapps/36_inspecao_rotina_fluxo_continuo.md`
+
+### Resultado
+
+A seção `Inspeção de Rotina` recebeu a estrutura inicial com campos para status de rondas, áreas operacionais, anormalidades e observações.
+
+Durante a validação, a rolagem do fluxo contínuo foi corrigida para permitir avanço até as seções seguintes.
+
+### Decisão complementar
+
+A criação de controles por YAML foi validada como alternativa prática para acelerar a montagem de estruturas repetitivas no Power Apps Studio.
+
+### Próxima etapa
+
+V073 - Inserir estrutura inicial de POTS Revisados no fluxo contínuo.
