@@ -1350,3 +1350,37 @@ Arquivos:
 ### Próxima etapa
 
 V079 - Revisar layout geral do Livro do Plantão em fluxo contínuo.
+---
+
+## V079 - padroniza layout geral do Livro do Plantão em fluxo contínuo
+
+**Data:** 16/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** `docs/powerapps/43_padronizacao_layout_livro_plantao_fluxo_continuo.md`
+
+### Resultado
+
+O layout geral do Livro do Plantão em fluxo contínuo foi revisado e padronizado após a montagem das seções 1 a 9.
+
+### Ajustes principais
+
+- correção do corte visual da data no cabeçalho;
+- definição de cabeçalho como área informativa;
+- manutenção dos campos de recebimento como editáveis enquanto o livro estiver em preenchimento;
+- melhoria visual da seção Equipe do Plantão;
+- redução das listas resumidas de Ocorrências e Pendências para 2 itens;
+- correção de corte visual nas listas;
+- preservação da rolagem geral do fluxo contínuo.
+
+### Snapshot YAML
+
+O arquivo pai `powerapps/source/scrDashboard.pa.yaml` foi atualizado com os ajustes principais de layout.
+
+Arquivos:
+
+- `powerapps/source/scrDashboard.pa.yaml`
+- `powerapps/source/snapshots/scrDashboard_V079_2026-06-16.pa.yaml`
+
+### Próxima etapa
+
+V080 - Definir regras de salvamento e finalização do Livro do Plantão.
