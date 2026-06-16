@@ -1122,3 +1122,18 @@ Documento criado:
 Próxima etapa:
 
 - V067 - Preparar layout base do Livro do Plantão em fluxo contínuo.
+---
+
+## V067 - registra layout base do Livro do Plantão em fluxo contínuo
+
+**Data:** 15/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** docs/powerapps/31_layout_base_livro_plantao_fluxo_continuo.md
+
+### Resultado
+
+A tela Livro do Plantão foi reorganizada para iniciar o modelo de preenchimento em fluxo contínuo, com seções abertas e roláveis em ordem operacional.
+
+### Próxima etapa
+
+V068 - Inserir campos iniciais do Cabeçalho do Plantão no fluxo contínuo.
