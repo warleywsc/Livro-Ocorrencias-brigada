@@ -1224,3 +1224,18 @@ A criação de controles por YAML foi validada como alternativa prática para ac
 ### Próxima etapa
 
 V073 - Inserir estrutura inicial de POTS Revisados no fluxo contínuo.
+---
+
+## V073 - corrige campo multiline da Conferência de Viaturas e Materiais
+
+**Data:** 16/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** `docs/powerapps/37_correcao_multiline_conferencia_viaturas_materiais.md`
+
+### Resultado
+
+A seção `Conferência de Viaturas e Materiais` foi corrigida para exibir corretamente o campo multiline de observações, sem corte visual.
+
+### Próxima etapa
+
+V074 - Inserir estrutura inicial de POTS Revisados no fluxo contínuo.
