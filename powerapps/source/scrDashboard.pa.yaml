@@ -1,0 +1,153 @@
+& {
+    $ErrorActionPreference = "Stop"
+
+    $pastaProjeto = "C:\Projetos\Livro-Ocorrencias-brigada"
+    Set-Location $pastaProjeto
+
+    $motivo = "V075 - registra snapshot do codigo YAML atual do Power Apps"
+
+    $pastaSource = Join-Path $pastaProjeto "powerapps\source"
+    $pastaSnapshots = Join-Path $pastaSource "snapshots"
+    $pastaDocsPowerApps = Join-Path $pastaProjeto "docs\powerapps"
+
+    $arquivoCodigoAtual = Join-Path $pastaSource "scrDashboard.pa.yaml"
+    $arquivoSnapshot = Join-Path $pastaSnapshots "scrDashboard_V075_2026-06-16.pa.yaml"
+    $arquivoRegistro = Join-Path $pastaDocsPowerApps "39_snapshot_codigo_yaml_powerapps.md"
+    $arquivoControle = Join-Path $pastaProjeto "docs\00_controle_do_projeto.md"
+
+    if (!(Test-Path $pastaSource)) {
+        New-Item -ItemType Directory -Path $pastaSource -Force | Out-Null
+    }
+
+    if (!(Test-Path $pastaSnapshots)) {
+        New-Item -ItemType Directory -Path $pastaSnapshots -Force | Out-Null
+    }
+
+    if (!(Test-Path $pastaDocsPowerApps)) {
+        New-Item -ItemType Directory -Path $pastaDocsPowerApps -Force | Out-Null
+    }
+
+    $codigoYaml = Get-Clipboard -Raw
+
+    if ([string]::IsNullOrWhiteSpace($codigoYaml)) {
+        Write-Host "ERRO: A area de transferencia esta vazia. Copie o codigo YAML do Power Apps antes de executar." -ForegroundColor Red
+        return
+    }
+
+    if ($codigoYaml -notmatch "Screens:" -or $codigoYaml -notmatch "scrDashboard") {
+        Write-Host "ERRO: O conteudo copiado nao parece ser o codigo YAML completo da tela scrDashboard." -ForegroundColor Red
+        return
+    }
+
+    [System.IO.File]::WriteAllText($arquivoCodigoAtual, $codigoYaml, [System.Text.UTF8Encoding]::new($false))
+    [System.IO.File]::WriteAllText($arquivoSnapshot, $codigoYaml, [System.Text.UTF8Encoding]::new($false))
+
+    $conteudoRegistro = @'
+# V075 - Snapshot do código YAML atual do Power Apps
+
+## Objetivo
+
+Registrar no repositório o snapshot atual do código YAML da tela principal do app Power Apps.
+
+## Motivo
+
+Durante a construção do Livro do Plantão em fluxo contínuo, foi validado que a Exibição de Código do Power Apps Studio permite copiar estruturas YAML dos controles.
+
+A partir desta etapa, o projeto passa a armazenar também o código YAML atual do app no repositório, facilitando:
+
+- consulta histórica;
+- comparação entre versões;
+- recuperação de controles;
+- reaproveitamento de blocos YAML;
+- análise de mudanças visuais e estruturais;
+- continuidade do projeto em novos chats.
+
+## Arquivos criados
+
+- `powerapps/source/scrDashboard.pa.yaml`
+- `powerapps/source/snapshots/scrDashboard_V075_2026-06-16.pa.yaml`
+
+## Regra adotada
+
+O arquivo abaixo será sempre o snapshot atual mais recente da tela principal:
+
+`powerapps/source/scrDashboard.pa.yaml`
+
+A pasta abaixo manterá snapshots históricos por versão:
+
+`powerapps/source/snapshots/`
+
+## Estado atual registrado
+
+Snapshot gerado após validação da V074, contendo a estrutura visual do Livro do Plantão em fluxo contínuo até a seção:
+
+`6. POTS Revisados`
+
+## Próxima etapa
+
+V076 - Inserir estrutura inicial de Ocorrências do Plantão no fluxo contínuo.
+'@
+
+    [System.IO.File]::WriteAllText($arquivoRegistro, $conteudoRegistro, [System.Text.UTF8Encoding]::new($false))
+
+    $textoControle = [System.IO.File]::ReadAllText($arquivoControle)
+
+    $blocoControle = @'
+
+---
+
+## V075 - registra snapshot do código YAML atual do Power Apps
+
+**Data:** 16/06/2026  
+**Status:** Registrado  
+**Arquivo de registro:** `docs/powerapps/39_snapshot_codigo_yaml_powerapps.md`
+
+### Resultado
+
+O projeto passou a armazenar o código YAML atual da tela principal do Power Apps no repositório.
+
+### Arquivos criados
+
+- `powerapps/source/scrDashboard.pa.yaml`
+- `powerapps/source/snapshots/scrDashboard_V075_2026-06-16.pa.yaml`
+
+### Decisão complementar
+
+A partir desta etapa, sempre que uma etapa visual relevante for validada, o código YAML atual poderá ser atualizado no repositório junto com o registro técnico.
+
+### Próxima etapa
+
+V076 - Inserir estrutura inicial de Ocorrências do Plantão no fluxo contínuo.
+'@
+
+    if ($textoControle -notmatch "V075 - registra snapshot do código YAML atual do Power Apps") {
+        [System.IO.File]::AppendAllText($arquivoControle, $blocoControle, [System.Text.UTF8Encoding]::new($false))
+    }
+
+    git add docs/00_controle_do_projeto.md docs/powerapps/39_snapshot_codigo_yaml_powerapps.md powerapps/source/scrDashboard.pa.yaml powerapps/source/snapshots/scrDashboard_V075_2026-06-16.pa.yaml
+    git commit -m $motivo
+    git push
+
+    $statusGit = git status --short
+    $ultimoCommit = git log -1 --oneline
+    $arquivosAtualizados = git show --stat --oneline --name-only HEAD
+
+    $relatorio = @"
+PENDENCIAS=NAO
+MOTIVO=$motivo
+
+STATUS_GIT=
+$statusGit
+
+ULTIMO_COMMIT=
+$ultimoCommit
+
+ARQUIVOS_ATUALIZADOS=
+$arquivosAtualizados
+
+PROXIMA_ETAPA=V076 - Inserir estrutura inicial de Ocorrencias do Plantao no fluxo continuo
+"@
+
+    Set-Clipboard $relatorio
+    Write-Host $relatorio -ForegroundColor Green
+}

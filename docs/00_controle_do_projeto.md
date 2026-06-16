@@ -1254,3 +1254,27 @@ A seção `POTS Revisados` recebeu a estrutura inicial com campos para status do
 ### Próxima etapa
 
 V075 - Inserir estrutura inicial de Ocorrências do Plantão no fluxo contínuo.
+---
+
+## V075 - registra snapshot do código YAML atual do Power Apps
+
+**Data:** 16/06/2026  
+**Status:** Registrado  
+**Arquivo de registro:** `docs/powerapps/39_snapshot_codigo_yaml_powerapps.md`
+
+### Resultado
+
+O projeto passou a armazenar o código YAML atual da tela principal do Power Apps no repositório.
+
+### Arquivos criados
+
+- `powerapps/source/scrDashboard.pa.yaml`
+- `powerapps/source/snapshots/scrDashboard_V075_2026-06-16.pa.yaml`
+
+### Decisão complementar
+
+A partir desta etapa, sempre que uma etapa visual relevante for validada, o código YAML atual poderá ser atualizado no repositório junto com o registro técnico.
+
+### Próxima etapa
+
+V076 - Inserir estrutura inicial de Ocorrências do Plantão no fluxo contínuo.
