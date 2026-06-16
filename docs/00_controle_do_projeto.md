@@ -1167,3 +1167,18 @@ A seção Recebimento do Serviço recebeu os campos Passagem de Serviço Recebid
 ### Próxima etapa
 
 V070 - Inserir estrutura inicial da Equipe do Plantão no fluxo contínuo.
+---
+
+## V070 - registra estrutura inicial da Equipe do Plantão no fluxo contínuo
+
+**Data:** 15/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** docs/powerapps/34_equipe_plantao_fluxo_continuo.md
+
+### Resultado
+
+A seção Equipe do Plantão recebeu a estrutura inicial de exibição dos integrantes vinculados ao plantão atual, com galeria filtrada pela lista EquipePlantao.
+
+### Próxima etapa
+
+V071 - Inserir estrutura inicial da Conferência de Viaturas e Materiais no fluxo contínuo.
