@@ -1302,3 +1302,27 @@ Arquivos:
 ### Próxima etapa
 
 V077 - Inserir estrutura inicial de Pendências Operacionais no fluxo contínuo.
+---
+
+## V077 - registra Pendências Operacionais no fluxo contínuo
+
+**Data:** 16/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** `docs/powerapps/41_pendencias_operacionais_fluxo_continuo.md`
+
+### Resultado
+
+A seção `Pendências Operacionais` recebeu a estrutura inicial com indicadores de total, abertas, concluídas e lista das últimas pendências do plantão.
+
+### Snapshot YAML
+
+O arquivo pai `powerapps/source/scrDashboard.pa.yaml` foi atualizado por substituição da seção 8, sem necessidade de recópia integral do YAML do Power Apps.
+
+Arquivos:
+
+- `powerapps/source/scrDashboard.pa.yaml`
+- `powerapps/source/snapshots/scrDashboard_V077_2026-06-16.pa.yaml`
+
+### Próxima etapa
+
+V078 - Inserir estrutura inicial de Revisão e Finalização no fluxo contínuo.
