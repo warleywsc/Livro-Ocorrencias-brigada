@@ -1182,3 +1182,24 @@ A seção Equipe do Plantão recebeu a estrutura inicial de exibição dos integ
 ### Próxima etapa
 
 V071 - Inserir estrutura inicial da Conferência de Viaturas e Materiais no fluxo contínuo.
+---
+
+## V071 - registra Conferência de Viaturas e Materiais no fluxo contínuo
+
+**Data:** 16/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** docs/powerapps/35_conferencia_viaturas_materiais_fluxo_continuo.md
+
+### Resultado
+
+A seção Conferência de Viaturas e Materiais recebeu a estrutura inicial com campos para status das viaturas, materiais, status geral e observações.
+
+Durante a validação, o alinhamento dos campos foi corrigido por recriação do componente, e o contraste dos dropdowns foi aprovado.
+
+### Decisão complementar
+
+Nas próximas etapas, poderá ser testada a criação de novos controles por blocos YAML copiados da Exibição de Código do Power Apps Studio.
+
+### Próxima etapa
+
+V072 - Inserir estrutura inicial da Inspeção de Rotina no fluxo contínuo.
