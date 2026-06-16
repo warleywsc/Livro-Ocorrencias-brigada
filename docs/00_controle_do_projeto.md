@@ -1152,3 +1152,18 @@ A seção Cabeçalho do Plantão recebeu os campos iniciais do plantão em duas 
 ### Próxima etapa
 
 V069 - Inserir campos da seção Recebimento do Serviço no fluxo contínuo.
+---
+
+## V069 - registra campos da seção Recebimento do Serviço no fluxo contínuo
+
+**Data:** 15/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** docs/powerapps/33_recebimento_servico_fluxo_continuo.md
+
+### Resultado
+
+A seção Recebimento do Serviço recebeu os campos Passagem de Serviço Recebida e Resumo Operacional Inicial, carregando os dados fictícios do plantão atual dentro do fluxo contínuo.
+
+### Próxima etapa
+
+V070 - Inserir estrutura inicial da Equipe do Plantão no fluxo contínuo.
