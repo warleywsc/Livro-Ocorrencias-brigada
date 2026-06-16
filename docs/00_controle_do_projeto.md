@@ -1278,3 +1278,27 @@ A partir desta etapa, sempre que uma etapa visual relevante for validada, o cód
 ### Próxima etapa
 
 V076 - Inserir estrutura inicial de Ocorrências do Plantão no fluxo contínuo.
+---
+
+## V076 - registra Ocorrências do Plantão no fluxo contínuo
+
+**Data:** 16/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** `docs/powerapps/40_ocorrencias_plantao_fluxo_continuo.md`
+
+### Resultado
+
+A seção `Ocorrências do Plantão` recebeu a estrutura inicial com indicadores de total, abertas, encerradas e lista das últimas ocorrências do plantão.
+
+### Snapshot YAML
+
+O código YAML atual da tela principal foi atualizado no repositório.
+
+Arquivos:
+
+- `powerapps/source/scrDashboard.pa.yaml`
+- `powerapps/source/snapshots/scrDashboard_V076_2026-06-16.pa.yaml`
+
+### Próxima etapa
+
+V077 - Inserir estrutura inicial de Pendências Operacionais no fluxo contínuo.
