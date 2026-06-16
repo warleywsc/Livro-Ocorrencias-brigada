@@ -1239,3 +1239,18 @@ A seção `Conferência de Viaturas e Materiais` foi corrigida para exibir corre
 ### Próxima etapa
 
 V074 - Inserir estrutura inicial de POTS Revisados no fluxo contínuo.
+---
+
+## V074 - registra POTS Revisados no fluxo contínuo
+
+**Data:** 16/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** `docs/powerapps/38_pots_revisados_fluxo_continuo.md`
+
+### Resultado
+
+A seção `POTS Revisados` recebeu a estrutura inicial com campos para status dos POTS revisados, ciência da equipe, status geral e observações.
+
+### Próxima etapa
+
+V075 - Inserir estrutura inicial de Ocorrências do Plantão no fluxo contínuo.
