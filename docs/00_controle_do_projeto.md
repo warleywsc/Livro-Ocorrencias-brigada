@@ -1326,3 +1326,27 @@ Arquivos:
 ### Próxima etapa
 
 V078 - Inserir estrutura inicial de Revisão e Finalização no fluxo contínuo.
+---
+
+## V078 - registra Revisão e Finalização no fluxo contínuo
+
+**Data:** 16/06/2026  
+**Status:** Validado visualmente  
+**Arquivo de registro:** `docs/powerapps/42_revisao_finalizacao_fluxo_continuo.md`
+
+### Resultado
+
+A seção `Revisão e Finalização` recebeu a estrutura inicial com campos para revisão do livro, pendências críticas, liberação final, observações e aviso sobre a ação final.
+
+### Snapshot YAML
+
+O arquivo pai `powerapps/source/scrDashboard.pa.yaml` foi atualizado por substituição da seção 9, sem necessidade de recópia integral do YAML do Power Apps.
+
+Arquivos:
+
+- `powerapps/source/scrDashboard.pa.yaml`
+- `powerapps/source/snapshots/scrDashboard_V078_2026-06-16.pa.yaml`
+
+### Próxima etapa
+
+V079 - Revisar layout geral do Livro do Plantão em fluxo contínuo.
