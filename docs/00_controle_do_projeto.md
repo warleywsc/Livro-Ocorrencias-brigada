@@ -1384,3 +1384,18 @@ Arquivos:
 ### Próxima etapa
 
 V080 - Definir regras de salvamento e finalização do Livro do Plantão.
+---
+
+## V080 - registra criação das colunas operacionais em Plantoes
+
+**Data:** 2026-06-16
+**Status:** Validado
+**Motivo:** registra a criação manual das colunas operacionais na lista SharePoint Plantoes.
+
+### Arquivos atualizados
+
+- docs/powerapps/44_criacao_colunas_operacionais_plantoes.md
+
+### Próxima etapa
+
+V081 - Configurar campos do Livro do Plantão para carregar e salvar colunas de Plantoes.
