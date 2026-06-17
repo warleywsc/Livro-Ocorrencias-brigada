@@ -1,4 +1,4 @@
-# Controle do Projeto
+﻿# Controle do Projeto
 
 ## Projeto
 
@@ -1399,3 +1399,24 @@ V080 - Definir regras de salvamento e finalização do Livro do Plantão.
 ### Próxima etapa
 
 V081 - Configurar campos do Livro do Plantão para carregar e salvar colunas de Plantoes.
+---
+
+## V081 - Configuração de campos e padronização do layout final do Livro do Plantão
+
+**Data:** 2026-06-17 09:38:50  
+**Status:** concluído  
+**Registro:** docs/powerapps/45_configuracao_campos_layout_livro_plantao.md
+
+### Resumo
+
+- Padronizado o layout final das seções do Livro do Plantão em fluxo contínuo.
+- Confirmada a leitura inicial dos principais campos da lista Plantoes via varPlantaoAtual.
+- Ajustados containers, alturas, galerias e cards para evitar corte e rolagem interna indevida.
+- Consolidada a regra de reconstrução por YAML completo.
+- Consolidada a regra de usar vírgulas nas fórmulas dentro do YAML colado no Power Apps.
+- Mantidas as galerias de Equipe, Ocorrências e Pendências vinculadas ao plantão atual.
+- Validado visualmente o fluxo contínuo do Livro do Plantão nas seções 1 a 9.
+
+### Próxima etapa
+
+V082 - Definir regras de salvamento e finalização do Livro do Plantão.
