@@ -1420,3 +1420,26 @@ V081 - Configurar campos do Livro do Plantão para carregar e salvar colunas de 
 ### Próxima etapa
 
 V082 - Definir regras de salvamento e finalização do Livro do Plantão.
+---
+
+## V082 - Regras de salvamento e finalização do Livro do Plantão
+
+**Data:** 2026-06-17 10:01:02  
+**Status:** concluído  
+**Registro:** docs/powerapps/46_regras_salvamento_finalizacao_livro_plantao.md
+
+### Resumo
+
+- Substituído o aviso provisório da seção 9 por botões funcionais.
+- Criado botão Salvar Livro do Plantão.
+- Criado botão Finalizar Livro do Plantão.
+- Implementado Patch na lista Plantoes.
+- Implementada validação mínima antes da finalização.
+- Gravados StatusLivro, DataFinalizacao e FinalizadoPor na finalização.
+- Validado bloqueio visual dos botões após finalização.
+- Corrigida exibição de HTML em campos de texto longo usando PlainText.
+- Testes de salvamento, bloqueio inválido e finalização válida aprovados.
+
+### Próxima etapa
+
+V083 - Criar confirmação de finalização e tratamento de erro no salvamento do Livro do Plantão.
