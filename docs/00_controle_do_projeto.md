@@ -1443,3 +1443,26 @@ V082 - Definir regras de salvamento e finalização do Livro do Plantão.
 ### Próxima etapa
 
 V083 - Criar confirmação de finalização e tratamento de erro no salvamento do Livro do Plantão.
+---
+
+## V083 - Confirmação de finalização e tratamento de erro no Livro do Plantão
+
+**Data:** 2026-06-17 10:19:26  
+**Status:** concluído  
+**Registro:** docs/powerapps/47_confirmacao_finalizacao_tratamento_erro_livro_plantao.md
+
+### Resumo
+
+- Criado modal de confirmação antes da finalização do Livro do Plantão.
+- Botão Finalizar deixou de finalizar diretamente e passou a abrir confirmação.
+- Botão Confirmar finalização executa Patch com IfError.
+- Botão Salvar Livro do Plantão recebeu IfError.
+- Criada variável varProcessandoLivroPlantao para evitar clique duplo.
+- Criada variável varConfirmarFinalizacaoLivroPlantao para controlar o modal.
+- Validado botão Cancelar sem gravação.
+- Validado botão Confirmar finalização com gravação de StatusLivro, DataFinalizacao e FinalizadoPor.
+- Ajustadas fórmulas coladas na barra do Power Apps para ponto e vírgula e ações sequenciais com dois pontos e vírgula.
+
+### Próxima etapa
+
+V084 - Criar rotina de reabertura do Livro do Plantão com justificativa.
