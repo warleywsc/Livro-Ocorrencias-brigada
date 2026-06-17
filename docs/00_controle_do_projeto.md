@@ -1466,3 +1466,26 @@ V083 - Criar confirmação de finalização e tratamento de erro no salvamento d
 ### Próxima etapa
 
 V084 - Criar rotina de reabertura do Livro do Plantão com justificativa.
+---
+
+## V084 - Reorganização documental e regras de reabertura do Livro do Plantão
+
+**Data:** 2026-06-17 20:57:55  
+**Status:** concluído  
+**Registro principal:** docs/powerapps/48_decisao_reabertura_livro_plantao.md
+
+### Resumo
+
+- Analisados e reorganizados os arquivos Markdown do projeto.
+- Criado índice central da documentação em docs/00_indice_documentacao.md.
+- Criado documento de regras operacionais em docs/07_regras_operacionais_livro_plantao.md.
+- Registrada decisão técnica da reabertura em docs/powerapps/48_decisao_reabertura_livro_plantao.md.
+- Movidos documentos MD redundantes para docs/_arquivo_md_redundantes.
+- Movidas validações Power Apps da pasta docs/validacoes_powerapps para docs/powerapps.
+- Consolidada documentação manual da Fase 1 SharePoint em sharepoint/06_execucao_manual_fase1_consolidado.md.
+- Mantidas versões antigas sem exclusão definitiva.
+- Registrada a decisão de não fechar a reabertura definitiva sem histórico, data, usuário e contador de reaberturas.
+
+### Próxima etapa
+
+V085 - Criar colunas e lista de histórico para reabertura do Livro do Plantão.
