@@ -1489,3 +1489,28 @@ V084 - Criar rotina de reabertura do Livro do Plantão com justificativa.
 ### Próxima etapa
 
 V085 - Criar colunas e lista de histórico para reabertura do Livro do Plantão.
+---
+
+## V085 - Estrutura manual SharePoint para histórico de reabertura do Livro do Plantão
+
+**Data:** 2026-06-17 21:41:15  
+**Status:** concluído  
+**Registro:** sharepoint/22_historico_reaberturas_livro_plantao.md
+
+### Resumo
+
+- Abandonada a criação via PnP PowerShell nesta etapa por exigir aprovação administrativa ampla.
+- Adotada criação manual controlada no Microsoft Lists.
+- Criadas/validadas colunas complementares na lista Plantoes:
+  - JustificativaReabertura
+  - DataUltimaReabertura
+  - ReabertoPorUltimo
+  - QuantidadeReaberturas
+- Criada lista HistoricoReaberturasPlantao.
+- Criadas colunas de histórico para rastrear cada reabertura.
+- Definido vínculo técnico por PlantaoId e CodigoPlantao.
+- Validada visualmente a estrutura da lista HistoricoReaberturasPlantao.
+
+### Próxima etapa
+
+V086 - Ajustar o Patch de reabertura no Power Apps para gravar histórico e contador.
