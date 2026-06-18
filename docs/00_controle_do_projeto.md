@@ -1514,3 +1514,26 @@ V085 - Criar colunas e lista de histórico para reabertura do Livro do Plantão.
 ### Próxima etapa
 
 V086 - Ajustar o Patch de reabertura no Power Apps para gravar histórico e contador.
+---
+
+## V086 - Patch de reabertura com histórico e contador
+
+**Data:** 2026-06-17 22:26:24  
+**Status:** concluído  
+**Registro:** docs/powerapps/49_patch_reabertura_historico_contador.md
+
+### Resumo
+
+- Ajustado Patch do botão Confirmar reabertura.
+- Criado registro automático na lista HistoricoReaberturasPlantao.
+- Atualizado item principal na lista Plantoes.
+- Implementado contador de reaberturas.
+- Validada primeira reabertura com NumeroReabertura = 1.
+- Validada segunda reabertura com NumeroReabertura = 2.
+- Preservados DataFinalizacaoAnterior e FinalizadoPorAnterior no histórico.
+- Atualizados DataUltimaReabertura, ReabertoPorUltimo e QuantidadeReaberturas em Plantoes.
+- Ajustada altura dos modais de finalização e reabertura para evitar botões cortados.
+
+### Próxima etapa
+
+V087 - Validar e documentar regras de permissão para reabertura do Livro do Plantão.
