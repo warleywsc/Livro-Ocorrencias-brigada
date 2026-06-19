@@ -1564,3 +1564,31 @@ V087 - Validar e documentar regras de permissão para reabertura do Livro do Pla
 ### Próxima etapa
 
 V088 - Refinar permissão do Líder responsável no Livro do Plantão.
+---
+
+## V088 - Permissão do Líder responsável na reabertura do Livro do Plantão
+
+**Data:** 2026-06-19 19:56:21  
+**Status:** concluído  
+**Registro:** docs/powerapps/51_permissao_lider_responsavel_reabertura.md
+
+### Resumo
+
+- Refinada a regra de permissão para reabertura do Livro do Plantão.
+- Administrador pode reabrir qualquer Livro do Plantão.
+- Supervisor pode reabrir qualquer Livro do Plantão.
+- Líder pode reabrir somente se for o Líder Responsável Atual do plantão.
+- Operador, Leitura e demais perfis sem autorização não podem reabrir.
+- Criada normalização do perfil Líder por meio da variável varPerfilAcessoNormalizado.
+- Criadas/atualizadas variáveis:
+  - varEmailLiderResponsavelAtualPlantao
+  - varUsuarioAtualEhLiderResponsavelPlantao
+  - varPodeReabrirLivroPlantao
+- Mantida dupla proteção:
+  - botão Reabrir bloqueado visualmente;
+  - botão Confirmar reabertura bloqueado logicamente antes do Patch.
+- Validados os testes com Administrador, Líder responsável e Operador.
+
+### Próxima etapa
+
+V089 - Revisar regras de edição, finalização e bloqueio por perfil no Livro do Plantão.
