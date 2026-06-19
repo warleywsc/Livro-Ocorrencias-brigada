@@ -1537,3 +1537,30 @@ V086 - Ajustar o Patch de reabertura no Power Apps para gravar histórico e cont
 ### Próxima etapa
 
 V087 - Validar e documentar regras de permissão para reabertura do Livro do Plantão.
+---
+
+## V087 - Regras de permissão para reabertura do Livro do Plantão
+
+**Data:** 2026-06-19 19:43:05  
+**Status:** concluído  
+**Registro:** docs/powerapps/50_permissoes_reabertura_livro_plantao.md
+
+### Resumo
+
+- Criada regra de permissão para reabertura do Livro do Plantão.
+- Usada a lista Usuarios como base de perfil.
+- Criadas/atualizadas variáveis:
+  - varUsuarioAtual
+  - varPerfilAcessoAtual
+  - varPodeReabrirLivroPlantao
+  - varPodeFinalizarLivroPlantao
+  - varPodeEditarLivroPlantao
+- Botão Reabrir passou a ficar ativo somente para perfis autorizados.
+- Botão Confirmar reabertura recebeu validação lógica de permissão antes do Patch.
+- Regra do MVP: Administrador e Supervisor podem reabrir.
+- Operador, Leitura e demais perfis sem autorização ficam bloqueados.
+- Regra do Líder responsável foi documentada como pendência futura para confirmação do campo interno correto.
+
+### Próxima etapa
+
+V088 - Refinar permissão do Líder responsável no Livro do Plantão.
