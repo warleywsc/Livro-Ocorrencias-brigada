@@ -1643,3 +1643,95 @@ V090 - Publicar versão de teste e validar fluxo completo no app publicado.
 ### Próxima etapa
 
 V091 - Preparar compartilhamento restrito e roteiro de validação piloto.
+---
+
+## V091 - Inventário funcional do app completo antes de piloto
+
+**Data:** 2026-06-20 19:19:35  
+**Status:** concluído  
+**Tipo:** decisão de controle / inventário funcional  
+**Documento:** docs/00_controle_do_projeto.md
+
+### Decisão registrada
+
+Foi decidido que o app **não será liberado para piloto real neste momento**.
+
+O piloto real somente será considerado depois que o app estiver totalmente concluído em:
+
+- funcionalidades;
+- layout;
+- permissões;
+- dados de teste controlados;
+- validação interna no app executado/publicado.
+
+### Situação atual
+
+Até a V090, foi concluído e validado o núcleo funcional do **Livro do Plantão**, incluindo:
+
+- execução do app fora do modo edição;
+- identificação de perfil no cabeçalho;
+- regras de Administrador, Supervisor, Líder e Operador;
+- bloqueio por perfil;
+- bloqueio após finalização;
+- salvar rascunho;
+- finalização com confirmação;
+- tratamento básico de erro;
+- reabertura com justificativa;
+- histórico de reabertura;
+- contador de reaberturas;
+- validação no app executado/publicado.
+
+### Entendimento consolidado
+
+O projeto possui um **MVP operacional parcial do Livro do Plantão**, mas o sistema completo ainda não está finalizado.
+
+Ainda precisam ser concluídas ou revisadas as demais áreas do app antes de qualquer piloto real.
+
+### Áreas ainda pendentes antes de piloto
+
+| Área | Situação |
+|---|---|
+| Criação/seleção real de plantões | Pendente |
+| Equipe do Plantão | Parcial |
+| Ocorrências | Parcial |
+| Pendências Operacionais | Parcial |
+| POTS | Parcial |
+| Histórico geral | Pendente |
+| Relatórios | Pendente |
+| Administração | Pendente |
+| Layout global | Parcial |
+| Permissões reais no SharePoint | Parcial |
+| Dados de teste | Pendente |
+| Roteiro de piloto | Não iniciado |
+
+### Critério para piloto futuro
+
+O piloto real só poderá ser preparado quando:
+
+- todos os fluxos principais estiverem concluídos;
+- o layout global estiver padronizado;
+- as permissões por perfil estiverem revisadas em todas as áreas;
+- os dados fictícios estiverem limpos ou controlados;
+- o app estiver validado em execução publicada;
+- houver roteiro de uso e validação para os usuários piloto.
+
+### Próximo caminho recomendado
+
+| Versão | Etapa sugerida |
+|---|---|
+| V092 | Revisar e concluir criação/seleção real de Plantão |
+| V093 | Concluir Equipe do Plantão |
+| V094 | Concluir Ocorrências |
+| V095 | Concluir Pendências |
+| V096 | Concluir POTS |
+| V097 | Concluir Histórico e Relatórios |
+| V098 | Concluir Administração |
+| V099 | Revisar layout global do app completo |
+| V100 | Limpeza técnica, dados de teste e validação final interna |
+| V101 | Preparar compartilhamento restrito e roteiro de piloto |
+
+### Resultado da V091
+
+A V091 não cria nova funcionalidade no app.
+
+A V091 registra formalmente a decisão de **não liberar piloto agora** e define que a próxima fase será concluir o app completo antes de qualquer compartilhamento com usuários reais.
