@@ -1592,3 +1592,27 @@ V088 - Refinar permissão do Líder responsável no Livro do Plantão.
 ### Próxima etapa
 
 V089 - Revisar regras de edição, finalização e bloqueio por perfil no Livro do Plantão.
+---
+
+## V089 - Regras de edição, finalização e bloqueio por perfil no Livro do Plantão
+
+**Data:** 2026-06-20 15:48:03  
+**Status:** concluído  
+**Registro:** docs/powerapps/52_regras_edicao_finalizacao_bloqueio_perfil.md
+
+### Resumo
+
+- Revisadas as regras de edição, salvamento, finalização e reabertura por perfil.
+- Administrador e Supervisor podem editar, salvar, finalizar e reabrir conforme o status do Livro.
+- Líder responsável pode editar, salvar, finalizar e reabrir somente o próprio Livro do Plantão.
+- Operador e Leitura ficam restritos à visualização.
+- Botão Salvar recebeu validação de permissão.
+- Botão Finalizar recebeu validação de permissão.
+- Botão Confirmar finalização passou a forçar atualização das variáveis de bloqueio após finalizar.
+- Campos editáveis passaram a considerar StatusLivro, permissão e varProcessandoLivroPlantao.
+- Definido que filtros e controles de consulta não devem ser bloqueados pela regra do Livro finalizado.
+- Identificado que o problema de exibição da lista HistoricoReaberturasPlantao era cache/filtro visual da Microsoft Lists, não falha do Power Apps.
+
+### Próxima etapa
+
+V090 - Publicar versão de teste e validar fluxo completo no app publicado.
