@@ -1616,3 +1616,30 @@ V089 - Revisar regras de edição, finalização e bloqueio por perfil no Livro 
 ### Próxima etapa
 
 V090 - Publicar versão de teste e validar fluxo completo no app publicado.
+---
+
+## V090 - Publicação de teste e validação do fluxo completo no app publicado
+
+**Data:** 2026-06-20 19:07:00  
+**Status:** concluído  
+**Registro:** docs/powerapps/53_publicacao_teste_fluxo_completo_app_publicado.md
+
+### Resumo
+
+- Validado o app executado fora do modo edição.
+- Confirmado que publicar/executar não equivale a compartilhar com toda a organização.
+- Teste mantido restrito.
+- Validado fluxo como Administrador.
+- Validado fluxo como Líder responsável.
+- Validado bloqueio como Operador.
+- Corrigida atualização visual após reabertura, forçando recálculo das variáveis de permissão.
+- Criado indicador de perfil no cabeçalho:
+  - perfil de acesso;
+  - nome do usuário logado.
+- Confirmado funcionamento de finalização, reabertura, histórico e contador.
+- Observado que múltiplas janelas/abas na autenticação fazem parte do comportamento do Power Apps.
+- Mantida pendência futura de preparar compartilhamento restrito para validação piloto.
+
+### Próxima etapa
+
+V091 - Preparar compartilhamento restrito e roteiro de validação piloto.
