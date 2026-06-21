@@ -1834,3 +1834,23 @@ ARQUIVOS_GERADOS=
 - docs/powerapps/59_v093_reconstrucao_controles_funcionais_livro_plantao.md
 
 PROXIMA_ETAPA=Colar os blocos no Power Apps e validar o fluxo real do Livro do Plantão.
+
+## V093F - Sincronização segura do Power Apps Studio para o VS Code
+
+DATA_HORA=2026-06-20 23:05:02
+
+STATUS=SINCRONIZADO
+
+MOTIVO=Power Apps Studio confirmado como fonte oficial; divergência estava no arquivo local/repositório.
+
+ARQUIVO_ATUALIZADO=powerapps/source/scrDashboard.pa.yaml
+
+BACKUP_ANTES_SYNC=powerapps\source\backups\scrDashboard_antes_sync_seguro_V093F_20260620_230502.pa.yaml
+
+SNAPSHOT_SYNC=powerapps\source\snapshots\scrDashboard_V093F_powerapps_studio_atual_20260620_230502.pa.yaml
+
+REGISTRO=docs/powerapps/60_v093f_sincronizacao_segura_powerapps_studio_vscode.md
+
+OBSERVACAO=Os patches V093E nao devem ser colados no Power Apps.
+
+PROXIMA_ETAPA=V093G - validar fluxo real do Livro do Plantão no Power Apps.
