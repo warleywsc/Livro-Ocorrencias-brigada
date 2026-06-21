@@ -1854,3 +1854,15 @@ REGISTRO=docs/powerapps/60_v093f_sincronizacao_segura_powerapps_studio_vscode.md
 OBSERVACAO=Os patches V093E nao devem ser colados no Power Apps.
 
 PROXIMA_ETAPA=V093G - validar fluxo real do Livro do Plantão no Power Apps.
+
+## V093G - Roteiro de teste real do Livro do Plantão
+
+DATA_HORA=2026-06-20 23:06:28
+
+STATUS=ROTEIRO_GERADO
+
+ARQUIVO=docs/powerapps/61_roteiro_teste_real_fluxo_livro_plantao_v093g.md
+
+OBJETIVO=Validar no Power Apps Studio o fluxo real de carregar, criar, atualizar, salvar, finalizar e reabrir o Livro do Plantão.
+
+PROXIMA_ETAPA=Executar o teste real no Power Apps e registrar o resultado.
