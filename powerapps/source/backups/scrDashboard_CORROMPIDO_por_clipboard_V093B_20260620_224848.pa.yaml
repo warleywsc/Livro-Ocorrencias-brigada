@@ -1,0 +1,279 @@
+& {
+    $ErrorActionPreference = "Stop"
+
+    $repo = "C:\Projetos\Livro-Ocorrencias-brigada"
+    Set-Location $repo
+
+    $dataHora = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $dataArquivo = Get-Date -Format "yyyy-MM-dd_HHmmss"
+
+    $arquivoApp = "powerapps/source/scrDashboard.pa.yaml"
+    $snapshotDir = "powerapps/source/snapshots"
+    $backupDir = "powerapps/source/backups"
+    $docRegistro = "docs/powerapps/56_sincronizacao_yaml_atual_powerapps_v092.md"
+    $controle = "docs/00_controle_do_projeto.md"
+
+    New-Item -ItemType Directory -Force -Path $snapshotDir | Out-Null
+    New-Item -ItemType Directory -Force -Path $backupDir | Out-Null
+    New-Item -ItemType Directory -Force -Path "docs/powerapps" | Out-Null
+
+    function Testar-Texto {
+        param(
+            [string]$Nome,
+            [string]$Conteudo,
+            [string]$Padrao
+        )
+
+        [PSCustomObject]@{
+            Item = $Nome
+            Status = $(if ($Conteudo.Contains($Padrao)) { "OK" } else { "FALTA" })
+        }
+    }
+
+    function Testar-Regex {
+        param(
+            [string]$Nome,
+            [string]$Conteudo,
+            [string]$Padrao
+        )
+
+        [PSCustomObject]@{
+            Item = $Nome
+            Status = $(if ([regex]::IsMatch($Conteudo, $Padrao, [System.Text.RegularExpressions.RegexOptions]::Singleline)) { "OK" } else { "FALTA" })
+        }
+    }
+
+    function Executar-DiagnosticoV093 {
+        param(
+            [string]$Conteudo
+        )
+
+        $testes = @()
+
+        $testes += Testar-Texto -Nome "Bloco 0 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoSelecaoPlantao:"
+        $testes += Testar-Texto -Nome "Bloco 1 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoCabecalho:"
+        $testes += Testar-Texto -Nome "Bloco 2 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoRecebimentoServico:"
+        $testes += Testar-Texto -Nome "Bloco 3 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoEquipe:"
+        $testes += Testar-Texto -Nome "Bloco 4 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoViaturasMateriais:"
+        $testes += Testar-Texto -Nome "Bloco 5 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoInspecaoRotina:"
+        $testes += Testar-Texto -Nome "Bloco 6 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoPotsRevisados:"
+        $testes += Testar-Texto -Nome "Bloco 7 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoOcorrenciasPlantao:"
+        $testes += Testar-Texto -Nome "Bloco 8 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoPendenciasOperacionais:"
+        $testes += Testar-Texto -Nome "Bloco 9 existe" -Conteudo $Conteudo -Padrao "- ctnLivroSecaoRevisaoFinalizacao:"
+
+        $testes += Testar-Texto -Nome "DataPicker selecao existe" -Conteudo $Conteudo -Padrao "- dtpSelecaoPlantaoData:"
+        $testes += Testar-Texto -Nome "Dropdown turno existe" -Conteudo $Conteudo -Padrao "- ddSelecaoPlantaoTurno:"
+        $testes += Testar-Texto -Nome "Dropdown posto existe" -Conteudo $Conteudo -Padrao "- ddSelecaoPlantaoPostoServico:"
+        $testes += Testar-Texto -Nome "Dropdown plantao extra existe" -Conteudo $Conteudo -Padrao "- ddSelecaoPlantaoExtra:"
+
+        $testes += Testar-Texto -Nome "Botao carregar plantao existe" -Conteudo $Conteudo -Padrao "- btnSelecaoPlantaoCarregar:"
+        $testes += Testar-Regex -Nome "Carregar usa Refresh Plantoes" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCarregar:[\s\S]*Refresh\(Plantoes\)"
+        $testes += Testar-Regex -Nome "Carregar usa LookUp Plantoes" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCarregar:[\s\S]*LookUp\([\s\S]*Plantoes"
+        $testes += Testar-Regex -Nome "Carregar define varPlantaoAtual" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCarregar:[\s\S]*Set\([\s\S]*varPlantaoAtual"
+        $testes += Testar-Regex -Nome "Carregar recalcula permissoes" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCarregar:[\s\S]*Select\(btnTecnicoRecalcularPermissoesPlantao\)"
+
+        $testes += Testar-Texto -Nome "Botao criar plantao existe" -Conteudo $Conteudo -Padrao "- btnSelecaoPlantaoCriar:"
+        $testes += Testar-Regex -Nome "Criar usa Patch Plantoes" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCriar:[\s\S]*Patch\([\s\S]*Plantoes"
+        $testes += Testar-Regex -Nome "Criar usa Defaults Plantoes" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCriar:[\s\S]*Defaults\(Plantoes\)"
+        $testes += Testar-Regex -Nome "Criar gera CodigoPlantao" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCriar:[\s\S]*varCodigoPlantaoGerado"
+        $testes += Testar-Regex -Nome "Criar define StatusLivro Em preenchimento" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCriar:[\s\S]*StatusLivro:[\s\S]*Em preenchimento"
+        $testes += Testar-Regex -Nome "Criar define DataAbertura" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCriar:[\s\S]*DataAbertura:[\s\S]*Now\(\)"
+        $testes += Testar-Regex -Nome "Criar define LiderEscalado" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCriar:[\s\S]*LiderEscalado:"
+        $testes += Testar-Regex -Nome "Criar define LiderResponsavelAtual" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCriar:[\s\S]*LiderResponsavelAtual:"
+        $testes += Testar-Regex -Nome "Criar recalcula permissoes" -Conteudo $Conteudo -Padrao "btnSelecaoPlantaoCriar:[\s\S]*Select\(btnTecnicoRecalcularPermissoesPlantao\)"
+
+        $testes += Testar-Texto -Nome "Botao tecnico recalcular permissoes existe" -Conteudo $Conteudo -Padrao "- btnTecnicoRecalcularPermissoesPlantao:"
+        $testes += Testar-Texto -Nome "varPodeEditarLivroPlantao existe" -Conteudo $Conteudo -Padrao "varPodeEditarLivroPlantao"
+        $testes += Testar-Texto -Nome "varPodeSalvarLivroPlantao existe" -Conteudo $Conteudo -Padrao "varPodeSalvarLivroPlantao"
+        $testes += Testar-Texto -Nome "varPodeFinalizarLivroPlantao existe" -Conteudo $Conteudo -Padrao "varPodeFinalizarLivroPlantao"
+        $testes += Testar-Texto -Nome "varPodeReabrirLivroPlantao existe" -Conteudo $Conteudo -Padrao "varPodeReabrirLivroPlantao"
+
+        $testes += Testar-Texto -Nome "Botao salvar existe" -Conteudo $Conteudo -Padrao "- btnLivroSalvarRascunho:"
+        $testes += Testar-Regex -Nome "Salvar usa Patch Plantoes" -Conteudo $Conteudo -Padrao "btnLivroSalvarRascunho:[\s\S]*Patch\([\s\S]*Plantoes"
+        $testes += Testar-Regex -Nome "Salvar grava PassagemServico" -Conteudo $Conteudo -Padrao "btnLivroSalvarRascunho:[\s\S]*PassagemServico:"
+        $testes += Testar-Regex -Nome "Salvar grava ResumoOperacional" -Conteudo $Conteudo -Padrao "btnLivroSalvarRascunho:[\s\S]*ResumoOperacional:"
+        $testes += Testar-Regex -Nome "Salvar grava ObservacoesRevisaoFinalizacao" -Conteudo $Conteudo -Padrao "btnLivroSalvarRascunho:[\s\S]*ObservacoesRevisaoFinalizacao:"
+
+        $testes += Testar-Texto -Nome "Botao finalizar existe" -Conteudo $Conteudo -Padrao "- btnLivroFinalizar:"
+        $testes += Testar-Regex -Nome "Finalizar abre confirmacao" -Conteudo $Conteudo -Padrao "btnLivroFinalizar:[\s\S]*Set\(varConfirmarFinalizacaoLivroPlantao,\s*true\)"
+        $testes += Testar-Texto -Nome "Confirmacao finalizacao existe" -Conteudo $Conteudo -Padrao "varConfirmarFinalizacaoLivroPlantao"
+        $testes += Testar-Regex -Nome "Finalizacao grava StatusLivro Finalizado" -Conteudo $Conteudo -Padrao "StatusLivro:[\s\S]*Finalizado"
+
+        $testes += Testar-Texto -Nome "Botao reabrir existe" -Conteudo $Conteudo -Padrao "- btnLivroReabrir:"
+        $testes += Testar-Regex -Nome "Reabrir abre confirmacao" -Conteudo $Conteudo -Padrao "btnLivroReabrir:[\s\S]*Set\(varConfirmarReaberturaLivroPlantao,\s*true\)"
+        $testes += Testar-Texto -Nome "Justificativa reabertura existe" -Conteudo $Conteudo -Padrao "txtModalJustificativaReaberturaLivro"
+        $testes += Testar-Texto -Nome "Historico reabertura existe" -Conteudo $Conteudo -Padrao "HistoricoReaberturasPlantao"
+        $testes += Testar-Regex -Nome "Reabertura grava StatusLivro Em preenchimento" -Conteudo $Conteudo -Padrao "StatusLivro:[\s\S]*Em preenchimento"
+        $testes += Testar-Regex -Nome "Reabertura usa Patch Historico" -Conteudo $Conteudo -Padrao "Patch\([\s\S]*HistoricoReaberturasPlantao"
+
+        return $testes
+    }
+
+    $conteudoLocal = ""
+    if (Test-Path $arquivoApp) {
+        $conteudoLocal = Get-Content -Path $arquivoApp -Raw -Encoding UTF8
+    }
+
+    $clipboard = ""
+    try {
+        $clipboard = Get-Clipboard -Raw
+    }
+    catch {
+        $clipboard = ""
+    }
+
+    $clipboardPareceYamlAtual = (
+        $clipboard.Contains("- ctnLivroSecaoSelecaoPlantao:") -and
+        $clipboard.Contains("- ctnLivroSecaoCabecalho:") -and
+        $clipboard.Contains("- ctnLivroSecaoRevisaoFinalizacao:")
+    )
+
+    $acaoExecutada = ""
+
+    if ($clipboardPareceYamlAtual) {
+        if (Test-Path $arquivoApp) {
+            $backup = Join-Path $backupDir "scrDashboard_antes_sync_V092_$dataArquivo.pa.yaml"
+            Copy-Item -Path $arquivoApp -Destination $backup -Force
+        }
+        else {
+            $backup = "NAO_GERADO_ARQUIVO_ORIGINAL_INEXISTENTE"
+        }
+
+        Set-Content -Path $arquivoApp -Value $clipboard -Encoding UTF8
+
+        $snapshot = Join-Path $snapshotDir "scrDashboard_V092_visual_validado_$dataArquivo.pa.yaml"
+        Copy-Item -Path $arquivoApp -Destination $snapshot -Force
+
+        $acaoExecutada = "SINCRONIZACAO_REALIZADA_COM_CLIPBOARD"
+        $conteudoParaTeste = $clipboard
+    }
+    else {
+        $backup = "NAO_GERADO"
+        $snapshot = "NAO_GERADO"
+        $acaoExecutada = "SINCRONIZACAO_NAO_REALIZADA_CLIPBOARD_NAO_CONTEM_YAML_ATUAL_COMPLETO"
+        $conteudoParaTeste = $conteudoLocal
+    }
+
+    $testes = Executar-DiagnosticoV093 -Conteudo $conteudoParaTeste
+    $faltas = @($testes | Where-Object { $_.Status -eq "FALTA" })
+    $oks = @($testes | Where-Object { $_.Status -eq "OK" })
+    $pendencias = if ($faltas.Count -gt 0) { "SIM" } else { "NAO" }
+    $tabela = ($testes | Format-Table -AutoSize | Out-String).Trim()
+
+    $doc = @"
+# V093A - Sincronização do YAML atual validado no Power Apps
+
+DATA_HORA=$dataHora
+
+ACAO_EXECUTADA=$acaoExecutada
+
+ARQUIVO_PRINCIPAL=$arquivoApp
+
+BACKUP=$backup
+
+SNAPSHOT=$snapshot
+
+TESTES_TOTAL=$($testes.Count)
+TESTES_OK=$($oks.Count)
+TESTES_FALHA=$($faltas.Count)
+
+PENDENCIAS=$pendencias
+"@
+
+    Set-Content -Path $docRegistro -Value $doc -Encoding UTF8
+
+    $entradaControle = @"
+
+## V093A - Sincronização do YAML atual validado no Power Apps
+
+DATA_HORA=$dataHora
+
+ACAO_EXECUTADA=$acaoExecutada
+
+PENDENCIAS=$pendencias
+
+TESTES_TOTAL=$($testes.Count)
+TESTES_OK=$($oks.Count)
+TESTES_FALHA=$($faltas.Count)
+
+ARQUIVOS=
+- $arquivoApp
+- $docRegistro
+- $snapshot
+
+PROXIMA_ETAPA=V093 - Validar fluxo real do Livro do Plantão no Power Apps.
+"@
+
+    if (Test-Path $controle) {
+        Add-Content -Path $controle -Value $entradaControle -Encoding UTF8
+    }
+
+    git add $arquivoApp
+    git add $docRegistro
+    git add $controle
+
+    if (($snapshot -ne "NAO_GERADO") -and (Test-Path $snapshot)) {
+        git add $snapshot
+    }
+
+    if (($backup -ne "NAO_GERADO") -and ($backup -ne "NAO_GERADO_ARQUIVO_ORIGINAL_INEXISTENTE") -and (Test-Path $backup)) {
+        git add $backup
+    }
+
+    $statusStage = git status --short
+
+    if ($statusStage.Trim().Length -gt 0) {
+        git commit -m "V093A - sincroniza YAML atual validado no Power Apps"
+        git push
+        $commitStatus = "COMMIT_REALIZADO=SIM"
+    }
+    else {
+        $commitStatus = "COMMIT_REALIZADO=NAO; MOTIVO=Nenhuma alteracao para commit"
+    }
+
+    $ultimoCommit = git log -1 --oneline
+    $statusFinal = git status --short
+
+    $relatorio = @"
+PENDENCIAS=$pendencias
+MOTIVO=V093A sincronizacao e diagnostico do YAML atual validado no Power Apps
+
+PASTA_ATUAL=$repo
+DATA_HORA=$dataHora
+
+ACAO_EXECUTADA=$acaoExecutada
+
+$commitStatus
+
+BACKUP=$backup
+SNAPSHOT=$snapshot
+
+ULTIMO_COMMIT=
+$ultimoCommit
+
+STATUS_GIT_FINAL=
+$statusFinal
+
+TOTAL_TESTES=$($testes.Count)
+TESTES_OK=$($oks.Count)
+TESTES_FALHA=$($faltas.Count)
+
+RESULTADO_TESTES=
+$tabela
+
+PROXIMA_ETAPA=
+Se ACAO_EXECUTADA=SINCRONIZACAO_NAO_REALIZADA_CLIPBOARD_NAO_CONTEM_YAML_ATUAL_COMPLETO, copie o YAML atual completo do Power Apps para o clipboard e rode este mesmo bloco novamente.
+
+Se PENDENCIAS=NAO, executar teste real no Power Apps:
+1. Carregar plantao existente.
+2. Criar plantao novo.
+3. Salvar rascunho.
+4. Finalizar com confirmacao.
+5. Reabrir com justificativa.
+6. Confirmar registro no HistoricoReaberturasPlantao.
+"@
+
+    $relatorio | Set-Clipboard
+    Write-Host $relatorio -ForegroundColor Cyan
+}
+Write-Host "FIM_DO_BLOCO" -ForegroundColor DarkGray

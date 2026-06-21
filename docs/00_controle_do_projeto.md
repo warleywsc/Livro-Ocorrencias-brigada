@@ -1796,3 +1796,25 @@ CANDIDATO_USADO=C:\Projetos\Livro-Ocorrencias-brigada\powerapps\source\snapshots
 SNAPSHOT_RESTAURADO=powerapps\source\snapshots\scrDashboard_V093C_restaurado_yaml_real_20260620_224848.pa.yaml
 
 PROXIMA_ETAPA=V093 - reconstruir ou validar os controles funcionais reais do Livro do Plantão.
+
+## V093D - Diagnóstico seguro pós-restauração
+
+DATA_HORA=2026-06-20 22:50:43
+
+STATUS=REGISTRADO
+
+PENDENCIAS=SIM
+
+EH_YAML_POWERAPPS=True
+
+PARECE_DIAGNOSTICO_OU_SCRIPT=False
+
+TOTAL_TESTES=28
+
+TESTES_OK=16
+
+TESTES_FALHA=12
+
+ARQUIVO_REGISTRO=docs/powerapps/58_diagnostico_seguro_v093_pos_restauracao.md
+
+PROXIMA_ETAPA=V093 - reconstruir ou validar controles funcionais reais do Livro do Plantão.
