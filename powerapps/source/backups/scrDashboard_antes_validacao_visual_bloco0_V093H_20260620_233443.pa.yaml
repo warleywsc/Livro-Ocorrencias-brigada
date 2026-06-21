@@ -1254,16 +1254,13 @@ Screens:
                                     Fill: =ColorValue("#F9FAFB")
                                     FillPortions: =0
                                     Height: |-
-                                      =Max(
-                                          Self.PaddingTop + Self.PaddingBottom +
-                                          lblSelecaoPlantaoTitulo.Height +
-                                          lblSelecaoPlantaoResumo.Height +
-                                          ctnSelecaoPlantaoCampos.Height +
-                                          ctnSelecaoPlantaoAcoes.Height +
-                                          lblSelecaoPlantaoStatus.Height +
-                                          (4 * Self.LayoutGap),
-                                          338
-                                      )
+                                      =Self.PaddingTop + Self.PaddingBottom +
+                                      lblSelecaoPlantaoTitulo.Height +
+                                      lblSelecaoPlantaoResumo.Height +
+                                      ctnSelecaoPlantaoCampos.Height +
+                                      ctnSelecaoPlantaoAcoes.Height +
+                                      lblSelecaoPlantaoStatus.Height +
+                                      (4 * Self.LayoutGap)
                                     LayoutAlignItems: =LayoutAlignItems.Stretch
                                     LayoutDirection: =LayoutDirection.Vertical
                                     LayoutGap: =10
@@ -1292,16 +1289,15 @@ Screens:
                                           FocusedBorderThickness: =4
                                           Font: =Font.'Segoe UI'
                                           FontWeight: =FontWeight.Semibold
-                                          Height: =36
+                                          Height: =32
                                           LayoutMinHeight: =16
                                           LayoutMinWidth: =16
                                           Size: =16
                                           Text: ="0. Seleção do Plantão"
-                                          Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+                                          Width: =Parent.Width
                                     - lblSelecaoPlantaoResumo:
                                         Control: Label@2.5.1
                                         Properties:
-                                          Height: =52
                                           AlignInContainer: =AlignInContainer.Stretch
                                           BorderColor: =RGBA(0, 0, 0, 0)
                                           BorderStyle: =BorderStyle.None
@@ -1315,22 +1311,19 @@ Screens:
                                           LayoutMinWidth: =16
                                           Size: =11
                                           Text: ="Carregue um plantão existente ou crie um novo plantão controlado por Data, Turno, Posto de Serviço e Plantão Extra."
-                                          Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+                                          Width: =Parent.Width
                                     - ctnSelecaoPlantaoCampos:
                                         Control: GroupContainer@1.5.0
                                         Variant: AutoLayout
                                         Properties:
                                           FillPortions: =0
                                           Height: |-
-                                            =Max(
-                                                Self.PaddingTop + Self.PaddingBottom +
-                                                Max(
-                                                    ctnSelecaoPlantaoCampoData.Height,
-                                                    ctnSelecaoPlantaoCampoTurno.Height,
-                                                    ctnSelecaoPlantaoCampoPosto.Height,
-                                                    ctnSelecaoPlantaoCampoExtra.Height
-                                                ),
-                                                90
+                                            =Self.PaddingTop + Self.PaddingBottom +
+                                            Max(
+                                                ctnSelecaoPlantaoCampoData.Height,
+                                                ctnSelecaoPlantaoCampoTurno.Height,
+                                                ctnSelecaoPlantaoCampoPosto.Height,
+                                                ctnSelecaoPlantaoCampoExtra.Height
                                             )
                                           LayoutAlignItems: =LayoutAlignItems.Stretch
                                           LayoutDirection: =LayoutDirection.Horizontal
@@ -1343,16 +1336,15 @@ Screens:
                                               Control: GroupContainer@1.5.0
                                               Variant: AutoLayout
                                               Properties:
-                                                FillPortions: =0
-                                                Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                                                Height: =Self.PaddingTop + Self.PaddingBottom + 22 + 42 + Self.LayoutGap
                                                 LayoutAlignItems: =LayoutAlignItems.Stretch
                                                 LayoutDirection: =LayoutDirection.Vertical
-                                                LayoutGap: =2
+                                                LayoutGap: =4
                                                 LayoutMinHeight: =16
                                                 LayoutMinWidth: =16
                                                 PaddingBottom: =4
-                                                PaddingLeft: =8
-                                                PaddingRight: =8
+                                                PaddingLeft: =4
+                                                PaddingRight: =4
                                                 PaddingTop: =4
                                               Children:
                                                 - lblSelecaoPlantaoData:
@@ -1362,7 +1354,7 @@ Screens:
                                                       Color: =ColorValue("#374151")
                                                       Font: =Font.'Segoe UI'
                                                       FontWeight: =FontWeight.Semibold
-                                                      Height: =24
+                                                      Height: =22
                                                       LayoutMinHeight: =16
                                                       LayoutMinWidth: =16
                                                       Size: =11
@@ -1371,7 +1363,6 @@ Screens:
                                                 - dtpSelecaoPlantaoData:
                                                     Control: Classic/DatePicker@2.6.0
                                                     Properties:
-                                                      AlignInContainer: =AlignInContainer.Stretch
                                                       BorderColor: =ColorValue("#D6E4EC")
                                                       Color: =ColorValue("#1F2937")
                                                       DefaultDate: |-
@@ -1397,16 +1388,15 @@ Screens:
                                               Control: GroupContainer@1.5.0
                                               Variant: AutoLayout
                                               Properties:
-                                                FillPortions: =0
-                                                Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                                                Height: =Self.PaddingTop + Self.PaddingBottom + 22 + 42 + Self.LayoutGap
                                                 LayoutAlignItems: =LayoutAlignItems.Stretch
                                                 LayoutDirection: =LayoutDirection.Vertical
-                                                LayoutGap: =2
+                                                LayoutGap: =4
                                                 LayoutMinHeight: =16
                                                 LayoutMinWidth: =16
                                                 PaddingBottom: =4
-                                                PaddingLeft: =8
-                                                PaddingRight: =8
+                                                PaddingLeft: =4
+                                                PaddingRight: =4
                                                 PaddingTop: =4
                                               Children:
                                                 - lblSelecaoPlantaoTurno:
@@ -1416,7 +1406,7 @@ Screens:
                                                       Color: =ColorValue("#374151")
                                                       Font: =Font.'Segoe UI'
                                                       FontWeight: =FontWeight.Semibold
-                                                      Height: =24
+                                                      Height: =22
                                                       LayoutMinHeight: =16
                                                       LayoutMinWidth: =16
                                                       Size: =11
@@ -1425,7 +1415,6 @@ Screens:
                                                 - ddSelecaoPlantaoTurno:
                                                     Control: Classic/DropDown@2.3.1
                                                     Properties:
-                                                      AlignInContainer: =AlignInContainer.Stretch
                                                       BorderColor: =ColorValue("#D6E4EC")
                                                       ChevronBackground: =ColorValue("#F9FAFB")
                                                       ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
@@ -1468,16 +1457,15 @@ Screens:
                                               Control: GroupContainer@1.5.0
                                               Variant: AutoLayout
                                               Properties:
-                                                FillPortions: =0
-                                                Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                                                Height: =Self.PaddingTop + Self.PaddingBottom + 22 + 42 + Self.LayoutGap
                                                 LayoutAlignItems: =LayoutAlignItems.Stretch
                                                 LayoutDirection: =LayoutDirection.Vertical
-                                                LayoutGap: =2
+                                                LayoutGap: =4
                                                 LayoutMinHeight: =16
                                                 LayoutMinWidth: =16
                                                 PaddingBottom: =4
-                                                PaddingLeft: =8
-                                                PaddingRight: =8
+                                                PaddingLeft: =4
+                                                PaddingRight: =4
                                                 PaddingTop: =4
                                               Children:
                                                 - lblSelecaoPlantaoPosto:
@@ -1487,7 +1475,7 @@ Screens:
                                                       Color: =ColorValue("#374151")
                                                       Font: =Font.'Segoe UI'
                                                       FontWeight: =FontWeight.Semibold
-                                                      Height: =24
+                                                      Height: =22
                                                       LayoutMinHeight: =16
                                                       LayoutMinWidth: =16
                                                       Size: =11
@@ -1496,7 +1484,6 @@ Screens:
                                                 - ddSelecaoPlantaoPostoServico:
                                                     Control: Classic/DropDown@2.3.1
                                                     Properties:
-                                                      AlignInContainer: =AlignInContainer.Stretch
                                                       BorderColor: =ColorValue("#D6E4EC")
                                                       ChevronBackground: =ColorValue("#F9FAFB")
                                                       ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
@@ -1539,16 +1526,15 @@ Screens:
                                               Control: GroupContainer@1.5.0
                                               Variant: AutoLayout
                                               Properties:
-                                                FillPortions: =0
-                                                Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                                                Height: =Self.PaddingTop + Self.PaddingBottom + 22 + 42 + Self.LayoutGap
                                                 LayoutAlignItems: =LayoutAlignItems.Stretch
                                                 LayoutDirection: =LayoutDirection.Vertical
-                                                LayoutGap: =2
+                                                LayoutGap: =4
                                                 LayoutMinHeight: =16
                                                 LayoutMinWidth: =16
                                                 PaddingBottom: =4
-                                                PaddingLeft: =8
-                                                PaddingRight: =8
+                                                PaddingLeft: =4
+                                                PaddingRight: =4
                                                 PaddingTop: =4
                                               Children:
                                                 - lblSelecaoPlantaoExtra:
@@ -1558,7 +1544,7 @@ Screens:
                                                       Color: =ColorValue("#374151")
                                                       Font: =Font.'Segoe UI'
                                                       FontWeight: =FontWeight.Semibold
-                                                      Height: =24
+                                                      Height: =22
                                                       LayoutMinHeight: =16
                                                       LayoutMinWidth: =16
                                                       Size: =11
@@ -1567,7 +1553,6 @@ Screens:
                                                 - ddSelecaoPlantaoExtra:
                                                     Control: Classic/DropDown@2.3.1
                                                     Properties:
-                                                      AlignInContainer: =AlignInContainer.Stretch
                                                       BorderColor: =ColorValue("#D6E4EC")
                                                       ChevronBackground: =ColorValue("#F9FAFB")
                                                       ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
@@ -1611,25 +1596,16 @@ Screens:
                                         Variant: AutoLayout
                                         Properties:
                                           FillPortions: =0
-                                          Height: |-
-                                            =Max(
-                                                Self.PaddingTop + Self.PaddingBottom +
-                                                Max(
-                                                    btnSelecaoPlantaoCarregar.Height,
-                                                    btnSelecaoPlantaoCriar.Height,
-                                                    btnSelecaoPlantaoAtualizar.Height
-                                                ),
-                                                76
-                                            )
+                                          Height: =Self.PaddingTop + Self.PaddingBottom + 44
                                           LayoutAlignItems: =LayoutAlignItems.Center
                                           LayoutDirection: =LayoutDirection.Horizontal
                                           LayoutGap: =12
                                           LayoutMinHeight: =16
                                           LayoutMinWidth: =16
-                                          PaddingBottom: =8
-                                          PaddingLeft: =8
-                                          PaddingRight: =8
-                                          PaddingTop: =8
+                                          PaddingBottom: =6
+                                          PaddingLeft: =4
+                                          PaddingRight: =4
+                                          PaddingTop: =6
                                           Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
                                         Children:
                                           - btnSelecaoPlantaoCarregar:
@@ -1643,7 +1619,7 @@ Screens:
                                                 DisabledFill: =RGBA(242, 242, 241, 0)
                                                 Fill: =ColorValue("#0082BC")
                                                 Font: =Font.'Segoe UI'
-                                                Height: =52
+                                                Height: =44
                                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                                 HoverColor: =Color.White
                                                 HoverFill: =ColorValue("#0B5F8A")
@@ -1708,7 +1684,7 @@ Screens:
                                                       ColorValue("#9CA3AF")
                                                   )
                                                 Font: =Font.'Segoe UI'
-                                                Height: =52
+                                                Height: =44
                                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                                 HoverColor: =Color.White
                                                 HoverFill: =ColorValue("#166534")
@@ -1845,7 +1821,7 @@ Screens:
                                                 DisabledFill: =RGBA(242, 242, 241, 0)
                                                 Fill: =ColorValue("#F3F4F6")
                                                 Font: =Font.'Segoe UI'
-                                                Height: =52
+                                                Height: =44
                                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                                 HoverColor: =Color.White
                                                 HoverFill: =RGBA(16, 110, 190, 1)
@@ -1916,8 +1892,7 @@ Screens:
                                                 " | Status: " &
                                                 Coalesce(varPlantaoAtual.StatusLivro.Value, "não informado")
                                             )
-                                          Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
-
+                                          Width: =Parent.Width
                               - ctnLivroPlantaoAtalhos:
                                   Control: GroupContainer@1.5.0
                                   Variant: AutoLayout

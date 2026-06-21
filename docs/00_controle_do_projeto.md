@@ -1894,3 +1894,25 @@ ARQUIVO_PATCH=powerapps\source\patches\V093\ctnLivroSecaoSelecaoPlantao_V093H_PA
 REGISTRO=docs/powerapps/62_v093h_correcao_visual_bloco_0_selecao_plantao.md
 
 PROXIMA_ETAPA=Colar o patch substituindo apenas ctnLivroSecaoSelecaoPlantao no Power Apps Studio e validar visualmente.
+
+## V093H - Validação visual do Bloco 0 - Seleção do Plantão
+
+DATA_HORA=2026-06-20 23:34:43
+
+STATUS=VALIDADO
+
+PENDENCIAS=NAO
+
+MOTIVO=Bloco 0 validado visualmente após correção de layout/altura.
+
+ARQUIVO_APP=powerapps/source/scrDashboard.pa.yaml
+
+PATCH_VALIDADO=powerapps/source/patches/V093/ctnLivroSecaoSelecaoPlantao_V093H_PADRAO_VISUAL.pa.yaml
+
+BACKUP_ANTES=powerapps\source\backups\scrDashboard_antes_validacao_visual_bloco0_V093H_20260620_233443.pa.yaml
+
+SNAPSHOT=powerapps\source\snapshots\scrDashboard_V093H_bloco0_validado_20260620_233443.pa.yaml
+
+REGISTRO=docs/powerapps/63_v093h_validacao_visual_bloco_0_selecao_plantao.md
+
+PROXIMA_ETAPA=Retomar V093G - teste real do fluxo do Livro do Plantão.
