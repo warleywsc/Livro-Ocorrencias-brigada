@@ -1,0 +1,672 @@
+                              - ctnLivroSecaoSelecaoPlantao:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderColor: =ColorValue("#D6E4EC")
+                                    BorderThickness: =1
+                                    Fill: =ColorValue("#F9FAFB")
+                                    FillPortions: =0
+                                    Height: |-
+                                      =Max(
+                                          Self.PaddingTop + Self.PaddingBottom +
+                                          lblSelecaoPlantaoTitulo.Height +
+                                          lblSelecaoPlantaoResumo.Height +
+                                          ctnSelecaoPlantaoCampos.Height +
+                                          ctnSelecaoPlantaoAcoes.Height +
+                                          lblSelecaoPlantaoStatus.Height +
+                                          (4 * Self.LayoutGap),
+                                          338
+                                      )
+                                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutGap: =10
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    PaddingBottom: =12
+                                    PaddingLeft: =16
+                                    PaddingRight: =16
+                                    PaddingTop: =12
+                                    RadiusBottomLeft: =8
+                                    RadiusBottomRight: =8
+                                    RadiusTopLeft: =8
+                                    RadiusTopRight: =8
+                                    Width: =Parent.Width
+                                  Children:
+                                    - lblSelecaoPlantaoTitulo:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Stretch
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =ColorValue("#0B5F8A")
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =36
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          Size: =16
+                                          Text: ="0. Seleção do Plantão"
+                                          Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+                                    - lblSelecaoPlantaoResumo:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          Height: =52
+                                          AlignInContainer: =AlignInContainer.Stretch
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =ColorValue("#374151")
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          Size: =11
+                                          Text: ="Carregue um plantão existente ou crie um novo plantão controlado por Data, Turno, Posto de Serviço e Plantão Extra."
+                                          Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+                                    - ctnSelecaoPlantaoCampos:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          FillPortions: =0
+                                          Height: |-
+                                            =Max(
+                                                Self.PaddingTop + Self.PaddingBottom +
+                                                Max(
+                                                    ctnSelecaoPlantaoCampoData.Height,
+                                                    ctnSelecaoPlantaoCampoTurno.Height,
+                                                    ctnSelecaoPlantaoCampoPosto.Height,
+                                                    ctnSelecaoPlantaoCampoExtra.Height
+                                                ),
+                                                90
+                                            )
+                                          LayoutAlignItems: =LayoutAlignItems.Stretch
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutGap: =12
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+                                        Children:
+                                          - ctnSelecaoPlantaoCampoData:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                FillPortions: =0
+                                                Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                                                LayoutAlignItems: =LayoutAlignItems.Stretch
+                                                LayoutDirection: =LayoutDirection.Vertical
+                                                LayoutGap: =2
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingBottom: =4
+                                                PaddingLeft: =8
+                                                PaddingRight: =8
+                                                PaddingTop: =4
+                                              Children:
+                                                - lblSelecaoPlantaoData:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Color: =ColorValue("#374151")
+                                                      Font: =Font.'Segoe UI'
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =24
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Size: =11
+                                                      Text: ="Data do Plantão"
+                                                      Width: =Parent.Width
+                                                - dtpSelecaoPlantaoData:
+                                                    Control: Classic/DatePicker@2.6.0
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      BorderColor: =ColorValue("#D6E4EC")
+                                                      Color: =ColorValue("#1F2937")
+                                                      DefaultDate: |-
+                                                        =If(
+                                                            IsBlank(varPlantaoAtual.DataPlantao),
+                                                            Today(),
+                                                            varPlantaoAtual.DataPlantao
+                                                        )
+                                                      DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                      DisabledColor: =RGBA(161, 159, 157, 1)
+                                                      DisabledFill: =RGBA(242, 242, 241, 0)
+                                                      Fill: =Color.White
+                                                      Font: =Font.'Segoe UI'
+                                                      Height: =42
+                                                      IconBackground: =ColorValue("#0082BC")
+                                                      IconFill: =Color.White
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingBottom: =0
+                                                      Size: =12
+                                                      Width: =Parent.Width
+                                          - ctnSelecaoPlantaoCampoTurno:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                FillPortions: =0
+                                                Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                                                LayoutAlignItems: =LayoutAlignItems.Stretch
+                                                LayoutDirection: =LayoutDirection.Vertical
+                                                LayoutGap: =2
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingBottom: =4
+                                                PaddingLeft: =8
+                                                PaddingRight: =8
+                                                PaddingTop: =4
+                                              Children:
+                                                - lblSelecaoPlantaoTurno:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Color: =ColorValue("#374151")
+                                                      Font: =Font.'Segoe UI'
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =24
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Size: =11
+                                                      Text: ="Turno"
+                                                      Width: =Parent.Width
+                                                - ddSelecaoPlantaoTurno:
+                                                    Control: Classic/DropDown@2.3.1
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      BorderColor: =ColorValue("#D6E4EC")
+                                                      ChevronBackground: =ColorValue("#F9FAFB")
+                                                      ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                                                      ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                                                      ChevronFill: =ColorValue("#1F2937")
+                                                      ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                                                      ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                                                      Color: =ColorValue("#1F2937")
+                                                      Default: |-
+                                                        =If(
+                                                            IsBlank(varPlantaoAtual.Turno.Value),
+                                                            "Dia",
+                                                            varPlantaoAtual.Turno.Value
+                                                        )
+                                                      DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                      DisabledColor: =RGBA(161, 159, 157, 1)
+                                                      DisabledFill: =RGBA(242, 242, 241, 0)
+                                                      Fill: =Color.White
+                                                      Font: =Font.'Segoe UI'
+                                                      Height: =42
+                                                      HoverBorderColor: =RGBA(16, 110, 190, 1)
+                                                      HoverColor: =ColorValue("#1F2937")
+                                                      HoverFill: =ColorValue("#D9EEF8")
+                                                      Items: =Choices(Plantoes.Turno)
+                                                      Items.Value: =Value
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingBottom: =5
+                                                      PaddingLeft: =8
+                                                      PaddingRight: =5
+                                                      PaddingTop: =5
+                                                      PressedBorderColor: =RGBA(16, 110, 190, 1)
+                                                      PressedColor: =Color.White
+                                                      PressedFill: =ColorValue("#0B5F8A")
+                                                      SelectionColor: =Color.White
+                                                      SelectionFill: =ColorValue("#0082BC")
+                                                      Size: =12
+                                                      Width: =Parent.Width
+                                          - ctnSelecaoPlantaoCampoPosto:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                FillPortions: =0
+                                                Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                                                LayoutAlignItems: =LayoutAlignItems.Stretch
+                                                LayoutDirection: =LayoutDirection.Vertical
+                                                LayoutGap: =2
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingBottom: =4
+                                                PaddingLeft: =8
+                                                PaddingRight: =8
+                                                PaddingTop: =4
+                                              Children:
+                                                - lblSelecaoPlantaoPosto:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Color: =ColorValue("#374151")
+                                                      Font: =Font.'Segoe UI'
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =24
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Size: =11
+                                                      Text: ="Posto de Serviço"
+                                                      Width: =Parent.Width
+                                                - ddSelecaoPlantaoPostoServico:
+                                                    Control: Classic/DropDown@2.3.1
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      BorderColor: =ColorValue("#D6E4EC")
+                                                      ChevronBackground: =ColorValue("#F9FAFB")
+                                                      ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                                                      ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                                                      ChevronFill: =ColorValue("#1F2937")
+                                                      ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                                                      ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                                                      Color: =ColorValue("#1F2937")
+                                                      Default: |-
+                                                        =If(
+                                                            IsBlank(varPlantaoAtual.PostoServico.Value),
+                                                            Coalesce(varUsuarioAtual.PostoServico.Value, "Brigada de Incêndio"),
+                                                            varPlantaoAtual.PostoServico.Value
+                                                        )
+                                                      DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                      DisabledColor: =RGBA(161, 159, 157, 1)
+                                                      DisabledFill: =RGBA(242, 242, 241, 0)
+                                                      Fill: =Color.White
+                                                      Font: =Font.'Segoe UI'
+                                                      Height: =42
+                                                      HoverBorderColor: =RGBA(16, 110, 190, 1)
+                                                      HoverColor: =ColorValue("#1F2937")
+                                                      HoverFill: =ColorValue("#D9EEF8")
+                                                      Items: =Choices(Plantoes.PostoServico)
+                                                      Items.Value: =Value
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingBottom: =5
+                                                      PaddingLeft: =8
+                                                      PaddingRight: =5
+                                                      PaddingTop: =5
+                                                      PressedBorderColor: =RGBA(16, 110, 190, 1)
+                                                      PressedColor: =Color.White
+                                                      PressedFill: =ColorValue("#0B5F8A")
+                                                      SelectionColor: =Color.White
+                                                      SelectionFill: =ColorValue("#0082BC")
+                                                      Size: =12
+                                                      Width: =Parent.Width
+                                          - ctnSelecaoPlantaoCampoExtra:
+                                              Control: GroupContainer@1.5.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                FillPortions: =0
+                                                Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                                                LayoutAlignItems: =LayoutAlignItems.Stretch
+                                                LayoutDirection: =LayoutDirection.Vertical
+                                                LayoutGap: =2
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingBottom: =4
+                                                PaddingLeft: =8
+                                                PaddingRight: =8
+                                                PaddingTop: =4
+                                              Children:
+                                                - lblSelecaoPlantaoExtra:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      Color: =ColorValue("#374151")
+                                                      Font: =Font.'Segoe UI'
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =24
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      Size: =11
+                                                      Text: ="Plantão Extra"
+                                                      Width: =Parent.Width
+                                                - ddSelecaoPlantaoExtra:
+                                                    Control: Classic/DropDown@2.3.1
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Stretch
+                                                      BorderColor: =ColorValue("#D6E4EC")
+                                                      ChevronBackground: =ColorValue("#F9FAFB")
+                                                      ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                                                      ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                                                      ChevronFill: =ColorValue("#1F2937")
+                                                      ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                                                      ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                                                      Color: =ColorValue("#1F2937")
+                                                      Default: |-
+                                                        =If(
+                                                            Coalesce(varPlantaoAtual.PlantaoExtra, false),
+                                                            "Sim",
+                                                            "Não"
+                                                        )
+                                                      DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                      DisabledColor: =RGBA(161, 159, 157, 1)
+                                                      DisabledFill: =RGBA(242, 242, 241, 0)
+                                                      Fill: =Color.White
+                                                      Font: =Font.'Segoe UI'
+                                                      Height: =42
+                                                      HoverBorderColor: =RGBA(16, 110, 190, 1)
+                                                      HoverColor: =ColorValue("#1F2937")
+                                                      HoverFill: =ColorValue("#D9EEF8")
+                                                      Items: =["Não", "Sim"]
+                                                      Items.Value: =Value
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingBottom: =5
+                                                      PaddingLeft: =8
+                                                      PaddingRight: =5
+                                                      PaddingTop: =5
+                                                      PressedBorderColor: =RGBA(16, 110, 190, 1)
+                                                      PressedColor: =Color.White
+                                                      PressedFill: =ColorValue("#0B5F8A")
+                                                      SelectionColor: =Color.White
+                                                      SelectionFill: =ColorValue("#0082BC")
+                                                      Size: =12
+                                                      Width: =Parent.Width
+                                    - ctnSelecaoPlantaoAcoes:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          FillPortions: =0
+                                          Height: |-
+                                            =Max(
+                                                Self.PaddingTop + Self.PaddingBottom +
+                                                Max(
+                                                    btnSelecaoPlantaoCarregar.Height,
+                                                    btnSelecaoPlantaoCriar.Height,
+                                                    btnSelecaoPlantaoAtualizar.Height
+                                                ),
+                                                76
+                                            )
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutGap: =12
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          PaddingBottom: =8
+                                          PaddingLeft: =8
+                                          PaddingRight: =8
+                                          PaddingTop: =8
+                                          Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+                                        Children:
+                                          - btnSelecaoPlantaoCarregar:
+                                              Control: Classic/Button@2.2.0
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                Color: =Color.White
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                DisabledFill: =RGBA(242, 242, 241, 0)
+                                                Fill: =ColorValue("#0082BC")
+                                                Font: =Font.'Segoe UI'
+                                                Height: =52
+                                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                                HoverColor: =Color.White
+                                                HoverFill: =ColorValue("#0B5F8A")
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                OnSelect: |-
+                                                  =Refresh(Plantoes);
+                                                  Set(
+                                                      varPlantaoLocalizado,
+                                                      LookUp(
+                                                          Plantoes,
+                                                          Text(DataPlantao, "[$-en-US]yyyy-mm-dd") = Text(dtpSelecaoPlantaoData.SelectedDate, "[$-en-US]yyyy-mm-dd") &&
+                                                          Turno.Value = ddSelecaoPlantaoTurno.Selected.Value &&
+                                                          PostoServico.Value = ddSelecaoPlantaoPostoServico.Selected.Value &&
+                                                          Coalesce(PlantaoExtra, false) = (ddSelecaoPlantaoExtra.Selected.Value = "Sim")
+                                                      )
+                                                  );
+                                                  If(
+                                                      IsBlank(varPlantaoLocalizado.ID),
+                                                      Notify(
+                                                          "Nenhum plantão encontrado para os filtros informados.",
+                                                          NotificationType.Warning
+                                                      ),
+                                                      Set(varPlantaoAtual, varPlantaoLocalizado);
+                                                      Select(btnTecnicoRecalcularPermissoesPlantao);
+                                                      Notify(
+                                                          "Plantão carregado com sucesso.",
+                                                          NotificationType.Success
+                                                      )
+                                                  )
+                                                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                                PressedColor: =Color.White
+                                                PressedFill: =ColorValue("#0B5F8A")
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                                Size: =12
+                                                Text: ="Carregar Plantão"
+                                                Width: =180
+                                          - btnSelecaoPlantaoCriar:
+                                              Control: Classic/Button@2.2.0
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                Color: =Color.White
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                DisabledFill: =RGBA(242, 242, 241, 0)
+                                                DisplayMode: |-
+                                                  =If(
+                                                      varUsuarioAtualEhAdministradorOuSupervisor ||
+                                                      varPerfilAcessoNormalizado = "Lider",
+                                                      DisplayMode.Edit,
+                                                      DisplayMode.View
+                                                  )
+                                                Fill: |-
+                                                  =If(
+                                                      varUsuarioAtualEhAdministradorOuSupervisor ||
+                                                      varPerfilAcessoNormalizado = "Lider",
+                                                      ColorValue("#1F7A4D"),
+                                                      ColorValue("#9CA3AF")
+                                                  )
+                                                Font: =Font.'Segoe UI'
+                                                Height: =52
+                                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                                HoverColor: =Color.White
+                                                HoverFill: =ColorValue("#166534")
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                OnSelect: |-
+                                                  =If(
+                                                      !(varUsuarioAtualEhAdministradorOuSupervisor || varPerfilAcessoNormalizado = "Lider"),
+                                                      Notify(
+                                                          "Você não tem permissão para criar plantão.",
+                                                          NotificationType.Error
+                                                      ),
+                                                      Refresh(Plantoes);
+                                                      Set(
+                                                          varPlantaoLocalizado,
+                                                          LookUp(
+                                                              Plantoes,
+                                                              Text(DataPlantao, "[$-en-US]yyyy-mm-dd") = Text(dtpSelecaoPlantaoData.SelectedDate, "[$-en-US]yyyy-mm-dd") &&
+                                                              Turno.Value = ddSelecaoPlantaoTurno.Selected.Value &&
+                                                              PostoServico.Value = ddSelecaoPlantaoPostoServico.Selected.Value &&
+                                                              Coalesce(PlantaoExtra, false) = (ddSelecaoPlantaoExtra.Selected.Value = "Sim")
+                                                          )
+                                                      );
+                                                      If(
+                                                          !IsBlank(varPlantaoLocalizado.ID),
+                                                          Set(varPlantaoAtual, varPlantaoLocalizado);
+                                                          Select(btnTecnicoRecalcularPermissoesPlantao);
+                                                          Notify(
+                                                              "Já existia um plantão com estes filtros. O plantão existente foi carregado.",
+                                                              NotificationType.Information
+                                                          ),
+                                                          Set(
+                                                              varCodigoPlantaoGerado,
+                                                              "PL-" &
+                                                              Text(dtpSelecaoPlantaoData.SelectedDate, "[$-en-US]yyyy-mm-dd") &
+                                                              "-" &
+                                                              Upper(
+                                                                  Substitute(
+                                                                      Substitute(
+                                                                          Substitute(
+                                                                              ddSelecaoPlantaoTurno.Selected.Value,
+                                                                              " ",
+                                                                              ""
+                                                                          ),
+                                                                          "ã",
+                                                                          "a"
+                                                                      ),
+                                                                      "Ã",
+                                                                      "A"
+                                                                  )
+                                                              ) &
+                                                              "-" &
+                                                              Switch(
+                                                                  ddSelecaoPlantaoPostoServico.Selected.Value,
+                                                                  "Brigada de Incêndio",
+                                                                  "BI",
+                                                                  "Angra 1",
+                                                                  "A1",
+                                                                  "Angra 2",
+                                                                  "A2",
+                                                                  "Angra 3",
+                                                                  "A3",
+                                                                  "POSTO"
+                                                              ) &
+                                                              If(
+                                                                  ddSelecaoPlantaoExtra.Selected.Value = "Sim",
+                                                                  "-EXTRA",
+                                                                  ""
+                                                              )
+                                                          );
+                                                          Set(
+                                                              varUsuarioPessoaPlantao,
+                                                              {
+                                                                  '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                                                                  Claims: "i:0#.f|membership|" & Lower(User().Email),
+                                                                  DisplayName: User().FullName,
+                                                                  Email: User().Email,
+                                                                  Department: "",
+                                                                  JobTitle: "",
+                                                                  Picture: ""
+                                                              }
+                                                          );
+                                                          IfError(
+                                                              Set(
+                                                                  varPlantaoAtual,
+                                                                  Patch(
+                                                                      Plantoes,
+                                                                      Defaults(Plantoes),
+                                                                      {
+                                                                          Title: varCodigoPlantaoGerado,
+                                                                          CodigoPlantao: varCodigoPlantaoGerado,
+                                                                          DataPlantao: dtpSelecaoPlantaoData.SelectedDate,
+                                                                          Turno: {Value: ddSelecaoPlantaoTurno.Selected.Value},
+                                                                          PlantaoExtra: ddSelecaoPlantaoExtra.Selected.Value = "Sim",
+                                                                          PostoServico: {Value: ddSelecaoPlantaoPostoServico.Selected.Value},
+                                                                          StatusLivro: {Value: "Em preenchimento"},
+                                                                          DataAbertura: Now(),
+                                                                          LiderEscalado: varUsuarioPessoaPlantao,
+                                                                          LiderResponsavelAtual: varUsuarioPessoaPlantao
+                                                                      }
+                                                                  )
+                                                              ),
+                                                              Notify(
+                                                                  "Erro ao criar o plantão: " & Coalesce(FirstError.Message, "erro não informado."),
+                                                                  NotificationType.Error
+                                                              ),
+                                                              Refresh(Plantoes);
+                                                              Select(btnTecnicoRecalcularPermissoesPlantao);
+                                                              Notify(
+                                                                  "Plantão criado e carregado com sucesso.",
+                                                                  NotificationType.Success
+                                                              )
+                                                          )
+                                                      )
+                                                  )
+                                                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                                PressedColor: =Color.White
+                                                PressedFill: =ColorValue("#166534")
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                                Size: =12
+                                                Text: ="Criar / Carregar"
+                                                Width: =180
+                                          - btnSelecaoPlantaoAtualizar:
+                                              Control: Classic/Button@2.2.0
+                                              Properties:
+                                                BorderColor: =ColorValue("#D6E4EC")
+                                                BorderStyle: =BorderStyle.None
+                                                Color: =ColorValue("#1F2937")
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                DisabledFill: =RGBA(242, 242, 241, 0)
+                                                Fill: =ColorValue("#F3F4F6")
+                                                Font: =Font.'Segoe UI'
+                                                Height: =52
+                                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                                HoverColor: =Color.White
+                                                HoverFill: =RGBA(16, 110, 190, 1)
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                OnSelect: |-
+                                                  =Refresh(Usuarios);
+                                                  Refresh(Plantoes);
+                                                  Refresh(HistoricoReaberturasPlantao);
+                                                  If(
+                                                      !IsBlank(varPlantaoAtual.ID),
+                                                      Set(
+                                                          varPlantaoAtual,
+                                                          LookUp(
+                                                              Plantoes,
+                                                              ID = varPlantaoAtual.ID
+                                                          )
+                                                      )
+                                                  );
+                                                  Select(btnTecnicoRecalcularPermissoesPlantao);
+                                                  Notify(
+                                                      "Dados do plantão atualizados.",
+                                                      NotificationType.Success
+                                                  )
+                                                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                                PressedColor: =Color.White
+                                                PressedFill: =RGBA(16, 110, 190, 1)
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                                Size: =12
+                                                Text: ="Atualizar"
+                                                Width: =130
+                                    - lblSelecaoPlantaoStatus:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Stretch
+                                          BorderColor: =ColorValue("#D6E4EC")
+                                          BorderThickness: =1
+                                          Color: =ColorValue("#374151")
+                                          Fill: =Color.White
+                                          Font: =Font.'Segoe UI'
+                                          Height: =58
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          PaddingBottom: =6
+                                          PaddingLeft: =10
+                                          PaddingRight: =10
+                                          PaddingTop: =6
+                                          Size: =11
+                                          Text: |-
+                                            =If(
+                                                IsBlank(varPlantaoAtual.ID),
+                                                "Nenhum plantão carregado. Use os filtros acima para carregar ou criar um plantão.",
+                                                "Plantão carregado: " &
+                                                Coalesce(varPlantaoAtual.CodigoPlantao, "sem código") &
+                                                " | Data: " &
+                                                If(
+                                                    IsBlank(varPlantaoAtual.DataPlantao),
+                                                    "não informada",
+                                                    Text(varPlantaoAtual.DataPlantao, "[$-pt-BR]dd/mm/yyyy")
+                                                ) &
+                                                " | Turno: " &
+                                                Coalesce(varPlantaoAtual.Turno.Value, "não informado") &
+                                                " | Posto: " &
+                                                Coalesce(varPlantaoAtual.PostoServico.Value, "não informado") &
+                                                " | Status: " &
+                                                Coalesce(varPlantaoAtual.StatusLivro.Value, "não informado")
+                                            )
+                                          Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
