@@ -1880,3 +1880,17 @@ ARQUIVO_PATCH=powerapps\source\patches\V093\ctnLivroSecaoSelecaoPlantao_V093H_PA
 REGISTRO=docs/powerapps/62_v093h_correcao_visual_bloco_0_selecao_plantao.md
 
 PROXIMA_ETAPA=Colar o patch substituindo apenas ctnLivroSecaoSelecaoPlantao no Power Apps Studio e validar visualmente.
+
+## V093H - Correção visual do Bloco 0 - Seleção do Plantão
+
+DATA_HORA=2026-06-20 23:20:33
+
+STATUS=PATCH_GERADO
+
+MOTIVO=Bloco 0 funcional, mas fora do padrão visual/altura dos demais blocos.
+
+ARQUIVO_PATCH=powerapps\source\patches\V093\ctnLivroSecaoSelecaoPlantao_V093H_PADRAO_VISUAL.pa.yaml
+
+REGISTRO=docs/powerapps/62_v093h_correcao_visual_bloco_0_selecao_plantao.md
+
+PROXIMA_ETAPA=Colar o patch substituindo apenas ctnLivroSecaoSelecaoPlantao no Power Apps Studio e validar visualmente.
