@@ -1916,3 +1916,25 @@ SNAPSHOT=powerapps\source\snapshots\scrDashboard_V093H_bloco0_validado_20260620_
 REGISTRO=docs/powerapps/63_v093h_validacao_visual_bloco_0_selecao_plantao.md
 
 PROXIMA_ETAPA=Retomar V093G - teste real do fluxo do Livro do Plantão.
+
+## V093G - Validação real do fluxo do Livro do Plantão
+
+DATA_HORA=2026-06-21 00:12:06
+
+STATUS=VALIDADO
+
+PENDENCIAS=NAO
+
+MOTIVO=Fluxo real do Livro do Plantão validado no Power Apps Studio após ajuste da atualização visual na finalização.
+
+ARQUIVO_APP=powerapps/source/scrDashboard.pa.yaml
+
+BACKUP_ANTES_SYNC=powerapps\source\backups\scrDashboard_antes_registro_V093G_20260621_001206.pa.yaml
+
+SNAPSHOT_VALIDADO=powerapps\source\snapshots\scrDashboard_V093G_fluxo_real_validado_20260621_001206.pa.yaml
+
+REGISTRO=docs/powerapps/64_v093g_validacao_fluxo_real_livro_plantao.md
+
+ITENS_VALIDADOS=Visual blocos 0 a 9; carregar; criar/carregar; atualizar; editar; salvar; finalizar; bloquear após finalizar; reabrir com justificativa; histórico de reabertura; rolagem/alinhamento.
+
+PROXIMA_ETAPA=V094 - Revisar pendências funcionais remanescentes e preparar estabilização do Livro do Plantão.
