@@ -1761,3 +1761,22 @@ BLOCOS_VALIDADOS=
 - ctnLivroSecaoRevisaoFinalizacao
 
 PROXIMA_ETAPA=V093 - Validar fluxo real do Livro do Plantão com criação/carregamento de plantão, salvamento, finalização e reabertura controlada.
+
+## V093A - Sincronização do YAML atual validado no Power Apps
+
+DATA_HORA=2026-06-20 22:41:29
+
+ACAO_EXECUTADA=SINCRONIZACAO_REALIZADA_COM_CLIPBOARD
+
+PENDENCIAS=SIM
+
+TESTES_TOTAL=48
+TESTES_OK=36
+TESTES_FALHA=12
+
+ARQUIVOS=
+- powerapps/source/scrDashboard.pa.yaml
+- docs/powerapps/56_sincronizacao_yaml_atual_powerapps_v092.md
+- powerapps\source\snapshots\scrDashboard_V092_visual_validado_2026-06-20_224129.pa.yaml
+
+PROXIMA_ETAPA=V093 - Validar fluxo real do Livro do Plantão no Power Apps.
