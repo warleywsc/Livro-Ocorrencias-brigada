@@ -1735,3 +1735,29 @@ O piloto real só poderá ser preparado quando:
 A V091 não cria nova funcionalidade no app.
 
 A V091 registra formalmente a decisão de **não liberar piloto agora** e define que a próxima fase será concluir o app completo antes de qualquer compartilhamento com usuários reais.
+## V092 - Padronização de layout e alturas do Livro do Plantão
+
+DATA_HORA=2026-06-20 22:37:04
+
+STATUS=VALIDADO
+
+MOTIVO=Padroniza visualmente os blocos 0 a 9 do Livro do Plantão em fluxo contínuo, usando altura calculada por soma de elementos internos, gaps e paddings, com mínimo visual validado quando necessário.
+
+ARQUIVOS_ATUALIZADOS=
+- docs/powerapps/54_padrao_layout_alturas_containers_powerapps.md
+- docs/powerapps/55_validacao_padrao_layout_alturas_fluxo_continuo.md
+- powerapps\source\snapshots\scrDashboard_V092_2026-06-20.pa.yaml
+
+BLOCOS_VALIDADOS=
+- ctnLivroSecaoSelecaoPlantao
+- ctnLivroSecaoCabecalho
+- ctnLivroSecaoRecebimentoServico
+- ctnLivroSecaoEquipe
+- ctnLivroSecaoViaturasMateriais
+- ctnLivroSecaoInspecaoRotina
+- ctnLivroSecaoPotsRevisados
+- ctnLivroSecaoOcorrenciasPlantao
+- ctnLivroSecaoPendenciasOperacionais
+- ctnLivroSecaoRevisaoFinalizacao
+
+PROXIMA_ETAPA=V093 - Validar fluxo real do Livro do Plantão com criação/carregamento de plantão, salvamento, finalização e reabertura controlada.
