@@ -1780,3 +1780,19 @@ ARQUIVOS=
 - powerapps\source\snapshots\scrDashboard_V092_visual_validado_2026-06-20_224129.pa.yaml
 
 PROXIMA_ETAPA=V093 - Validar fluxo real do Livro do Plantão no Power Apps.
+
+## V093C - Restauração do YAML real após sincronização indevida do clipboard
+
+DATA_HORA=2026-06-20 22:48:48
+
+STATUS=CORRIGIDO
+
+MOTIVO=Restaura o arquivo principal do Power Apps após substituição indevida por conteúdo de diagnóstico copiado no clipboard.
+
+ARQUIVO_RESTAURADO=powerapps/source/scrDashboard.pa.yaml
+
+CANDIDATO_USADO=C:\Projetos\Livro-Ocorrencias-brigada\powerapps\source\snapshots\scrDashboard_V079_2026-06-16.pa.yaml
+
+SNAPSHOT_RESTAURADO=powerapps\source\snapshots\scrDashboard_V093C_restaurado_yaml_real_20260620_224848.pa.yaml
+
+PROXIMA_ETAPA=V093 - reconstruir ou validar os controles funcionais reais do Livro do Plantão.
