@@ -1,0 +1,59 @@
+- btnTecnicoRecalcularPermissoesPlantao:
+    Control: Label@2.5.1
+    Properties:
+      Color: =RGBA(0, 0, 0, 0)
+      Fill: =RGBA(0, 0, 0, 0)
+      Height: =1
+      OnSelect: |-
+        =Set(varEmailUsuarioAtual, Lower(User().Email));
+        Set(
+            varEhLiderLivroPlantao,
+            !IsBlank(varPlantaoAtual) &&
+            (
+                Lower(Coalesce(varPlantaoAtual.LiderResponsavelAtual.Email, "")) = varEmailUsuarioAtual ||
+                Lower(Coalesce(varPlantaoAtual.LiderEscalado.Email, "")) = varEmailUsuarioAtual
+            )
+        );
+        Set(
+            varUsuarioLivroPlantao,
+            LookUp(
+                Usuarios,
+                Lower(Email) = varEmailUsuarioAtual ||
+                Lower(Title) = varEmailUsuarioAtual
+            )
+        );
+        Set(
+            varEhAdministradorLivroPlantao,
+            Coalesce(varUsuarioLivroPlantao.Perfil.Value, "") = "Administrador" ||
+            Coalesce(varUsuarioLivroPlantao.Perfil.Value, "") = "Admin" ||
+            Coalesce(varUsuarioLivroPlantao.Perfil.Value, "") = "Gestor"
+        );
+        Set(
+            varPodeEditarLivroPlantao,
+            !IsBlank(varPlantaoAtual) &&
+            Coalesce(varPlantaoAtual.StatusLivro.Value, "") <> "Finalizado" &&
+            (
+                varEhLiderLivroPlantao ||
+                varEhAdministradorLivroPlantao
+            )
+        );
+        Set(
+            varPodeSalvarLivroPlantao,
+            varPodeEditarLivroPlantao
+        );
+        Set(
+            varPodeFinalizarLivroPlantao,
+            varPodeEditarLivroPlantao
+        );
+        Set(
+            varPodeReabrirLivroPlantao,
+            !IsBlank(varPlantaoAtual) &&
+            Coalesce(varPlantaoAtual.StatusLivro.Value, "") = "Finalizado" &&
+            varEhAdministradorLivroPlantao
+        )
+      Size: =1
+      Text: =""
+      Visible: =false
+      Width: =1
+      X: =0
+      Y: =0

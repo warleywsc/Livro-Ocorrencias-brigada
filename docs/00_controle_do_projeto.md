@@ -1818,3 +1818,19 @@ TESTES_FALHA=12
 ARQUIVO_REGISTRO=docs/powerapps/58_diagnostico_seguro_v093_pos_restauracao.md
 
 PROXIMA_ETAPA=V093 - reconstruir ou validar controles funcionais reais do Livro do Plantão.
+
+## V093E - Geração de YAMLs funcionais para reconstrução do Livro do Plantão
+
+DATA_HORA=2026-06-20 22:53:48
+
+STATUS=GERADO
+
+ARQUIVOS_GERADOS=
+- powerapps\source\patches\V093\ctnLivroSecaoSelecaoPlantao_V093_RECONSTRUIR.pa.yaml
+- powerapps\source\patches\V093\btnTecnicoRecalcularPermissoesPlantao_V093_OCULTO.pa.yaml
+- powerapps\source\patches\V093\ctnLivroSecaoRevisaoFinalizacao_V093_FUNCIONAL.pa.yaml
+- powerapps\source\patches\V093\ctnModaisFinalizacaoReabertura_V093.pa.yaml
+- powerapps\source\patches\V093\ORDEM_COLAGEM_V093.txt
+- docs/powerapps/59_v093_reconstrucao_controles_funcionais_livro_plantao.md
+
+PROXIMA_ETAPA=Colar os blocos no Power Apps e validar o fluxo real do Livro do Plantão.

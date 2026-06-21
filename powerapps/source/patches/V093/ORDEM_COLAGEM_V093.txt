@@ -1,0 +1,20 @@
+ORDEM_COLAGEM_V093
+
+1. Colar/substituir o bloco 0:
+powerapps\source\patches\V093\ctnLivroSecaoSelecaoPlantao_V093_RECONSTRUIR.pa.yaml
+
+2. Colar o controle oculto técnico na mesma tela:
+powerapps\source\patches\V093\btnTecnicoRecalcularPermissoesPlantao_V093_OCULTO.pa.yaml
+
+3. Substituir o bloco 9:
+powerapps\source\patches\V093\ctnLivroSecaoRevisaoFinalizacao_V093_FUNCIONAL.pa.yaml
+
+4. Colar os modais na tela, fora do fluxo principal:
+powerapps\source\patches\V093\ctnModaisFinalizacaoReabertura_V093.pa.yaml
+
+Depois da colagem:
+- conferir se não foram criados sufixos _1, _2 nos nomes;
+- se houver sufixos, renomear para os nomes originais;
+- salvar o app;
+- copiar o YAML atual completo do Power Apps;
+- rodar diagnóstico seguro V093.

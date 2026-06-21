@@ -1,0 +1,286 @@
+- ctnModalConfirmacaoFinalizacaoLivro:
+    Control: GroupContainer@1.5.0
+    Variant: AutoLayout
+    Properties:
+      BorderColor: =ColorValue("#D6E4EC")
+      BorderThickness: =1
+      Fill: =Color.White
+      Height: =250
+      LayoutAlignItems: =LayoutAlignItems.Stretch
+      LayoutDirection: =LayoutDirection.Vertical
+      LayoutGap: =12
+      PaddingBottom: =16
+      PaddingLeft: =16
+      PaddingRight: =16
+      PaddingTop: =16
+      RadiusBottomLeft: =12
+      RadiusBottomRight: =12
+      RadiusTopLeft: =12
+      RadiusTopRight: =12
+      Visible: =varConfirmarFinalizacaoLivroPlantao
+      Width: =560
+      X: =(Parent.Width - Self.Width) / 2
+      Y: =120
+    Children:
+      - lblModalFinalizacaoTitulo:
+          Control: Label@2.5.1
+          Properties:
+            Color: =ColorValue("#0B5F8A")
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            Size: =16
+            Text: ="Confirmar finalização"
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+      - lblModalFinalizacaoTexto:
+          Control: Label@2.5.1
+          Properties:
+            Color: =ColorValue("#374151")
+            Font: =Font.'Segoe UI'
+            Height: =92
+            Size: =12
+            Text: ="Confirme a finalização do Livro do Plantão. Após finalizar, a edição ficará bloqueada até uma reabertura autorizada."
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+      - ctnModalFinalizacaoAcoes:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            FillPortions: =0
+            Height: =68
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =12
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+          Children:
+            - btnModalFinalizacaoCancelar:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =ColorValue("#6B7280")
+                  BorderThickness: =1
+                  Color: =ColorValue("#374151")
+                  Fill: =Color.White
+                  FillPortions: =1
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =48
+                  OnSelect: =Set(varConfirmarFinalizacaoLivroPlantao, false)
+                  Size: =12
+                  Text: ="Cancelar"
+            - btnModalFinalizacaoConfirmar:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =ColorValue("#1F7A4D")
+                  BorderThickness: =1
+                  Color: =Color.White
+                  Fill: =ColorValue("#1F7A4D")
+                  FillPortions: =1
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =48
+                  OnSelect: |-
+                    =Set(varProcessandoLivroPlantao, true);
+                    IfError(
+                        Set(
+                            varPlantaoAtual,
+                            Patch(
+                                Plantoes,
+                                LookUp(Plantoes, ID = varPlantaoAtual.ID),
+                                {
+                                    PassagemServico: txtLivroRecebimentoPassagem.Text,
+                                    ResumoOperacional: txtLivroRecebimentoResumo.Text,
+                                    StatusViaturas: {Value: ddStatusViaturas.Selected.Value},
+                                    StatusMateriais: {Value: ddStatusMateriais.Selected.Value},
+                                    StatusGeralConferencia: {Value: ddStatusConferenciaGeral.Selected.Value},
+                                    ObservacoesConferencia: txtLivroViaturasObservacoes.Text,
+                                    StatusRondas: {Value: ddStatusRondas.Selected.Value},
+                                    StatusAreasOperacionais: {Value: ddStatusAreas.Selected.Value},
+                                    StatusAnormalidades: {Value: ddStatusAnormalidades.Selected.Value},
+                                    ObservacoesInspecaoRotina: txtLivroInspecaoObservacoes.Text,
+                                    StatusPotsRevisados: {Value: ddStatusPotsRevisados.Selected.Value},
+                                    StatusCienciaEquipePots: {Value: ddStatusCienciaEquipePots.Selected.Value},
+                                    StatusGeralPots: {Value: ddStatusGeralPots.Selected.Value},
+                                    ObservacoesPots: txtLivroPotsObservacoes.Text,
+                                    RevisaoLivro: {Value: ddRevisaoLivro.Selected.Value},
+                                    PendenciasCriticas: {Value: ddPendenciasCriticas.Selected.Value},
+                                    LiberacaoFinal: {Value: ddLiberacaoFinal.Selected.Value},
+                                    ObservacoesRevisaoFinalizacao: txtLivroRevisaoObservacoes.Text,
+                                    StatusLivro: {Value: "Finalizado"},
+                                    DataFinalizacao: Now()
+                                }
+                            )
+                        ),
+                        Notify(
+                            "Erro ao finalizar o Livro do Plantão: " & Coalesce(FirstError.Message, "erro não informado."),
+                            NotificationType.Error
+                        );
+                        Set(varProcessandoLivroPlantao, false),
+                        Notify(
+                            "Livro do Plantão finalizado com sucesso.",
+                            NotificationType.Success
+                        );
+                        Set(varConfirmarFinalizacaoLivroPlantao, false);
+                        Refresh(Plantoes);
+                        Select(btnTecnicoRecalcularPermissoesPlantao);
+                        Set(varProcessandoLivroPlantao, false)
+                    )
+                  Size: =12
+                  Text: ="Confirmar"
+
+- ctnModalReaberturaLivro:
+    Control: GroupContainer@1.5.0
+    Variant: AutoLayout
+    Properties:
+      BorderColor: =ColorValue("#D6E4EC")
+      BorderThickness: =1
+      Fill: =Color.White
+      Height: =360
+      LayoutAlignItems: =LayoutAlignItems.Stretch
+      LayoutDirection: =LayoutDirection.Vertical
+      LayoutGap: =12
+      PaddingBottom: =16
+      PaddingLeft: =16
+      PaddingRight: =16
+      PaddingTop: =16
+      RadiusBottomLeft: =12
+      RadiusBottomRight: =12
+      RadiusTopLeft: =12
+      RadiusTopRight: =12
+      Visible: =varConfirmarReaberturaLivroPlantao
+      Width: =640
+      X: =(Parent.Width - Self.Width) / 2
+      Y: =100
+    Children:
+      - lblModalReaberturaTitulo:
+          Control: Label@2.5.1
+          Properties:
+            Color: =ColorValue("#92400E")
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            Size: =16
+            Text: ="Reabrir Livro do Plantão"
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+      - lblModalReaberturaTexto:
+          Control: Label@2.5.1
+          Properties:
+            Color: =ColorValue("#374151")
+            Font: =Font.'Segoe UI'
+            Height: =52
+            Size: =12
+            Text: ="Informe a justificativa para reabrir o Livro do Plantão. A reabertura será registrada em histórico."
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+      - txtModalJustificativaReaberturaLivro:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =ColorValue("#D6E4EC")
+            BorderThickness: =1
+            Color: =ColorValue("#1F2937")
+            Default: =""
+            Fill: =ColorValue("#F9FAFB")
+            Font: =Font.'Segoe UI'
+            Height: =130
+            HintText: ="Descreva o motivo da reabertura."
+            Mode: =TextMode.MultiLine
+            PaddingBottom: =8
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =8
+            Size: =12
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+      - ctnModalReaberturaAcoes:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            FillPortions: =0
+            Height: =68
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =12
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+          Children:
+            - btnModalReaberturaCancelar:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =ColorValue("#6B7280")
+                  BorderThickness: =1
+                  Color: =ColorValue("#374151")
+                  Fill: =Color.White
+                  FillPortions: =1
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =48
+                  OnSelect: =Set(varConfirmarReaberturaLivroPlantao, false)
+                  Size: =12
+                  Text: ="Cancelar"
+            - btnModalReaberturaConfirmar:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =ColorValue("#B7791F")
+                  BorderThickness: =1
+                  Color: =Color.White
+                  Fill: =ColorValue("#B7791F")
+                  FillPortions: =1
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =48
+                  OnSelect: |-
+                    =If(
+                        IsBlank(Trim(txtModalJustificativaReaberturaLivro.Text)),
+                        Notify(
+                            "Informe a justificativa da reabertura.",
+                            NotificationType.Error
+                        ),
+                        Set(varProcessandoLivroPlantao, true);
+                        IfError(
+                            Patch(
+                                HistoricoReaberturasPlantao,
+                                Defaults(HistoricoReaberturasPlantao),
+                                {
+                                    Title: "Reabertura - " & Coalesce(varPlantaoAtual.CodigoPlantao, varPlantaoAtual.Title),
+                                    Plantao: {
+                                        Id: varPlantaoAtual.ID,
+                                        Value: Coalesce(varPlantaoAtual.CodigoPlantao, varPlantaoAtual.Title)
+                                    },
+                                    Justificativa: txtModalJustificativaReaberturaLivro.Text,
+                                    DataHoraReabertura: Now(),
+                                    UsuarioReabertura: {
+                                        Claims: "i:0#.f|membership|" & Lower(User().Email),
+                                        DisplayName: User().FullName,
+                                        Email: Lower(User().Email)
+                                    }
+                                }
+                            );
+                            Set(
+                                varPlantaoAtual,
+                                Patch(
+                                    Plantoes,
+                                    LookUp(Plantoes, ID = varPlantaoAtual.ID),
+                                    {
+                                        StatusLivro: {Value: "Em preenchimento"},
+                                        JustificativaUltimaReabertura: txtModalJustificativaReaberturaLivro.Text,
+                                        DataUltimaReabertura: Now()
+                                    }
+                                )
+                            ),
+                            Notify(
+                                "Erro ao reabrir o Livro do Plantão: " & Coalesce(FirstError.Message, "erro não informado."),
+                                NotificationType.Error
+                            );
+                            Set(varProcessandoLivroPlantao, false),
+                            Notify(
+                                "Livro do Plantão reaberto com sucesso.",
+                                NotificationType.Success
+                            );
+                            Set(varConfirmarReaberturaLivroPlantao, false);
+                            Refresh(Plantoes);
+                            Refresh(HistoricoReaberturasPlantao);
+                            Select(btnTecnicoRecalcularPermissoesPlantao);
+                            Set(varProcessandoLivroPlantao, false)
+                        )
+                    )
+                  Size: =12
+                  Text: ="Confirmar Reabertura"

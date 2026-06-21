@@ -1,0 +1,608 @@
+- ctnLivroSecaoRevisaoFinalizacao:
+    Control: GroupContainer@1.5.0
+    Variant: AutoLayout
+    Properties:
+      AlignInContainer: =AlignInContainer.SetByContainer
+      BorderColor: =ColorValue("#D6E4EC")
+      BorderThickness: =1
+      Fill: =ColorValue("#F9FAFB")
+      FillPortions: =0
+      Height: |-
+        =Max(
+            Self.PaddingTop + Self.PaddingBottom +
+            lblLivroSecaoRevisaoFinalizacaoTitulo.Height +
+            ctnLivroRevisaoResumo.Height +
+            ctnLivroRevisaoStatus.Height +
+            ctnLivroRevisaoObservacoes.Height +
+            ctnLivroRevisaoAcoes.Height +
+            (4 * Self.LayoutGap),
+            500
+        )
+      LayoutAlignItems: =LayoutAlignItems.Stretch
+      LayoutDirection: =LayoutDirection.Vertical
+      LayoutGap: =10
+      LayoutMinHeight: =16
+      LayoutMinWidth: =16
+      PaddingBottom: =12
+      PaddingLeft: =16
+      PaddingRight: =16
+      PaddingTop: =12
+      RadiusBottomLeft: =8
+      RadiusBottomRight: =8
+      RadiusTopLeft: =8
+      RadiusTopRight: =8
+      Width: =Parent.Width
+    Children:
+      - lblLivroSecaoRevisaoFinalizacaoTitulo:
+          Control: Label@2.5.1
+          Properties:
+            AlignInContainer: =AlignInContainer.Stretch
+            Color: =ColorValue("#0B5F8A")
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            Size: =16
+            Text: ="9. Revisão e Finalização"
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+
+      - ctnLivroRevisaoResumo:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            AlignInContainer: =AlignInContainer.Stretch
+            FillPortions: =0
+            Height: |-
+              =Max(
+                  Self.PaddingTop + Self.PaddingBottom +
+                  lblLivroRevisaoResumo.Height,
+                  76
+              )
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =4
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            PaddingBottom: =8
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =8
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+          Children:
+            - lblLivroRevisaoResumo:
+                Control: Label@2.5.1
+                Properties:
+                  AlignInContainer: =AlignInContainer.Stretch
+                  Color: =ColorValue("#374151")
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =52
+                  LayoutMinHeight: =16
+                  LayoutMinWidth: =16
+                  Size: =11
+                  Text: ="Revise as informações principais do Livro do Plantão antes de salvar, finalizar ou reabrir o registro."
+                  Width: =Parent.Width
+
+      - ctnLivroRevisaoStatus:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            AlignInContainer: =AlignInContainer.Stretch
+            FillPortions: =0
+            Height: |-
+              =Max(
+                  Self.PaddingTop + Self.PaddingBottom +
+                  ctnLivroRevisaoStatusLinha.Height,
+                  90
+              )
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            PaddingBottom: =4
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =4
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+          Children:
+            - ctnLivroRevisaoStatusLinha:
+                Control: GroupContainer@1.5.0
+                Variant: AutoLayout
+                Properties:
+                  FillPortions: =0
+                  Height: |-
+                    =Max(
+                        Self.PaddingTop + Self.PaddingBottom +
+                        Max(
+                            ctnCampoRevisaoLivro.Height,
+                            ctnCampoPendenciasCriticas.Height,
+                            ctnCampoLiberacaoFinal.Height
+                        ),
+                        82
+                    )
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =12
+                  LayoutMinHeight: =16
+                  LayoutMinWidth: =16
+                  Width: =Parent.Width
+                Children:
+                  - ctnCampoRevisaoLivro:
+                      Control: GroupContainer@1.5.0
+                      Variant: AutoLayout
+                      Properties:
+                        FillPortions: =0
+                        Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =2
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =4
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =4
+                        Width: =(Parent.Width - 24) / 3
+                      Children:
+                        - lblCampoRevisaoLivro:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Stretch
+                              Color: =ColorValue("#374151")
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =24
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              Size: =11
+                              Text: ="Revisão do Livro"
+                              Width: =Parent.Width
+                        - ddRevisaoLivro:
+                            Control: Classic/DropDown@2.3.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Stretch
+                              BorderColor: =ColorValue("#D6E4EC")
+                              BorderThickness: =1
+                              ChevronBackground: =ColorValue("#F9FAFB")
+                              ChevronFill: =ColorValue("#1F2937")
+                              Color: =ColorValue("#1F2937")
+                              Default: =Coalesce(varPlantaoAtual.RevisaoLivro.Value, "Pendente")
+                              DisplayMode: |-
+                                =If(
+                                    varPodeEditarLivroPlantao,
+                                    DisplayMode.Edit,
+                                    DisplayMode.View
+                                )
+                              Fill: =ColorValue("#F9FAFB")
+                              Font: =Font.'Segoe UI'
+                              Height: =42
+                              Items: =["Pendente", "Conferido", "Com ajustes"]
+                              Items.Value: =Value
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              PaddingBottom: =5
+                              PaddingLeft: =8
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              SelectionColor: =Color.White
+                              SelectionFill: =ColorValue("#0082BC")
+                              Size: =12
+                              Width: =Parent.Width
+
+                  - ctnCampoPendenciasCriticas:
+                      Control: GroupContainer@1.5.0
+                      Variant: AutoLayout
+                      Properties:
+                        FillPortions: =0
+                        Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =2
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =4
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =4
+                        Width: =(Parent.Width - 24) / 3
+                      Children:
+                        - lblCampoPendenciasCriticas:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Stretch
+                              Color: =ColorValue("#374151")
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =24
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              Size: =11
+                              Text: ="Pendências Críticas"
+                              Width: =Parent.Width
+                        - ddPendenciasCriticas:
+                            Control: Classic/DropDown@2.3.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Stretch
+                              BorderColor: =ColorValue("#D6E4EC")
+                              BorderThickness: =1
+                              ChevronBackground: =ColorValue("#F9FAFB")
+                              ChevronFill: =ColorValue("#1F2937")
+                              Color: =ColorValue("#1F2937")
+                              Default: =Coalesce(varPlantaoAtual.PendenciasCriticas.Value, "Não verificado")
+                              DisplayMode: |-
+                                =If(
+                                    varPodeEditarLivroPlantao,
+                                    DisplayMode.Edit,
+                                    DisplayMode.View
+                                )
+                              Fill: =ColorValue("#F9FAFB")
+                              Font: =Font.'Segoe UI'
+                              Height: =42
+                              Items: =["Não verificado", "Não há", "Existem"]
+                              Items.Value: =Value
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              PaddingBottom: =5
+                              PaddingLeft: =8
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              SelectionColor: =Color.White
+                              SelectionFill: =ColorValue("#0082BC")
+                              Size: =12
+                              Width: =Parent.Width
+
+                  - ctnCampoLiberacaoFinal:
+                      Control: GroupContainer@1.5.0
+                      Variant: AutoLayout
+                      Properties:
+                        FillPortions: =0
+                        Height: =Max(Self.PaddingTop + Self.PaddingBottom + 24 + 42 + Self.LayoutGap, 82)
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =2
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =4
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =4
+                        Width: =(Parent.Width - 24) / 3
+                      Children:
+                        - lblCampoLiberacaoFinal:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Stretch
+                              Color: =ColorValue("#374151")
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =24
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              Size: =11
+                              Text: ="Liberação Final"
+                              Width: =Parent.Width
+                        - ddLiberacaoFinal:
+                            Control: Classic/DropDown@2.3.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Stretch
+                              BorderColor: =ColorValue("#D6E4EC")
+                              BorderThickness: =1
+                              ChevronBackground: =ColorValue("#F9FAFB")
+                              ChevronFill: =ColorValue("#1F2937")
+                              Color: =ColorValue("#1F2937")
+                              Default: =Coalesce(varPlantaoAtual.LiberacaoFinal.Value, "Não liberado")
+                              DisplayMode: |-
+                                =If(
+                                    varPodeEditarLivroPlantao,
+                                    DisplayMode.Edit,
+                                    DisplayMode.View
+                                )
+                              Fill: =ColorValue("#F9FAFB")
+                              Font: =Font.'Segoe UI'
+                              Height: =42
+                              Items: =["Não liberado", "Liberado", "Aguardando ajuste"]
+                              Items.Value: =Value
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              PaddingBottom: =5
+                              PaddingLeft: =8
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              SelectionColor: =Color.White
+                              SelectionFill: =ColorValue("#0082BC")
+                              Size: =12
+                              Width: =Parent.Width
+
+      - ctnLivroRevisaoObservacoes:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            AlignInContainer: =AlignInContainer.Stretch
+            FillPortions: =0
+            Height: |-
+              =Max(
+                  Self.PaddingTop + Self.PaddingBottom +
+                  lblLivroRevisaoObservacoes.Height +
+                  txtLivroRevisaoObservacoes.Height +
+                  Self.LayoutGap,
+                  170
+              )
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =4
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            PaddingBottom: =8
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =8
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+          Children:
+            - lblLivroRevisaoObservacoes:
+                Control: Label@2.5.1
+                Properties:
+                  AlignInContainer: =AlignInContainer.Stretch
+                  Color: =ColorValue("#374151")
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =24
+                  LayoutMinHeight: =16
+                  LayoutMinWidth: =16
+                  Size: =11
+                  Text: ="Observações da Revisão e Finalização"
+                  Width: =Parent.Width
+            - txtLivroRevisaoObservacoes:
+                Control: Classic/TextInput@2.3.2
+                Properties:
+                  AlignInContainer: =AlignInContainer.Stretch
+                  BorderColor: =ColorValue("#D6E4EC")
+                  BorderThickness: =1
+                  Color: =ColorValue("#1F2937")
+                  Default: =PlainText(Coalesce(varPlantaoAtual.ObservacoesRevisaoFinalizacao, ""))
+                  DisplayMode: |-
+                    =If(
+                        varPodeEditarLivroPlantao,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
+                  Fill: =ColorValue("#F9FAFB")
+                  Font: =Font.'Segoe UI'
+                  Height: =126
+                  HintText: ="Registre observações finais, ajustes pendentes ou informação relevante antes da finalização do livro."
+                  LayoutMinHeight: =16
+                  LayoutMinWidth: =16
+                  Mode: =TextMode.MultiLine
+                  PaddingBottom: =8
+                  PaddingLeft: =8
+                  PaddingRight: =8
+                  PaddingTop: =8
+                  Size: =12
+                  Width: =Parent.Width
+
+      - ctnLivroRevisaoAcoes:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            AlignInContainer: =AlignInContainer.Stretch
+            FillPortions: =0
+            Height: |-
+              =Max(
+                  Self.PaddingTop + Self.PaddingBottom +
+                  Max(
+                      btnLivroSalvarRascunho.Height,
+                      btnLivroFinalizar.Height,
+                      btnLivroReabrir.Height
+                  ),
+                  76
+              )
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =12
+            LayoutMinHeight: =16
+            LayoutMinWidth: =16
+            PaddingBottom: =8
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =8
+            Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+          Children:
+            - btnLivroSalvarRascunho:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =ColorValue("#0082BC")
+                  BorderThickness: =1
+                  Color: =Color.White
+                  DisplayMode: |-
+                    =If(
+                        varPodeSalvarLivroPlantao &&
+                        !varProcessandoLivroPlantao,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
+                  Fill: |-
+                    =If(
+                        varPodeSalvarLivroPlantao &&
+                        !varProcessandoLivroPlantao,
+                        ColorValue("#0082BC"),
+                        ColorValue("#9CA3AF")
+                    )
+                  FillPortions: =1
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =52
+                  OnSelect: |-
+                    =If(
+                        Coalesce(varPlantaoAtual.StatusLivro.Value, "") = "Finalizado",
+                        Notify(
+                            "Este Livro do Plantão já está finalizado. A edição está bloqueada.",
+                            NotificationType.Warning
+                        ),
+                        If(
+                            !varPodeSalvarLivroPlantao,
+                            Notify(
+                                "Você não tem permissão para salvar este Livro do Plantão.",
+                                NotificationType.Error
+                            ),
+                            Set(varProcessandoLivroPlantao, true);
+                            IfError(
+                                Set(
+                                    varPlantaoAtual,
+                                    Patch(
+                                        Plantoes,
+                                        LookUp(Plantoes, ID = varPlantaoAtual.ID),
+                                        {
+                                            PassagemServico: txtLivroRecebimentoPassagem.Text,
+                                            ResumoOperacional: txtLivroRecebimentoResumo.Text,
+                                            StatusViaturas: {Value: ddStatusViaturas.Selected.Value},
+                                            StatusMateriais: {Value: ddStatusMateriais.Selected.Value},
+                                            StatusGeralConferencia: {Value: ddStatusConferenciaGeral.Selected.Value},
+                                            ObservacoesConferencia: txtLivroViaturasObservacoes.Text,
+                                            StatusRondas: {Value: ddStatusRondas.Selected.Value},
+                                            StatusAreasOperacionais: {Value: ddStatusAreas.Selected.Value},
+                                            StatusAnormalidades: {Value: ddStatusAnormalidades.Selected.Value},
+                                            ObservacoesInspecaoRotina: txtLivroInspecaoObservacoes.Text,
+                                            StatusPotsRevisados: {Value: ddStatusPotsRevisados.Selected.Value},
+                                            StatusCienciaEquipePots: {Value: ddStatusCienciaEquipePots.Selected.Value},
+                                            StatusGeralPots: {Value: ddStatusGeralPots.Selected.Value},
+                                            ObservacoesPots: txtLivroPotsObservacoes.Text,
+                                            RevisaoLivro: {Value: ddRevisaoLivro.Selected.Value},
+                                            PendenciasCriticas: {Value: ddPendenciasCriticas.Selected.Value},
+                                            LiberacaoFinal: {Value: ddLiberacaoFinal.Selected.Value},
+                                            ObservacoesRevisaoFinalizacao: txtLivroRevisaoObservacoes.Text
+                                        }
+                                    )
+                                ),
+                                Notify(
+                                    "Erro ao salvar o Livro do Plantão: " & Coalesce(FirstError.Message, "erro não informado."),
+                                    NotificationType.Error
+                                );
+                                Set(varProcessandoLivroPlantao, false),
+                                Notify(
+                                    "Livro do Plantão salvo com sucesso.",
+                                    NotificationType.Success
+                                );
+                                Refresh(Plantoes);
+                                Select(btnTecnicoRecalcularPermissoesPlantao);
+                                Set(varProcessandoLivroPlantao, false)
+                            )
+                        )
+                    )
+                  PaddingBottom: =8
+                  PaddingLeft: =12
+                  PaddingRight: =12
+                  PaddingTop: =8
+                  Size: =12
+                  Text: ="Salvar"
+                  Width: =(Parent.Width - 24) / 3
+
+            - btnLivroFinalizar:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =ColorValue("#1F7A4D")
+                  BorderThickness: =1
+                  Color: =Color.White
+                  DisplayMode: |-
+                    =If(
+                        varPodeFinalizarLivroPlantao &&
+                        !varProcessandoLivroPlantao,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
+                  Fill: |-
+                    =If(
+                        varPodeFinalizarLivroPlantao &&
+                        !varProcessandoLivroPlantao,
+                        ColorValue("#1F7A4D"),
+                        ColorValue("#9CA3AF")
+                    )
+                  FillPortions: =1
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =52
+                  OnSelect: |-
+                    =If(
+                        Coalesce(varPlantaoAtual.StatusLivro.Value, "") = "Finalizado",
+                        Notify(
+                            "Este Livro do Plantão já está finalizado.",
+                            NotificationType.Warning
+                        ),
+                        If(
+                            !varPodeFinalizarLivroPlantao,
+                            Notify(
+                                "Você não tem permissão para finalizar este Livro do Plantão.",
+                                NotificationType.Error
+                            ),
+                            If(
+                                ddRevisaoLivro.Selected.Value <> "Conferido" ||
+                                ddPendenciasCriticas.Selected.Value = "Existem" ||
+                                ddLiberacaoFinal.Selected.Value <> "Liberado",
+                                Notify(
+                                    "Para finalizar, a Revisão do Livro deve estar como Conferido, Pendências Críticas não podem existir e a Liberação Final deve estar como Liberado.",
+                                    NotificationType.Error
+                                ),
+                                Set(varConfirmarFinalizacaoLivroPlantao, true)
+                            )
+                        )
+                    )
+                  PaddingBottom: =8
+                  PaddingLeft: =12
+                  PaddingRight: =12
+                  PaddingTop: =8
+                  Size: =12
+                  Text: ="Finalizar"
+                  Width: =(Parent.Width - 24) / 3
+
+            - btnLivroReabrir:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =ColorValue("#B7791F")
+                  BorderThickness: =1
+                  Color: =Color.White
+                  DisplayMode: |-
+                    =If(
+                        Coalesce(varPlantaoAtual.StatusLivro.Value, "") = "Finalizado" &&
+                        !varProcessandoLivroPlantao &&
+                        varPodeReabrirLivroPlantao,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
+                  Fill: |-
+                    =If(
+                        Coalesce(varPlantaoAtual.StatusLivro.Value, "") = "Finalizado" &&
+                        !varProcessandoLivroPlantao &&
+                        varPodeReabrirLivroPlantao,
+                        ColorValue("#B7791F"),
+                        ColorValue("#9CA3AF")
+                    )
+                  FillPortions: =1
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =52
+                  OnSelect: |-
+                    =If(
+                        Coalesce(varPlantaoAtual.StatusLivro.Value, "") <> "Finalizado",
+                        Notify(
+                            "Somente livros finalizados podem ser reabertos.",
+                            NotificationType.Warning
+                        ),
+                        If(
+                            !varPodeReabrirLivroPlantao,
+                            Notify(
+                                "Você não tem permissão para reabrir este Livro do Plantão.",
+                                NotificationType.Error
+                            ),
+                            Reset(txtModalJustificativaReaberturaLivro);
+                            Set(varConfirmarReaberturaLivroPlantao, true)
+                        )
+                    )
+                  PaddingBottom: =8
+                  PaddingLeft: =12
+                  PaddingRight: =12
+                  PaddingTop: =8
+                  Size: =12
+                  Text: ="Reabrir"
+                  Width: =(Parent.Width - 24) / 3
